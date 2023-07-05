@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="css/styles.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap" rel="stylesheet")
+    body 
+        //- test
+        include components/mixins
+        header.wrapper
+            .main-container.d-flex
+                .main-text 
+                    +headerLogo(logo)   
+                    h1 Hashtag, Дизайн агенція та веб-розробка
+                    h2.main-description Створення сайтів будь-якого ступеня складності. Розкрутка та просування сайту. Послуги з обслуговування та підтримки сайту. 
+                .main-project
+                    .carousel.d-flex
+                        .left-vertical
+                            .down-block.treemcb
+                            .down-block.decstop
+                            .down-block.card
+                        .center 
+                            .up-block.center-block.mcb
+                            .up-block.center-block.magazine
+                            .up-block.center-block.website
+                        .right-vertical
+                            .down-block.decstop
+                            .down-block.note
+                            .down-block.annalogo
+            .center-button
+                a(href="#")
+                p.portfolio 
+                p.button-text.arrow 
+            .menuButton#menuBtn
+                .menuText
+                    p М
+                    p е
+                    p н
+                    p ю
+        div.menuOpen#menuOpen
+            .cardsOverflow.d-flex.wrapper.flex-between
+                +cardsMenuInfo(cardsMenuInfo.general)
+                +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                +cardsMenuInfo(cardsMenuInfo.portfolio)
+                +cardsMenuInfo(cardsMenuInfo.contacts)
+
+        script(src="js/scripts.js") 

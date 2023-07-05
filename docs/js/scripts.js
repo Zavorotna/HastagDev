@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){var e=document.getElementById("menuBtn"),n=document.getElementById("menuOpen");e.addEventListener("click",(function(){e.classList.toggle("menuBtnClicked"),n.classList.toggle("menuOpenClicked")}))}));

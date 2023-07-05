@@ -1,0 +1,59 @@
+mixin headerLogo(logo) 
+    .top-navigation.d-flex
+        .logo 
+            a(href="index.html")
+            img(src="img/logo.svg", alt="logo")
+        .cellphone.d-flex
+            a.number(href="tel:+380973021025") 097 302 1025
+            a(href="#") UA
+
+-
+    let cardsMenuInfo = {
+        general: {
+            img: "img/generalCover.jpg",
+            alt: "Демонстрація головної сторінки Hashtag Developers",
+            title: "ГОЛОВНА",
+            href: "index.html",
+        },
+        aboutUs: {
+            img: "img/cover.jpg",
+            alt: "Демонстрація сторінки Про нас Hashtag Developers",
+            title: "Про нас", 
+            href: "#",
+        },
+        contacts: {
+            img: "img/cover.jpg",
+            alt: "Демонстрація сторінки Контакти Hashtag Developers",
+            title: "Контакти",
+            href: "contacts.html",
+        },
+        portfolio: {
+            img: "img/cover.jpg",
+            alt: "Демонстрація сторінки Портфоліо Hashtag Developers",
+            title: "Портфоліо",
+            href: "#", 
+        },
+        comand: {
+            img: "img/cover.jpg",
+            alt: "Демонстрація сторінки Команда Hashtag Developers",
+            title: "Команда",
+            href: "#",
+        },
+    }
+
+mixin cardsMenuInfo(cardsInfo)
+    .menuNavCard 
+        a(href = cardsInfo.href).cardHref
+            .cardTitle
+                p.menuNavText #{cardsInfo.title}
+            .cardImage 
+
+mixin footerContact(footer) 
+    .bottom-contacts.d-flex.wrapper
+        h3.footer-text Ти ще досі не телефонуєш нам?
+        p 
+            a.bottom-cell.arrow(href="#") контакти
+    .copyright
+        p Copyright © 2023. Hashtag Developers
+        
+            
