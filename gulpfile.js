@@ -15,12 +15,12 @@ import cleanCSS from "gulp-clean-css"
 const sass = gulpSass(coreSass)
 
 export const browserSyncFunc = () => {
-    browserSync ({
+    browserSync({
         server: {
             baseDir: "docs"
         },
-        open: false,
-        browser: "chrome"
+        open: true,
+        browser: "brave"
         //port: 8080
     })
 }
@@ -41,7 +41,7 @@ export const html = () => {
 
 export const css = () => {
     return gulp
-    .src ([
+    .src([
         "src/sass/*.css",
         "src/sass/*.sass"
     ])
@@ -49,12 +49,12 @@ export const css = () => {
         outputStyle: "compressed" //expanded, compact
     })
     .on("error", sass.logError))
-    .pipe(autoprefixer(["last 15 versions"], {
+    .pipe(autoprefixer(["last 15 versions"],{
         cascade: true
     }))
     .pipe(gcmq("styles.css"))
     .pipe(concat("styles.css"))
-    .pipe(cleanCSS ({
+    .pipe(cleanCSS({
         compatibility: "ie8"
     }))
     .pipe(gulp.dest("docs/css"))
@@ -64,7 +64,7 @@ export const css = () => {
 }
 
 export const js = () => {
-    return gulp 
+    return gulp
     .src([
         "src/js/**/*.js"
     ])
@@ -77,7 +77,7 @@ export const js = () => {
 }
 
 export const files = () => {
-    return gulp 
+    return gulp
     .src([
         "src/*.*"
     ], {dot: true})
@@ -88,7 +88,7 @@ export const files = () => {
 }
 
 export const fonts = () => {
-    return gulp 
+    return gulp
     .src([
         "src/fonts/**/*.*"
     ])
@@ -99,7 +99,7 @@ export const fonts = () => {
 }
 
 export const images = () => {
-    return gulp 
+    return gulp
     .src([
         "src/img/**/*"
     ])
@@ -112,7 +112,7 @@ export const images = () => {
 
 export const clear = () => {
     return cache.clearAll()
-} 
+}
 
 export const delDocs = () => {
     return del("docs")
@@ -123,7 +123,7 @@ export const watch = () => {
     gulp.watch("src/js/**/*.js", gulp.parallel(js))
     gulp.watch("src/pug/**/*.pug", gulp.parallel(html))
     gulp.watch("src/*.*", gulp.parallel(files))
-    gulp.watch("src/fonts/**/*.sass", gulp.parallel(fonts))
+    gulp.watch("src/fonts/**/*.*", gulp.parallel(fonts))
     gulp.watch("src/img/**/*.*", gulp.parallel(images))
 }
 
