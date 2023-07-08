@@ -477,7 +477,7 @@ footer.portfolio-wrapper
     column-gap: 15rem
     padding: 0
     margin-bottom: 44rem
-    li
+    li a
         list-style-type: none
         cursor: pointer
         color: #fff
@@ -495,7 +495,6 @@ footer.portfolio-wrapper
         background-color:  rgba(#24D7FF, 0.8)
 
     & > div
-        display: none
         column-gap: 50rem
         margin-left: 222px
         padding-bottom: 15rem
@@ -513,3 +512,14 @@ footer.portfolio-wrapper
 
 .portfolio-slider div.display
     display: flex
+
+.tabs-block:not(:target)
+    display: none
+
+.tabs-block 
+    display: flex
+    transition: 1s
+
+.tabs-block:target 
+    height: 466rem
+

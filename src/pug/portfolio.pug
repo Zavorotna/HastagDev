@@ -52,34 +52,39 @@ html(lang="en")
                         | є ефективним інструментом для просування бізнесу і залучення уваги цільової аудиторії.
                 .portfolio-slider-nav
                     ul.portfolio-slider-ul
-                        li.title-h3#lookall(href="") переглянути усе   
-                        li.title-h3#lookSites(href="") Сайти
-                        li.title-h3#lookLogo(href="") логотипи
-                        li.title-h3#lookCards(href="") візитки
-                        li.title-h3#reklamCreat(href="") рекламні креативи
+                        li
+                            a.title-h3#lookall(href="#slideLookAll") переглянути усе   
+                        li
+                            a.title-h3#lookSites(href="#slideLookSites") Сайти
+                        li
+                            a.title-h3#lookLogo(href="#slideLookLogo") логотипи
+                        li
+                            a.title-h3#lookCards(href="#slideLookCard") візитки
+                        li
+                            a.title-h3#reklamCreat(href="#slideLookReklam") рекламні креативи
 
             .portfolio-slider 
-                .portfolio-slider-look-all.d-flex.display
+                .portfolio-slider-look-all.tabs-block.d-flex#slideLookAll
                     +sliderLookAll(sliderLookAll.img1)
                     +sliderLookAll(sliderLookAll.img2)
                     +sliderLookAll(sliderLookAll.img3)
                     +sliderLookAll(sliderLookAll.img4)
-                .portfolio-slider-look-sites.d-flex 
+                .portfolio-slider-look-sites.tabs-block.d-flex#slideLookSites
                     +sliderLookSite(sliderLookSite.img1)
                     +sliderLookSite(sliderLookSite.img2)
                     +sliderLookSite(sliderLookSite.img3)
                     +sliderLookSite(sliderLookSite.img4)
-                .portfolio-slider-look-logo.d-flex 
+                .portfolio-slider-look-logo.tabs-block.d-flex#slideLookLogo 
                     +sliderLookLogo(sliderLookLogo.img1)
                     +sliderLookLogo(sliderLookLogo.img2)
                     +sliderLookLogo(sliderLookLogo.img3)
                     +sliderLookLogo(sliderLookLogo.img4)
-                .portfolio-slider-look-card.d-flex 
+                .portfolio-slider-look-card.tabs-block.d-flex#slideLookCard 
                     +sliderLookCard(sliderLookCard.img1)
                     +sliderLookCard(sliderLookCard.img2)
                     +sliderLookCard(sliderLookCard.img3)
                     +sliderLookCard(sliderLookCard.img4)
-                .portfolio-slider-look-reklam-creatives.d-flex 
+                .portfolio-slider-look-reklam-creatives.tabs-block.d-flex#slideLookReklam 
                     +sliderLookReklamCreat(sliderLookReklamCreat.img1)
                     +sliderLookReklamCreat(sliderLookReklamCreat.img2)
                     +sliderLookReklamCreat(sliderLookReklamCreat.img3)
