@@ -16,6 +16,7 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap" rel="stylesheet")
     body 
+    body 
         //- test1
         include components/mixins
         header.wrapper
@@ -23,12 +24,6 @@ html(lang="en")
                 //- .main-text  - забрав 50%
                 +headerLogo(logo)   
                 .main-project
-            .menuButton#menuBtn
-                .menuText
-                    p М
-                    p е
-                    p н
-                    p ю
         main.wrapper.contacts-wrap
             h1.title Контакти
             .main-contacts.d-flex.flex-wrap
@@ -72,6 +67,12 @@ html(lang="en")
                             input(type="file"  accept=".jpg,.png,.pdf,.svg,.doc,.exe") 
                     .submit
                         button(type="submit") відправити
+        .menuButton#menuBtn
+            .menuText
+                p М
+                p е
+                p н
+                p ю
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)

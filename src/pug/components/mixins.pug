@@ -31,7 +31,7 @@ mixin headerLogo(logo)
             img: "img/cover.jpg",
             alt: "Демонстрація сторінки Портфоліо Hashtag Developers",
             title: "Портфоліо",
-            href: "#", 
+            href: "portfolio.html", 
         },
         comand: {
             img: "img/cover.jpg",
@@ -55,5 +55,210 @@ mixin footerContact(footer)
             a.bottom-cell.arrow(href="#") контакти
     .copyright
         p Copyright © 2023. Hashtag Developers
-        
-            
+
+
+-
+    let sliderLookAll = {
+        img1: {
+            img: "img/omegadev.png",
+            alt: "Демонстрація сторінки omegadev",
+            titleBlue: "Omega Dev",
+            titleNormal: " | Development Services",
+            href: "#",
+        },
+        img2: {
+            img: "img/wrau.png",
+            alt: "Демонстрація сторінки wrau",
+            titleBlue: "wrau",
+            titleNormal: " | Асоціація переробки відходів",
+            href: "#",
+        },
+        img3: {
+            img: "img/highway.png",
+            alt: "Демонстрація сторінки highway",
+            titleBlue: "highway",
+            titleNormal: " | Інженерно - будівельна компанія",
+            href: "#",
+        },
+        img4: {
+            img: "img/k-yarmarock.png",
+            alt: "Демонстрація сторінки k-yarmarock",
+            titleBlue: "k-yarmarock",
+            titleNormal: " | Продаж килимів",
+            href: "#",
+        },
+    }
+
+mixin sliderLookAll(slider)
+    a(href=slider.href).decor-none
+        .card-slider
+            img(src=slider.img, alt=slider.alt)
+            h3.title-h3
+                span.blue-text= slider.titleBlue
+                | #{slider.titleNormal}
+
+
+-
+    let sliderLookSite = {
+        img1: {
+            img: "img/omegadev.png",
+            alt: "Демонстрація сторінки omegadev",
+            titleBlue: "Omega Dev",
+            titleNormal: " | Development Services",
+            href: "#",
+        },
+        img2: {
+            img: "img/wrau.png",
+            alt: "Демонстрація сторінки wrau",
+            titleBlue: "wrau",
+            titleNormal: " | Асоціація переробки відходів",
+            href: "#",
+        },
+        img3: {
+            img: "img/highway.png",
+            alt: "Демонстрація сторінки highway",
+            titleBlue: "highway",
+            titleNormal: " | Інженерно - будівельна компанія",
+            href: "#",
+        },
+        img4: {
+            img: "img/k-yarmarock.png",
+            alt: "Демонстрація сторінки k-yarmarock",
+            titleBlue: "k-yarmarock",
+            titleNormal: " | Продаж килимів",
+            href: "#",
+        },
+    }
+
+mixin sliderLookSite(slider)
+    a(href=slider.href).decor-none
+        .card-slider
+            img(src=slider.img, alt=slider.alt)
+            h3.title-h3
+                span.blue-text= slider.titleBlue
+                | #{slider.titleNormal}
+
+
+-
+    let sliderLookLogo = {
+        img1: {
+            img: "img/annatoys.png",
+            alt: "Демонстрація сторінки annatoys",
+            titleBlue: "Anna toys",
+            titleNormal: " | магазин іграшок",
+            href: "#",
+        },
+        img2: {
+            img: "img/farmital.png",
+            alt: "Демонстрація сторінки farmital",
+            titleBlue: "farmital",
+            titleNormal: " | інтернет - аптека",
+            href: "#",
+        },
+        img3: {
+            img: "img/association.png",
+            alt: "Демонстрація сторінки association",
+            titleBlue: "association of renewable energy",
+            titleNormal: " | асоціація ",
+            href: "#",
+        },
+        img4: {
+            img: "img/vzuteviymagnat.png",
+            alt: "Демонстрація сторінки vzuteviymagnat",
+            titleBlue: "взуттєвий магнат",
+            titleNormal: " | магазин взуття",
+            href: "#",
+        },
+    }
+
+mixin sliderLookLogo(slider2)
+    a(href=slider2.href).decor-none
+        .card-slider
+            img(src=slider2.img, alt=slider2.alt)
+            h3.title-h3
+                span.blue-text= slider2.titleBlue
+                | #{slider2.titleNormal}
+
+
+
+-
+    let sliderLookCard = {
+        img1: {
+            img: "img/magnatCar.png",
+            alt: "взуттєвий магнат",
+            titleBlue: "взуттєвий магнат",
+            titleNormal: " | магазин взуття",
+            href: "#",
+        },
+        img2: {
+            img: "img/lisacaron.png",
+            alt: "lisacaron",
+            titleBlue: "lisa carron",
+            titleNormal: " | дизайнер інтерʼєру",
+            href: "#",
+        },
+        img3: {
+            img: "img/one-above.png",
+            alt: "Демонстрація сторінки one above.png",
+            titleBlue: "one above",
+            titleNormal: " | туристична агенція",
+            href: "#",
+        },
+        img4: {
+            img: "img/verazo.jfif",
+            alt: "Демонстрація сторінки vzuteviymagnat",
+            titleBlue: "verazo",
+            titleNormal: " | графічний дизайнер",
+            href: "#",
+        },
+    }
+
+mixin sliderLookCard(slider3)
+    a(href=slider3.href).decor-none
+        .card-slider
+            img(src=slider3.img, alt=slider3.alt)
+            h3.title-h3
+                span.blue-text= slider3.titleBlue
+                | #{slider3.titleNormal}
+
+
+
+-
+    let sliderLookReklamCreat = {
+        img1: {
+            img: "img/small-genius-laboratory.png",
+            alt: "small-genius-laboratory.png",
+            titleBlue: "лабораторія маленьких геніїв",
+            titleNormal: " | дитячий садок",
+            href: "#",
+        },
+        img2: {
+            img: "img/small-genius-laboratory1.png",
+            alt: "small-genius-laboratory1.png",
+            titleBlue: "лабораторія маленьких геніїв",
+            titleNormal: " | дитячий садок",
+            href: "#",
+        },
+        img3: {
+            img: "img/small-genius-laboratory2.png",
+            alt: "small-genius-laboratory1.png",
+            titleBlue: "лабораторія маленьких геніїв",
+            titleNormal: " | дитячий садок",
+            href: "#",
+        },
+        img4: {
+            img: "img/small-genius-laboratory.png",
+            alt: "small-genius-laboratory1.png",
+            titleBlue: "лабораторія маленьких геніїв",
+            titleNormal: " | дитячий садок",
+            href: "#",
+        },
+    }
+
+mixin sliderLookReklamCreat(slider4)
+    a(href=slider4.href).decor-none
+        .card-slider
+            img(src=slider4.img, alt=slider4.alt)
+            h3.title-h3
+                span.blue-text= slider4.titleBlue
+                | #{slider4.titleNormal}

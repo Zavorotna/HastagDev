@@ -143,7 +143,7 @@ h1, h2, h3
     background: url("../img/annalogo.png") no-repeat center/cover
 
 .menuOpen
-    position: absolute
+    position: fixed
     left: -200%
     bottom: 23rem
     width: 100%
@@ -221,7 +221,7 @@ h1, h2, h3
     column-gap: 5rem
     flex-wrap: wrap
 .menuButton
-    position: absolute
+    position: fixed
     z-index: 2
     bottom: 60rem
     transition: 1s
@@ -449,3 +449,67 @@ input[type=file]
 
 .input-column-gap
     column-gap: 10rem
+
+// portfolio
+.portfolio-wrapper
+    max-width: 1465rem
+    margin: 0 auto
+
+.portfolio-main
+    padding-top: 71rem
+
+.blue-text
+    color: #24D7FF
+
+.portfolio-margin
+    margin-bottom: 139rem
+
+footer.portfolio-wrapper 
+    padding-bottom: 45rem
+    .wrapper
+        margin: 0
+
+.portfolio-slider-ul
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    text-align: center
+    column-gap: 15rem
+    padding: 0
+    margin-bottom: 44rem
+    li
+        list-style-type: none
+        cursor: pointer
+        color: #fff
+        &:hover 
+            color: #24D7FF
+
+.portfolio-slider
+    margin-bottom: 125rem
+    overflow-x: scroll 
+    &::-webkit-scrollbar
+        height: 8rem
+        background: transparent
+    
+    &::-webkit-scrollbar-thumb 
+        background-color:  rgba(#24D7FF, 0.8)
+
+    & > div
+        display: none
+        column-gap: 50rem
+        margin-left: 222px
+        padding-bottom: 15rem
+    & img
+        width: 750rem
+        height: 400rem
+        object-fit: cover
+    .card-slider img
+        margin-bottom: 28rem
+        
+
+.decor-none
+    color: #fff
+    text-decoration: none
+
+.portfolio-slider div.display
+    display: flex
