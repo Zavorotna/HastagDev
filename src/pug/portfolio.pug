@@ -32,37 +32,32 @@ html(lang="en")
             //- потрібно зробити щоб при кліку на #lookall , для .content-look-all присвоювався клас display, а для інших класів таких як
             .portfolio-wrapper
                 h1.title.portfolio-margin 
-                    .content-look-all
+                    .content-look-all#contentAll
                         | Ми розуміємо, що кожен бізнес має свої унікальні потреби, тому ми пропонуємо  
                         span.blue-text індивідуальний підхід 
                         | до кожного проекту.
-                    .content-look-sites
+                    .content-look-sites#contentSites
                         | Знайдемо найкраще вирішення проблем вашого бізнесу. Створимо 
                         span.blue-text сайт 
                         | вашої мрії.
-                    .content-look-logo
+                    .content-look-logo#contentLogo
                         | Потрібно створити логотип якісно та швидко? 
                         span.blue-text Hashtag Developers
                         |  до ваших послуг.
-                    .content-look-cards
+                    .content-look-cards#contentCards
                         span.blue-text Візитки 
                         | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
-                    .content-look-reklam
+                    .content-look-reklam#contentReklam
                         span.blue-text Рекламні креативи 
                         | є ефективним інструментом для просування бізнесу і залучення уваги цільової аудиторії.
                 .portfolio-slider-nav
                     ul.portfolio-slider-ul
-                        li
-                            a.title-h3#lookall(href="#slideLookAll") переглянути усе   
-                        li
-                            a.title-h3#lookSites(href="#slideLookSites") Сайти
-                        li
-                            a.title-h3#lookLogo(href="#slideLookLogo") логотипи
-                        li
-                            a.title-h3#lookCards(href="#slideLookCard") візитки
-                        li
-                            a.title-h3#reklamCreat(href="#slideLookReklam") рекламні креативи
-
+                        li.title-h3#lookall(href="#slideLookAll") переглянути усе
+                        li.title-h3#lookSites(href="#slideLookSites") Сайти
+                        li.title-h3#lookLogo(href="#slideLookLogo") логотипи
+                        li.title-h3#lookCards(href="#slideLookCard") візитки
+                        li.title-h3#reklamCreat(href="#slideLookReklam") рекламні креативи
+                        
             .portfolio-slider 
                 .portfolio-slider-look-all.tabs-block.d-flex#slideLookAll
                     +sliderLookAll(sliderLookAll.img1)
