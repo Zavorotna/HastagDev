@@ -436,6 +436,7 @@ input[type=file]
     justify-content: center
     display: flex
     button
+        cursor: pointer
         color: #FFF
         background: #24D7FF
         font-size: 18rem
@@ -488,6 +489,8 @@ h1.title.portfolio-margin
         color: #fff
         &:hover 
             color: #24D7FF
+        &:first-child
+            color: #24D7FF
 
 .portfolio-slider
     margin-bottom: 125rem
@@ -521,5 +524,47 @@ h1.title.portfolio-margin
     display: flex
 
 
+.tabs-block 
+    display: none
+    transition: 1s
+
+.tabs-block:target 
+    display: flex
 
 
+.text-normal
+    color: #FFF
+    /* body */
+    font-family: Open Sans
+    font-size: 18rem
+    font-style: normal
+    font-weight: 400
+    line-height: 140%
+    letter-spacing: 0.72rem
+    margin-bottom: 50rem
+
+.portfolio-img-smaller
+    display: flex
+    flex-wrap: wrap
+    column-gap: 4%
+    row-gap: 50rem
+    img
+        object-fit: cover
+        height: 23.5vw
+        width: 100%
+        margin-bottom: 27rem
+
+.portfolio-img-smaller-margin
+    margin-bottom: 50rem
+
+.portfolio-img-smaller .decor-none
+    width: 48%
+
+.portfolio-more-title
+    margin-bottom: 25rem
+
+.portfolio-more-h3-margin
+    margin-bottom: 30rem
+
+.portfolio-submit-margin
+    margin-bottom: 140rem
