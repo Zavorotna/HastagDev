@@ -1,3 +1,4 @@
+@import components/mixins
 html 
     font-size: 1px
 
@@ -7,10 +8,16 @@ body
     font-family: Montserrat
     // overflow-y: hidden
     background-color: #333
+
 a
     display: inline-block
     text-decoration: none
+
+p
+    margin: 0
+    
 h1
+    padding-bottom: 21rem
     color: #FFF
     font-size: 60px
     font-family: Open Sans
@@ -27,6 +34,7 @@ h1, h2, h3
     margin: 0 0 0 50rem 
 
 .main-container
+    justify-content: space-between
     column-gap: 25rem
 
 .d-flex
@@ -63,9 +71,13 @@ h1, h2, h3
 .number
     font-weight: 600
 
+.name-company
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+
 .main-project
-    border-left: 15rem solid #000
-    border-right: 15rem solid #000
+    max-width: 948rem
 
 .main-description
     color: #fff
@@ -74,19 +86,25 @@ h1, h2, h3
     font-style: normal
     font-weight: 400
     line-height: 120%
-
         
 .carousel
     width: 100%
     height: 100%
+    justify-content: center
+
+.left-vertical
+    border-left: 15rem solid #000
 
 .center
     position: relative
     top: -18%
 
+.right-vertical
+    border-right: 15rem solid #000
+
 .up-block
-    width: 300rem
-    height: 450rem
+    width: 200rem
+    height: 350rem
     background-color: #ccc
     border: 10rem solid #000
     border-top: 5rem solid #000
@@ -96,6 +114,15 @@ h1, h2, h3
     animation: center 25s linear infinite
     &:hover
         filter: grayscale(0)
+    +media(768)
+        width: 200rem
+        height: 400rem
+    +media(1220)
+        width: 250rem
+        height: 400rem
+    +media(1440)
+        width: 350rem
+        height: 500rem
     // @keyframes center 
     //     0%
     //         transform: translateY(0)
@@ -103,8 +130,8 @@ h1, h2, h3
     //         transform: translateY(-100%)
       
 .down-block
-    width: 200rem
-    height: 300rem
+    width: 150rem
+    height: 200rem
     background-color: #fff
     border-top: 5rem solid #000
     border-bottom: 5rem solid #000
@@ -113,6 +140,15 @@ h1, h2, h3
     animation: down 25s linear infinite
     &:hover
         filter: grayscale(0)
+    +media(768)
+        width: 150rem
+        height: 250rem
+    +media(1220)
+        width: 200rem
+        height: 250rem
+    +media(1440)
+        width: 200rem
+        height: 300rem
     // @keyframes down 
     //     0%
     //         transform: translateY(0)
@@ -141,6 +177,42 @@ h1, h2, h3
 
 .annalogo
     background: url("../img/annalogo.png") no-repeat center/cover
+
+.center-button
+    position: absolute
+    top: 60%
+    left: 50%
+    width: 350rem
+    height: 120rem
+    background-color: #333
+    transform: translateX(-50%)
+
+.center-main-button
+    padding: 37rem 90rem
+
+.portfolio
+    position: relative
+    display: inline-block
+    margin: 0
+    padding: 0 105rem 0 0
+    color: #24d7ff
+    font-family: Open Sans
+    font-size: 17rem
+    font-style: normal
+    font-weight: 800
+    line-height: normal
+    text-transform: uppercase
+
+.button-text
+    margin: 0
+    padding-top: 7rem
+    color: #fff
+    font-family: Open Sans
+    font-size: 12rem
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    letter-spacing: -0.24rem
 
 .menuOpen
     position: absolute
