@@ -16,19 +16,14 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap" rel="stylesheet")
     body 
-        //- test
+    body 
+        //- test1
         include components/mixins
         header.wrapper
             .main-container
                 //- .main-text  - забрав 50%
                 +headerLogo(logo)   
                 .main-project
-            .menuButton#menuBtn
-                .menuText
-                    p М
-                    p е
-                    p н
-                    p ю
         main.wrapper.contacts-wrap
             h1.title Контакти
             .main-contacts.d-flex.flex-wrap
@@ -48,7 +43,7 @@ html(lang="en")
                 //- ваш проект
             .contacts-form
                 form(action="", method="post") 
-                    .d-flex.flex-between.flex-wrap
+                    .d-flex.flex-between.flex-wrap.input-column-gap
                         label.for-small-input 
                             h3.title-h3 Ваше ім’я*
                             input.input-outline(type="text") 
@@ -72,6 +67,12 @@ html(lang="en")
                             input(type="file"  accept=".jpg,.png,.pdf,.svg,.doc,.exe") 
                     .submit
                         button(type="submit") відправити
+        .menuButton#menuBtn
+            .menuText
+                p М
+                p е
+                p н
+                p ю
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)

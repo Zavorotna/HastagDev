@@ -31,7 +31,7 @@ h1, h2, h3
     padding: 0
 
 .wrapper
-    margin: 0 0 0 50rem 
+    margin: 0 50rem 
 
 .main-container
     justify-content: space-between
@@ -215,7 +215,7 @@ h1, h2, h3
     letter-spacing: -0.24rem
 
 .menuOpen
-    position: absolute
+    position: fixed
     left: -200%
     bottom: 23rem
     width: 100%
@@ -293,7 +293,7 @@ h1, h2, h3
     column-gap: 5rem
     flex-wrap: wrap
 .menuButton
-    position: absolute
+    position: fixed
     z-index: 2
     bottom: 60rem
     transition: 1s
@@ -449,6 +449,7 @@ input[type=file]
     min-height: 40rem
 .contacts-wrap
     max-width: 870rem
+    padding: 0 50rem 
     margin: 0 auto
 
 .for-small-input
@@ -482,9 +483,11 @@ input[type=file]
         right: 0
     &::before
         content: '+'
+        font-size: 17rem
+        font-family: Montserrat
         position: absolute
         color: #fff
-        right: 15rem
+        right: 14.045rem
         z-index: 1
     p
         color: #FFF
@@ -505,6 +508,7 @@ input[type=file]
     justify-content: center
     display: flex
     button
+        cursor: pointer
         color: #FFF
         background: #24D7FF
         font-size: 18rem
@@ -515,3 +519,124 @@ input[type=file]
         display: inline-block
         padding: 10rem 41rem
         border: 0
+
+.input-column-gap
+    column-gap: 10rem
+
+// portfolio
+.portfolio-wrapper
+    width: 76.3%
+    margin: 0 auto
+
+.portfolio-main
+    padding-top: 71rem
+
+.blue-text
+    color: #24D7FF
+
+.portfolio-margin
+    margin-bottom: 139rem
+
+footer.portfolio-wrapper 
+    padding-bottom: 45rem
+    .wrapper
+        margin: 0
+
+h1.title.portfolio-margin 
+    div:not(div:first-child)
+        display: none
+        min-height: 300rem
+
+.portfolio-slider-ul
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    text-align: center
+    column-gap: 15rem
+    padding: 0
+    margin-bottom: 44rem
+    li 
+        list-style-type: none
+        cursor: pointer
+        color: #fff
+        &:hover 
+            color: #24D7FF
+        &:first-child
+            color: #24D7FF
+
+.portfolio-slider
+    margin-bottom: 125rem
+    overflow-x: scroll 
+    &::-webkit-scrollbar
+        height: 8rem
+        background: transparent
+    
+    &::-webkit-scrollbar-thumb 
+        background-color:  rgba(#24D7FF, 0.8)
+
+    & > div
+        column-gap: 50rem
+        margin-left: 11.85%
+        padding-bottom: 15rem
+        &:first-child
+            display: flex
+    & img
+        width: 750rem
+        height: 400rem
+        object-fit: cover
+    .card-slider img
+        margin-bottom: 28rem
+        
+
+.decor-none
+    color: #fff
+    text-decoration: none
+
+.portfolio-slider div.display
+    display: flex
+
+
+.tabs-block 
+    display: none
+    transition: 1s
+
+.tabs-block:target 
+    display: flex
+
+
+.text-normal
+    color: #FFF
+    /* body */
+    font-family: Open Sans
+    font-size: 18rem
+    font-style: normal
+    font-weight: 400
+    line-height: 140%
+    letter-spacing: 0.72rem
+    margin-bottom: 50rem
+
+.portfolio-img-smaller
+    display: flex
+    flex-wrap: wrap
+    column-gap: 4%
+    row-gap: 50rem
+    img
+        object-fit: cover
+        height: 23.5vw
+        width: 100%
+        margin-bottom: 27rem
+
+.portfolio-img-smaller-margin
+    margin-bottom: 50rem
+
+.portfolio-img-smaller .decor-none
+    width: 48%
+
+.portfolio-more-title
+    margin-bottom: 25rem
+
+.portfolio-more-h3-margin
+    margin-bottom: 30rem
+
+.portfolio-submit-margin
+    margin-bottom: 140rem
