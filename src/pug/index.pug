@@ -15,13 +15,13 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap" rel="stylesheet")
-    body 
+    body
         //- test
         include components/mixins
-        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16"  fill="none">
-            <path d="M0.432617 15.5135L13.3921 0.945923L26.3515 15.5135" stroke="black" stroke-opacity="0.2"/>
-        </svg>
-        header.wrapper
+        //- <svg xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16"  fill="none">
+        //-     <path d="M0.432617 15.5135L13.3921 0.945923L26.3515 15.5135" stroke="black" stroke-opacity="0.2"/>
+        //- </svg>
+        header.container
             .main-container.d-flex
                 .main-text 
                     +headerLogo(logo)  
@@ -34,7 +34,13 @@ html(lang="en")
                             .down-block.treemcb
                             .down-block.decstop
                             .down-block.card
+                            .down-block.treemcb
+                            .down-block.decstop
+                            .down-block.card
                         .center 
+                            .up-block.center-block.mcb
+                            .up-block.center-block.magazine
+                            .up-block.center-block.website
                             .up-block.center-block.mcb
                             .up-block.center-block.magazine
                             .up-block.center-block.website
@@ -42,7 +48,9 @@ html(lang="en")
                             .down-block.decstop
                             .down-block.note
                             .down-block.annalogo
-<<<<<<< HEAD
+                            .down-block.decstop
+                            .down-block.note
+                            .down-block.annalogo
             a(href="#")
                 .center-button
                     .center-main-button
@@ -54,18 +62,6 @@ html(lang="en")
                     p е
                     p н
                     p ю
-=======
-            .center-button
-                a(href="#")
-                p.portfolio 
-                p.button-text.arrow 
-        .menuButton#menuBtn
-            .menuText
-                p М
-                p е
-                p н
-                p ю
->>>>>>> 6f448a7caf51ff05a831e4cb2060830255fb5e48
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)

@@ -1,9 +1,9 @@
 mixin headerLogo(logo) 
-    .top-navigation.d-flex
+    .top-navigation.d-flex.flex-wrap
         .logo 
             a(href="index.html")
-            img(src="img/logo.svg", alt="logo")
-        .cellphone.d-flex
+                img(src="img/logo.svg", alt="logo")
+        .cellphone.d-flex.flex-between
             a.number(href="tel:+380973021025") 097 302 1025
             a(href="#") UA
 
@@ -89,14 +89,13 @@ mixin footerContact(footer)
         },
     }
 
-mixin sliderLookAll(slider)
+mixin sliderLookAll(slider, color)
     a(href=slider.href).decor-none
         .card-slider
             img(src=slider.img, alt=slider.alt)
-            h3.title-h3
+            h3.title-h3(class=color)
                 span.blue-text= slider.titleBlue
                 | #{slider.titleNormal}
-
 
 -
     let sliderLookSite = {
@@ -278,3 +277,33 @@ mixin sliderLookReklamCreat(slider4)
             h3.title-h3
                 span.blue-text= slider4.titleBlue
                 | #{slider4.titleNormal}
+
+-
+    let ourTeam = {
+        director: {
+            name: "дмитро пиріжок -",
+            position: "Director"
+        },
+        designer: {
+            name: "анастасія костроміна - ",
+            position: "Designer"
+        },
+        developer1: {
+            name: "Ярослав - ",
+            position:"Developer"
+        },
+        developer2: {
+            name: "Оля - ",
+            position:"Developer"
+        },
+        developer3: {
+            name: "Наташа - ",
+            position:"Developer"
+        }
+    }
+
+mixin ourTeam(team)
+    .d-flex.team
+        p.white.team-name #{team.name}
+        p.team-position #{team.position}
+    hr.team-hr

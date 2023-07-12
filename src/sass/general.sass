@@ -1,12 +1,14 @@
 @import components/mixins
 html 
     font-size: 1px
+    +media(2200)
+        font-size: 2px
 
 body
     margin: 0
     padding: 0
-    font-family: Montserrat
-    // overflow-y: hidden
+    // font-family: Montserrat
+    font-family: Open Sans
     background-color: #333
 
 a
@@ -18,9 +20,8 @@ p
     
 h1
     padding-bottom: 21rem
-    color: #FFF
+    color: #fff
     font-size: 60px
-    font-family: Open Sans
     font-style: normal
     font-weight: 800
     line-height: 75px
@@ -30,11 +31,22 @@ h1, h2, h3
     margin: 0
     padding: 0
 
+ul
+    margin: 0
+    padding: 0
+    li
+        margin: 0
+        list-style: none
+
 .wrapper
-    margin: 0 50rem 
+    margin: 0 25rem
+    +media(768)
+        margin: 0 50rem
+
+.container 
+    margin: 0 0 0 50rem 
 
 .main-container
-    justify-content: space-between
     column-gap: 25rem
 
 .d-flex
@@ -48,9 +60,13 @@ h1, h2, h3
 
 .top-navigation
     padding-top: 30rem
-    justify-content: space-between
     text-align: center
     align-items: center
+    justify-content: center
+    row-gap: 40rem
+    +media(425)
+        justify-content: space-between
+
 .logo
     img
         width: 170rem
@@ -58,12 +74,16 @@ h1, h2, h3
         flex-shrink: 0
 
 .cellphone 
-    column-gap: 30rem
+    width: 170rem
+    +media(390)
+        width: 200rem
+        justify-content: center
+        column-gap: 30rem
+        
     a
         color: #fff
         text-align: right
         font-size: 16rem
-        font-family: Open Sans
         font-weight: 700
         letter-spacing: -0.72rem
         text-transform: uppercase
@@ -82,14 +102,13 @@ h1, h2, h3
 .main-description
     color: #fff
     font-size: 25rem
-    font-family: Open Sans
     font-style: normal
     font-weight: 400
-    line-height: 120%
-        
+
 .carousel
     width: 100%
-    height: 100%
+    max-height: 100vh
+    overflow: hidden
     justify-content: center
 
 .left-vertical
@@ -97,7 +116,8 @@ h1, h2, h3
 
 .center
     position: relative
-    top: -18%
+    top: -40%
+    transform: translateY(-35%)
 
 .right-vertical
     border-right: 15rem solid #000
@@ -123,11 +143,11 @@ h1, h2, h3
     +media(1440)
         width: 350rem
         height: 500rem
-    // @keyframes center 
-    //     0%
-    //         transform: translateY(0)
-    //     100% 
-    //         transform: translateY(-100%)
+    @keyframes center 
+        0%
+            transform: translateY(0)
+        100% 
+            transform: translateY(-100%)
       
 .down-block
     width: 150rem
@@ -149,11 +169,11 @@ h1, h2, h3
     +media(1440)
         width: 200rem
         height: 300rem
-    // @keyframes down 
-    //     0%
-    //         transform: translateY(0)
-    //     100% 
-    //         transform: translateY(100%)
+    @keyframes down 
+        0%
+            transform: translateY(-100%) 
+        100% 
+            transform: translateY(0%)
 .treemcb
     background: url("../img/treemcb.png") no-repeat center/cover
 
@@ -196,7 +216,7 @@ h1, h2, h3
     margin: 0
     padding: 0 105rem 0 0
     color: #24d7ff
-    font-family: Open Sans
+    
     font-size: 17rem
     font-style: normal
     font-weight: 800
@@ -207,7 +227,7 @@ h1, h2, h3
     margin: 0
     padding-top: 7rem
     color: #fff
-    font-family: Open Sans
+    
     font-size: 12rem
     font-style: normal
     font-weight: 400
@@ -282,7 +302,7 @@ h1, h2, h3
 .cardTitle p
     color: #FFF
     font-size: 24rem
-    font-family: Open Sans
+    
     font-style: normal
     font-weight: 600
     line-height: normal
@@ -336,7 +356,7 @@ h1, h2, h3
 .footer-text
     color: #fff
     font-size: 24rem
-    font-family: Open Sans
+    
     font-style: normal
     font-weight: 600
     line-height: normal
@@ -347,7 +367,7 @@ h1, h2, h3
     padding-right: 25rem
     color: #24D7FF
     font-size: 15rem
-    font-family: Open Sans
+    
     font-style: normal
     font-weight: 600
     line-height: normal
@@ -367,11 +387,11 @@ h1, h2, h3
         transform: translateY(-50%)
 
 .copyright
+    margin-bottom: 30rem
     text-align: center
     p
         color: #fff
         font-size: 14rem
-        font-family: Open Sans
         font-style: normal
         font-weight: 600
         line-height: normal
@@ -382,7 +402,6 @@ h1, h2, h3
     color: #FFF
     /* h1 */
     font-size: 60rem
-    font-family: Open Sans
     font-style: normal
     font-weight: 800
     line-height: 75rem
@@ -392,7 +411,6 @@ h1, h2, h3
 .title-h3
     /* h3 */
     font-size: 24rem
-    font-family: Open Sans
     font-style: normal
     font-weight: 600
     line-height: normal
@@ -409,7 +427,7 @@ h1, h2, h3
     p
         color: #FFF
         font-size: 16rem
-        font-family: Open Sans
+        
         font-style: normal
         font-weight: 600
         line-height: 16rem
@@ -434,7 +452,7 @@ input, textarea
     input, textarea
         color: #FFF
         font-size: 12rem
-        font-family: Open Sans
+        
         font-style: normal
         font-weight: 400
         line-height: normal
@@ -492,7 +510,7 @@ input[type=file]
     p
         color: #FFF
         font-size: 12rem
-        font-family: Open Sans
+        
         font-style: normal
         font-weight: 400
         line-height: normal
@@ -512,7 +530,7 @@ input[type=file]
         color: #FFF
         background: #24D7FF
         font-size: 18rem
-        font-family: Open Sans
+        
         font-style: normal
         font-weight: 600
         text-transform: uppercase
@@ -607,7 +625,7 @@ h1.title.portfolio-margin
 .text-normal
     color: #FFF
     /* body */
-    font-family: Open Sans
+    
     font-size: 18rem
     font-style: normal
     font-weight: 400

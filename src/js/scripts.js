@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
       menuOpen.classList.toggle("menuOpenClicked");
     });
   });
-  
 
 let lookAll = document.getElementById("lookall");
 let lookSites = document.getElementById("lookSites");
@@ -134,4 +133,3 @@ reklamCreatLink.addEventListener('click', function() {
   hideAllSlides();
   slideLookReklam.style.display = 'flex';
 });
-
