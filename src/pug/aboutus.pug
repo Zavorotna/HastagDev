@@ -105,7 +105,7 @@ html(lang="en")
                     h2.our-portfolio Наше портфоліо
                     p
                         a.arrow.more(href="#") Детальніше           
-                .portfolio-slider 
+                .portfolio-slider.aboutus-portfolio
                     .portfolio-slider-look-all.tabs-block.aboutus-portfolio.d-flex#slideLookAll
                         +sliderLookAll(sliderLookAll.img1, "blue-text")
                         +sliderLookAll(sliderLookAll.img2, "blue-text")
@@ -118,7 +118,7 @@ html(lang="en")
                 +ourTeam(ourTeam.developer1)
                 +ourTeam(ourTeam.developer2)
                 +ourTeam(ourTeam.developer3 )
-                    
-        +footerContact(footer)
+        .main-wrapper            
+            +footerContact(footer)
 
         script(src="js/scripts.js") 
