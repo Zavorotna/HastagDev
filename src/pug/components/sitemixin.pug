@@ -68,7 +68,7 @@
             href2: "#"
         },
         carpet: {
-            header: "інтернет - магазин для компанії «килимовий ярмарок» ",
+            header: "інтернет - магазин для компанії ",
             blueText: "«килимовий ярмарок»",
             aboutCompany: "Компанія займається розробки ПЗ для приватних осіб, стартапів, малого та середнього бізнесу. Крім того, надають послуги IT-аутсорсингу.",
             img1: "img/carpet.webp",
@@ -86,9 +86,6 @@
             btnTransparent: "замовити",
             href2: "#"
         }
-        
-        
-
     }
 
 mixin oursWorks(site)
@@ -103,13 +100,17 @@ mixin oursWorks(site)
         .main-site-block.d-flex
             .picture-block.d-flex
                 picture
-                    img.presentation-img(src=site.img2, alt=site.alt2)
+                    if site.img2
+                        img.presentation-img(src=site.img2, alt=site.alt2)
                 picture
-                    img.presentation-img(src=site.img3, alt=site.alt3)
+                    if site.img3
+                        img.presentation-img(src=site.img3, alt=site.alt3)
                 picture
-                    img.presentation-img(src=site.img4, alt=site.alt4)
+                    if site.img4
+                        img.presentation-img(src=site.img4, alt=site.alt4)
                 picture
-                    img.presentation-img(src=site.img5, alt=site.alt5)
+                    if site.img5
+                        img.presentation-img(src=site.img5, alt=site.alt5)
             .description-block.d-flex
                 .description1
                     h2.header-description #{site.headerDescript1}
