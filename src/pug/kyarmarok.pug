@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="css/styles.css")
+        link(rel="stylesheet", href="css/portfoliosite.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap" rel="stylesheet")
+    body
+        include components/mixins
+        include components/sitemixin
+        .svg-container 
+            svg.my-svg(xmlns="http://www.w3.org/2000/svg" width="27rem" height="16rem" viewBox="0 0 27 16"  fill="none")
+        header.container
+                .main-text 
+                    +headerLogo(logo)
+        main
+            +oursWorks(site.carpet)
+        .menuButton#menuBtn
+                .menuText
+                    p М
+                    p е
+                    p н
+                    p ю
+        div.menuOpen#menuOpen
+            .cardsOverflow.d-flex.wrapper.flex-between
+                +cardsMenuInfo(cardsMenuInfo.general)
+                +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                +cardsMenuInfo(cardsMenuInfo.portfolio)
+                +cardsMenuInfo(cardsMenuInfo.contacts)
+        
+        .main-wrapper            
+            +footerContact(footer)
+
+        script(src="js/scripts.js") 

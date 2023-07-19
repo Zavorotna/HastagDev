@@ -16,11 +16,9 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap" rel="stylesheet")
     body
-        //- test
         include components/mixins
-        //- <svg xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16"  fill="none">
-        //-     <path d="M0.432617 15.5135L13.3921 0.945923L26.3515 15.5135" stroke="black" stroke-opacity="0.2"/>
-        //- </svg>
+        .svg-container 
+            svg.my-svg(xmlns="http://www.w3.org/2000/svg" width="27rem" height="16rem" viewBox="0 0 27 16"  fill="none")
         header.container
             .main-container.d-flex
                 .main-text 
@@ -31,26 +29,62 @@ html(lang="en")
                 .main-project
                     .carousel.d-flex
                         .left-vertical
-                            .down-block.treemcb
-                            .down-block.decstop
-                            .down-block.card
-                            .down-block.treemcb
-                            .down-block.decstop
-                            .down-block.card
+                            .down-block
+                                picture 
+                                    img.image(src="img/treemcb.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/decstop.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/card.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/treemcb.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/decstop.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/card.png", alt="")
                         .center 
-                            .up-block.center-block.mcb
-                            .up-block.center-block.magazine
-                            .up-block.center-block.website
-                            .up-block.center-block.mcb
-                            .up-block.center-block.magazine
-                            .up-block.center-block.website
+                            .up-block.center-block
+                                picture 
+                                    img.image(src="img/mackbook.png", alt="")
+                            .up-block.center-block
+                                picture 
+                                    img.image(src="img/magazine.png", alt="")
+                            .up-block.center-block
+                                picture 
+                                    img.image(src="img/website.png", alt="")
+                            .up-block.center-block
+                                picture 
+                                    img.image(src="img/mackbook.png", alt="")
+                            .up-block.center-block
+                                picture 
+                                    img.image(src="img/magazine.png", alt="")
+                            .up-block.center-block
+                                picture 
+                                    img.image(src="img/website.png", alt="")
                         .right-vertical
-                            .down-block.decstop
-                            .down-block.note
-                            .down-block.annalogo
-                            .down-block.decstop
-                            .down-block.note
-                            .down-block.annalogo
+                            .down-block
+                                picture 
+                                    img.image(src="img/decstop.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/note.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/annalogo.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/decstop.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/note.png", alt="")
+                            .down-block
+                                picture 
+                                    img.image(src="img/annalogo.png", alt="")
             a(href="#")
                 .center-button
                     .center-main-button

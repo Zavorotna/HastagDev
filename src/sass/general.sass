@@ -38,6 +38,20 @@ ul
         margin: 0
         list-style: none
 
+.svg-container 
+    width: 100%
+    height: 100%
+
+.my-svg 
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background-repeat: repeat
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='16' viewBox='0 0 27 16' fill='none'%3E%3Cpath d='M0.432617 15.5135L13.3921 0.945923L26.3515 15.5135' stroke='black' stroke-opacity='0.2' /%3E%3C/svg%3E")
+    z-index: -1
+
 .wrapper
     margin: 0 25rem
     +media(768)
@@ -174,29 +188,10 @@ ul
             transform: translateY(-100%) 
         100% 
             transform: translateY(0%)
-.treemcb
-    background: url("../img/treemcb.png") no-repeat center/cover
-
-.decstop
-    background: url("../img/decstop.png") no-repeat center/cover
-
-.card
-    background: url("../img/card.png") no-repeat center/cover
-
-.mcb
-    background: url("../img/mackbook.png") no-repeat center/cover
-
-.magazine
-    background: url("../img/magazine.png") no-repeat center/cover
-
-.website
-    background: url("../img/website.png") no-repeat center/cover
-
-.note
-    background: url("../img/note.png") no-repeat center/cover
-
-.annalogo
-    background: url("../img/annalogo.png") no-repeat center/cover
+.image
+    width: 100%
+    height: 100%
+    object-fit: cover
 
 .center-button
     position: absolute
