@@ -2,6 +2,23 @@
     @media screen and (min-width: #{$size}px)
         @content
 
-=cta($fixed: true ,$empty:false) 
+=cta($fixed: true) 
     display: inline-block
+    width: 118rem
+    padding: 10rem 40rem
+    text-align: center
+    font-family: Open Sans
+    font-size: 18rem
+    font-style: normal
+    font-weight: 600
+    text-transform: uppercase
+    
+    @if $fixed
+        border: 1rem solid #24D7FF
+        background-color: #24D7FF
+        color: #fff
+    @else 
+        background-color: transpatent
+        border: 1rem solid #24D7FF
+        color: #24D7FF
     
