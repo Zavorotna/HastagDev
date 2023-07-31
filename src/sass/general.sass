@@ -7,7 +7,6 @@ html
 body
     margin: 0
     padding: 0
-    // font-family: Montserrat
     font-family: Open Sans
     background-color: #333
     background-image: url(../img/arrow-background.svg)
@@ -22,11 +21,13 @@ p
 h1
     padding-bottom: 21rem
     color: #fff
-    font-size: 60px
+    font-size: 20rem
     font-style: normal
     font-weight: 800
     line-height: 75px
     text-transform: uppercase
+    +media(768)
+        font-size: 60rem
 
 h1, h2, h3 
     margin: 0
@@ -60,7 +61,10 @@ ul
     margin: 0 0 0 50rem 
 
 .main-container
+    flex-wrap: wrap
     column-gap: 25rem
+    +media(768)
+        flex-wrap: nowrap
 
 .d-flex
     display: flex
@@ -73,45 +77,47 @@ ul
 
 .main-text
     position: relative
-    max-width: 951rem
+    max-width: 948rem
 
 .elipse-box
     position: absolute
-    filter: blur(89.5rem)
+    filter: blur(4.66vw)
     z-index: -1
 
 .elipse1
-    width: 210.32rem
-    height: 258.523rem
+    width: 10.95vw
+    height: 13.464vh
     top: 25%
     left: 0
     background: rgba(36, 215, 255, 0.80)
-    border-radius: 258.523rem
+    border-radius: 13.464vh
 
 .elipse2
-    width: 365.603rem
-    height: 449.396rem
+    width: 19.04vw
+    height: 23.41vh
     top: 0
     right: 0
     background: rgba(36, 215, 255, 0.60)
-    border-radius: 449.396rem
+    border-radius: 23.41vh
 
 .elipse3
-    width: 144.472rem
-    height: 177.584rem
+    width: 7.524vw
+    height: 9.25vh
     background: #24D7FF
-    border-radius: 251.552rem
+    border-radius: 13.10vh
     top: 70%
     left: 50%
     transform: translate(-50% -70%)
 
 .elipse4
-    width: 359.706rem
-    height: 442.148rem
+    width: 18.73vw
+    height: 23.08vh
     bottom: 0
-    right: -50%
-    border-radius: 442.148
+    right: 0
+    border-radius: 23.08vh
     background: rgba(36, 215, 255, 0.80)
+    +media(768)
+        right: -50%
 
 .top-navigation
     padding-top: 30rem
@@ -134,7 +140,6 @@ ul
         width: 200rem
         justify-content: center
         column-gap: 30rem
-        
     a
         color: #fff
         text-align: right
@@ -152,13 +157,18 @@ ul
     transform: translateY(-50%)
 
 .main-project
-    max-width: 948rem
+    display: none
+    +media(768)
+        display: block
+        max-width: 948rem
 
 .main-description
     color: #fff
-    font-size: 25rem
+    font-size: 15rem
     font-style: normal
     font-weight: 400
+    +media(768)
+        font-size: 25rem
 
 .carousel
     width: 100%
@@ -178,8 +188,7 @@ ul
     border-right: 15rem solid #292929
 
 .up-block
-    width: 200rem
-    height: 350rem
+    min-width: 200rem
     background-color: #ccc
     border: 10rem solid #292929
     border-top: 5rem solid #292929
@@ -190,14 +199,11 @@ ul
     &:hover
         filter: grayscale(0)
     +media(768)
-        width: 200rem
-        height: 400rem
+        min-width: 200rem
     +media(1220)
-        width: 250rem
-        height: 400rem
+        min-width: 250rem
     +media(1440)
-        width: 350rem
-        height: 500rem
+        min-width: 350rem
     @keyframes center 
         0%
             transform: translateY(0)
@@ -205,8 +211,7 @@ ul
             transform: translateY(-100%)
       
 .down-block
-    width: 150rem
-    height: 200rem
+    min-width: 150rem
     background-color: #fff
     border-top: 5rem solid #292929
     border-bottom: 5rem solid #292929
@@ -216,14 +221,11 @@ ul
     &:hover
         filter: grayscale(0)
     +media(768)
-        width: 150rem
-        height: 250rem
+        min-width: 150rem
     +media(1220)
-        width: 200rem
-        height: 250rem
+        min-width: 200rem
     +media(1440)
-        width: 200rem
-        height: 300rem
+        min-width: 200rem
     @keyframes down 
         0%
             transform: translateY(-100%) 
@@ -252,7 +254,6 @@ ul
     margin: 0
     padding: 0 105rem 0 0
     color: #24d7ff
-    
     font-size: 17rem
     font-style: normal
     font-weight: 800
@@ -263,7 +264,6 @@ ul
     margin: 0
     padding-top: 7rem
     color: #fff
-    
     font-size: 12rem
     font-style: normal
     font-weight: 400
@@ -318,7 +318,6 @@ ul
             background-size: 103% 103%
             background-position: -3rem
             
-
 .cardImage 
     border-radius: 13rem
     width: 360rem
@@ -393,7 +392,6 @@ ul
 .footer-text
     color: #fff
     font-size: 24rem
-    
     font-style: normal
     font-weight: 600
     line-height: normal
@@ -404,7 +402,6 @@ ul
     padding-right: 25rem
     color: #24D7FF
     font-size: 15rem
-    
     font-style: normal
     font-weight: 600
     line-height: normal
@@ -489,7 +486,6 @@ input, textarea
     input, textarea
         color: #FFF
         font-size: 12rem
-        
         font-style: normal
         font-weight: 400
         line-height: normal
