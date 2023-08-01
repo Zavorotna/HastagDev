@@ -7,77 +7,78 @@ html(lang="en")
         title Document
         link(rel="stylesheet", href="css/styles.css")
     body
-        include components/mixins 
-        .svg-container 
-            .my-svg
-        header.wrapper
-            .main-container
-                //- .main-text  - забрав 50%
-                +headerLogo(logo)   
-                .main-project
+        div#menu-slide.slide-default
+            include components/mixins 
+            .svg-container 
+                .my-svg
+            header.wrapper
+                .main-container
+                    //- .main-text  - забрав 50%
+                    +headerLogo(logo)   
+                    .main-project
+            main.portfolio-main
+                //- потрібно зробити щоб при кліку на #lookall , для .content-look-all присвоювався клас display, а для інших класів таких як
+                .portfolio-wrapper
+                    h1.title.portfolio-margin 
+                        .content-look-all#contentAll
+                            | Ми розуміємо, що кожен бізнес має свої унікальні потреби, тому ми пропонуємо  
+                            span.blue-text індивідуальний підхід 
+                            | до кожного проекту.
+                        .content-look-sites#contentSites
+                            | Знайдемо найкраще вирішення проблем вашого бізнесу. Створимо 
+                            span.blue-text сайт 
+                            | вашої мрії.
+                        .content-look-logo#contentLogo
+                            | Потрібно створити логотип якісно та швидко? 
+                            span.blue-text Hashtag Developers
+                            |  до ваших послуг.
+                        .content-look-cards#contentCards
+                            span.blue-text Візитки 
+                            | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
+                        .content-look-reklam#contentReklam
+                            span.blue-text Рекламні креативи 
+                            | є ефективним інструментом для просування бізнесу і залучення уваги цільової аудиторії.
+                    .portfolio-slider-nav
+                        ul.portfolio-slider-ul
+                            li.title-h3#lookall(href="#slideLookAll") переглянути усе
+                            li.title-h3#lookSites(href="#slideLookSites") Сайти
+                            li.title-h3#lookLogo(href="#slideLookLogo") логотипи
+                            li.title-h3#lookCards(href="#slideLookCard") візитки
+                            li.title-h3#reklamCreat(href="#slideLookReklam") рекламні креативи
+                            
+                .portfolio-slider 
+                    .portfolio-slider-look-all.tabs-block.d-flex#slideLookAll
+                        +sliderLookAll(sliderLookAll.img1)
+                        +sliderLookAll(sliderLookAll.img2)
+                        +sliderLookAll(sliderLookAll.img3)
+                        +sliderLookAll(sliderLookAll.img4)
+                    .portfolio-slider-look-sites.tabs-block.d-flex#slideLookSites
+                        +sliderLookSite(sliderLookSite.img1)
+                        +sliderLookSite(sliderLookSite.img2)
+                        +sliderLookSite(sliderLookSite.img3)
+                        +sliderLookSite(sliderLookSite.img4)
+                    .portfolio-slider-look-logo.tabs-block.d-flex#slideLookLogo 
+                        +sliderLookLogo(sliderLookLogo.img1)
+                        +sliderLookLogo(sliderLookLogo.img2)
+                        +sliderLookLogo(sliderLookLogo.img3)
+                        +sliderLookLogo(sliderLookLogo.img4)
+                    .portfolio-slider-look-card.tabs-block.d-flex#slideLookCard 
+                        +sliderLookCard(sliderLookCard.img1)
+                        +sliderLookCard(sliderLookCard.img2)
+                        +sliderLookCard(sliderLookCard.img3)
+                        +sliderLookCard(sliderLookCard.img4)
+                    .portfolio-slider-look-reklam-creatives.tabs-block.d-flex#slideLookReklam 
+                        +sliderLookReklamCreat(sliderLookReklamCreat.img1)
+                        +sliderLookReklamCreat(sliderLookReklamCreat.img2)
+                        +sliderLookReklamCreat(sliderLookReklamCreat.img3)
+                        +sliderLookReklamCreat(sliderLookReklamCreat.img4)
+
         .menuButton#menuBtn
             .menuText
                 p М
                 p е
                 p н
                 p ю
-        main.portfolio-main
-            //- потрібно зробити щоб при кліку на #lookall , для .content-look-all присвоювався клас display, а для інших класів таких як
-            .portfolio-wrapper
-                h1.title.portfolio-margin 
-                    .content-look-all#contentAll
-                        | Ми розуміємо, що кожен бізнес має свої унікальні потреби, тому ми пропонуємо  
-                        span.blue-text індивідуальний підхід 
-                        | до кожного проекту.
-                    .content-look-sites#contentSites
-                        | Знайдемо найкраще вирішення проблем вашого бізнесу. Створимо 
-                        span.blue-text сайт 
-                        | вашої мрії.
-                    .content-look-logo#contentLogo
-                        | Потрібно створити логотип якісно та швидко? 
-                        span.blue-text Hashtag Developers
-                        |  до ваших послуг.
-                    .content-look-cards#contentCards
-                        span.blue-text Візитки 
-                        | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
-                    .content-look-reklam#contentReklam
-                        span.blue-text Рекламні креативи 
-                        | є ефективним інструментом для просування бізнесу і залучення уваги цільової аудиторії.
-                .portfolio-slider-nav
-                    ul.portfolio-slider-ul
-                        li.title-h3#lookall(href="#slideLookAll") переглянути усе
-                        li.title-h3#lookSites(href="#slideLookSites") Сайти
-                        li.title-h3#lookLogo(href="#slideLookLogo") логотипи
-                        li.title-h3#lookCards(href="#slideLookCard") візитки
-                        li.title-h3#reklamCreat(href="#slideLookReklam") рекламні креативи
-                        
-            .portfolio-slider 
-                .portfolio-slider-look-all.tabs-block.d-flex#slideLookAll
-                    +sliderLookAll(sliderLookAll.img1)
-                    +sliderLookAll(sliderLookAll.img2)
-                    +sliderLookAll(sliderLookAll.img3)
-                    +sliderLookAll(sliderLookAll.img4)
-                .portfolio-slider-look-sites.tabs-block.d-flex#slideLookSites
-                    +sliderLookSite(sliderLookSite.img1)
-                    +sliderLookSite(sliderLookSite.img2)
-                    +sliderLookSite(sliderLookSite.img3)
-                    +sliderLookSite(sliderLookSite.img4)
-                .portfolio-slider-look-logo.tabs-block.d-flex#slideLookLogo 
-                    +sliderLookLogo(sliderLookLogo.img1)
-                    +sliderLookLogo(sliderLookLogo.img2)
-                    +sliderLookLogo(sliderLookLogo.img3)
-                    +sliderLookLogo(sliderLookLogo.img4)
-                .portfolio-slider-look-card.tabs-block.d-flex#slideLookCard 
-                    +sliderLookCard(sliderLookCard.img1)
-                    +sliderLookCard(sliderLookCard.img2)
-                    +sliderLookCard(sliderLookCard.img3)
-                    +sliderLookCard(sliderLookCard.img4)
-                .portfolio-slider-look-reklam-creatives.tabs-block.d-flex#slideLookReklam 
-                    +sliderLookReklamCreat(sliderLookReklamCreat.img1)
-                    +sliderLookReklamCreat(sliderLookReklamCreat.img2)
-                    +sliderLookReklamCreat(sliderLookReklamCreat.img3)
-                    +sliderLookReklamCreat(sliderLookReklamCreat.img4)
-
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)

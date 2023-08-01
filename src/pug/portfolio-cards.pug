@@ -7,39 +7,40 @@ html(lang="en")
         title Document
         link(rel="stylesheet", href="css/styles.css")
     body
-        include components/mixins 
-        .svg-container 
-            .my-svg
-        header.wrapper
-            .main-container
-                //- .main-text  - забрав 50%
-                +headerLogo(logo)   
-                .main-project
+        div#menu-slide.slide-default
+            include components/mixins 
+            .svg-container 
+                .my-svg
+            header.wrapper
+                .main-container
+                    //- .main-text  - забрав 50%
+                    +headerLogo(logo)   
+                    .main-project
+            main.portfolio-main
+                .portfolio-wrapper 
+                    h1.title.portfolio-more-title
+                        .content-look-cards
+                            span.blue-text Візитки 
+                            | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
+
+                    p.text-normal Візитка - це компактний інструмент, який має великий потенціал для встановлення контакту з клієнтами і розширення бізнес-мережі.
+                        |  Починаючи з дизайну, візитка створює перший враження про ваш бізнес. Чистий, професійний та візуально привабливий дизайн візитки засвідчує вашу дбайливість про деталі і професіоналізм. Вона відображає вашу унікальність та ідентичність бренду, створюючи візуальне відображення вашої компанії.
+
+                    h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
+                    .portfolio-slider-look-card.portfolio-img-smaller.portfolio-img-smaller-margin
+                        +sliderLookCard(sliderLookCard.img1)
+                        +sliderLookCard(sliderLookCard.img2)
+                        +sliderLookCard(sliderLookCard.img3)
+                        +sliderLookCard(sliderLookCard.img4)
+                    .submit.portfolio-submit-margin 
+                        form(action="", method="post") 
+                            button(type="submit") замовити
         .menuButton#menuBtn
             .menuText
                 p М
                 p е
                 p н
                 p ю
-        main.portfolio-main
-            .portfolio-wrapper 
-                h1.title.portfolio-more-title
-                    .content-look-cards
-                        span.blue-text Візитки 
-                        | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
-
-                p.text-normal Візитка - це компактний інструмент, який має великий потенціал для встановлення контакту з клієнтами і розширення бізнес-мережі.
-                    |  Починаючи з дизайну, візитка створює перший враження про ваш бізнес. Чистий, професійний та візуально привабливий дизайн візитки засвідчує вашу дбайливість про деталі і професіоналізм. Вона відображає вашу унікальність та ідентичність бренду, створюючи візуальне відображення вашої компанії.
-
-                h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
-                .portfolio-slider-look-card.portfolio-img-smaller.portfolio-img-smaller-margin
-                    +sliderLookCard(sliderLookCard.img1)
-                    +sliderLookCard(sliderLookCard.img2)
-                    +sliderLookCard(sliderLookCard.img3)
-                    +sliderLookCard(sliderLookCard.img4)
-                .submit.portfolio-submit-margin 
-                    form(action="", method="post") 
-                        button(type="submit") замовити
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)

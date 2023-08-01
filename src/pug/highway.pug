@@ -9,15 +9,16 @@ html(lang="en")
         link(rel="stylesheet", href="css/portfoliosite.css")
         
     body
-        include components/mixins
-        include components/sitemixin
-        .svg-container 
-            .my-svg
-        header.container
-                .main-text 
-                    +headerLogo(logo)
-        main
-            +oursWorks(site.highWay)
+        div#menu-slide.slide-default
+            include components/mixins
+            include components/sitemixin
+            .svg-container 
+                .my-svg
+            header.container
+                    .main-text 
+                        +headerLogo(logo)
+            main
+                +oursWorks(site.highWay)
         .menuButton#menuBtn
                 .menuText
                     p М

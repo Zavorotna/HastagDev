@@ -8,15 +8,16 @@ html(lang="en")
         link(rel="stylesheet", href="css/styles.css")
         link(rel="stylesheet", href="css/portfoliosite.css")
     body
-        include components/mixins
-        include components/sitemixin
-        .svg-container 
-            .my-svg
-        header.container
-                .main-text 
-                    +headerLogo(logo)
-        main
-            +oursWorks(site.omegadev)
+        div#menu-slide.slide-default
+            include components/mixins
+            include components/sitemixin
+            .svg-container 
+                .my-svg
+            header.container
+                    .main-text 
+                        +headerLogo(logo)
+            main
+                +oursWorks(site.omegadev)
         .menuButton#menuBtn
                 .menuText
                     p М
