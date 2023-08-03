@@ -91,6 +91,15 @@ ul
     left: 0
     background: rgba(36, 215, 255, 0.80)
     border-radius: 13.464vh
+    animation: elipse1 15s infinite
+    animation-delay: 1s
+    
+    @keyframes elipse1
+        0%,100%
+            opacity: 1
+        50%
+            opacity: 0
+         
 
 .elipse2
     width: 19.04vw
@@ -99,6 +108,13 @@ ul
     right: 0
     background: rgba(36, 215, 255, 0.60)
     border-radius: 23.41vh
+    animation: elipse2 12s infinite
+    
+    @keyframes elipse2
+        0%,100%
+            opacity: 1
+        50%
+            opacity: 0
 
 .elipse3
     width: 7.524vw
@@ -108,6 +124,14 @@ ul
     top: 70%
     left: 50%
     transform: translate(-50% -70%)
+    animation: elipse1 10s infinite
+    animation-delay: 3s
+    
+    @keyframes elipse1
+        0%,100%
+            opacity: 1
+        50%
+            opacity: 0
 
 .elipse4
     width: 18.73vw
@@ -116,8 +140,16 @@ ul
     right: 0
     border-radius: 23.08vh
     background: rgba(36, 215, 255, 0.80)
+    animation: elipse1 20s infinite
+    animation-delay: 2s
     +media(768)
         right: -50%
+    
+    @keyframes elipse1
+        0%,100%
+            opacity: 1
+        50%
+            opacity: 0
 
 .top-navigation
     padding-top: 30rem
@@ -127,6 +159,7 @@ ul
     row-gap: 40rem
     +media(425)
         justify-content: space-between
+        row-gap: 0
 
 .logo
     img
@@ -151,6 +184,23 @@ ul
 .number
     font-weight: 600
 
+.language-switch
+    &:hover
+        opacity: 0.3
+        animation: color 1s forwards
+        
+@keyframes color
+    0%
+        opacity: 0.2
+        color: #fff
+        transition: all ease 1s
+    50%
+        opacity: 0.5
+    100%
+        opacity: 1
+        color: #fff
+        transition: all ease 1s
+  
 .name-company
     position: relative
     top: 50%

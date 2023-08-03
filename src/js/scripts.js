@@ -1,3 +1,10 @@
+function changeText(element, newText) { //function for change lang Ua to Eng, and Eng to Ua on header
+  if (element.innerText !== newText) {
+    element.innerText = newText;
+    element.href = (newText === 'ENG') ? 'indexEng.html' : 'index.html';
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     var menuBtn = document.getElementById("menuBtn");
     var menuOpen = document.getElementById("menuOpen");

@@ -1,12 +1,11 @@
-mixin headerLogo(logo) 
-    .top-navigation.d-flex.flex-wrap
-        .logo 
-            a(href="index.html")
-                img(src="img/logo.svg", alt="logo")
+mixin headerLogo(logo, lang, link, altText, numText)
+    .top-navigation.d-flex.flex-wrap.fixed-navigation
+        .logo.logo-fixed
+            a(href=link)
+                img(src=logo, alt=altText)
         .cellphone.d-flex.flex-between
-            a.number(href="tel:+380973021025") 097 302 1025
-            a(href="#") UA
-
+            a.number(href="tel:+380973021025")= numText
+            a.language-switch(data-lang=lang, href=link, onmouseover="changeText(this, '" + (lang === 'ua' ? 'ENG' : 'UA') + "');", onmouseout="changeText(this, '" + lang + "');")= lang
 -
     let cardsMenuInfo = {
         general: {

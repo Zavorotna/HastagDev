@@ -13,14 +13,10 @@ html(lang="en")
         include components/mixins
         .svg-container 
             .my-svg
-        header.wrapper
-            .main-container.flex-between.flex-wrap
-                .main-text 
-                    +headerLogo(logo)  
-                    h1 
-                    .description-about-us
-                        h2
-                        p
+        header
+            .fixed-header
+            +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025') 
+        main
             .menuButton#menuBtn.menuBtn
                 .menuText
                     p М
@@ -33,7 +29,6 @@ html(lang="en")
                     +cardsMenuInfo(cardsMenuInfo.aboutUs)
                     +cardsMenuInfo(cardsMenuInfo.portfolio)
                     +cardsMenuInfo(cardsMenuInfo.contacts)
-        main
             section.our-proposition.main-wrapper
                 h1.name-about Давайте додамо вашому бізнесу фарб
                 .description-us.d-flex
