@@ -7,6 +7,7 @@ html(lang="en")
         title Document
         link(rel="stylesheet", href="css/styles.css")
     body
+<<<<<<< HEAD
         include components/mixins
         .svg-container 
             .my-svg
@@ -14,32 +15,43 @@ html(lang="en")
             .main-container
                 +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
                 .main-project
+=======
+        div#menu-slide.slide-default
+            include components/mixins
+            .svg-container 
+                .my-svg
+            header.wrapper
+                .main-container
+                    //- .main-text  - забрав 50%
+                    +headerLogo(logo)   
+                    .main-project
+            main.portfolio-main
+                .portfolio-wrapper 
+                    h1.title.portfolio-more-title
+                        .content-look-logo
+                            | Потрібно створити логотип якісно та швидко? 
+                            span.blue-text Hashtag Developers
+                            |  до ваших послуг.
+
+                    p.text-normal Логотип - це один з найважливіших елементів будь-якого бізнесу. Він є візуальним символом, який представляє вашу компанію і стає визначним знаком вашого бренду. Один з головних аспектів важливості логотипу полягає у його візуальній ідентичності. Логотип створює унікальний образ вашої компанії, який відрізняє вас від конкурентів і допомагає клієнтам розпізнавати вас серед інших. Якщо логотип відображає вашу унікальність і цінності, він може стати потужним засобом розпізнаваності бренду.
+                    h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
+                    .portfolio-slider-look-logo.portfolio-img-smaller.portfolio-img-smaller-margin
+                        +sliderLookLogo(sliderLookLogo.img1)
+                        +sliderLookLogo(sliderLookLogo.img2)
+                        +sliderLookLogo(sliderLookLogo.img3)
+                        +sliderLookLogo(sliderLookLogo.img4)
+                        +sliderLookLogo(sliderLookLogo.img5)
+                        +sliderLookLogo(sliderLookLogo.img6)
+                    .submit.portfolio-submit-margin 
+                        form(action="", method="post") 
+                            button(type="submit") замовити
+>>>>>>> ff26a49dfa8dbc09ba39e56a5b40a21f5a4b65df
         .menuButton#menuBtn
             .menuText
                 p М
                 p е
                 p н
                 p ю
-        main.portfolio-main
-            .portfolio-wrapper 
-                h1.title.portfolio-more-title
-                    .content-look-logo
-                        | Потрібно створити логотип якісно та швидко? 
-                        span.blue-text Hashtag Developers
-                        |  до ваших послуг.
-
-                p.text-normal Логотип - це один з найважливіших елементів будь-якого бізнесу. Він є візуальним символом, який представляє вашу компанію і стає визначним знаком вашого бренду. Один з головних аспектів важливості логотипу полягає у його візуальній ідентичності. Логотип створює унікальний образ вашої компанії, який відрізняє вас від конкурентів і допомагає клієнтам розпізнавати вас серед інших. Якщо логотип відображає вашу унікальність і цінності, він може стати потужним засобом розпізнаваності бренду.
-                h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
-                .portfolio-slider-look-logo.portfolio-img-smaller.portfolio-img-smaller-margin
-                    +sliderLookLogo(sliderLookLogo.img1)
-                    +sliderLookLogo(sliderLookLogo.img2)
-                    +sliderLookLogo(sliderLookLogo.img3)
-                    +sliderLookLogo(sliderLookLogo.img4)
-                    +sliderLookLogo(sliderLookLogo.img5)
-                    +sliderLookLogo(sliderLookLogo.img6)
-                .submit.portfolio-submit-margin 
-                    form(action="", method="post") 
-                        button(type="submit") замовити
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)

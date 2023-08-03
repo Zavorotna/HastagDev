@@ -7,11 +7,13 @@ function changeText(element, newText) { //function for change lang Ua to Eng, an
 
 document.addEventListener("DOMContentLoaded", function() {
     var menuBtn = document.getElementById("menuBtn");
+    var menuSlide = document.getElementById("menu-slide");
     var menuOpen = document.getElementById("menuOpen");
   
     menuBtn.addEventListener("click", function() {
       menuBtn.classList.toggle("menuBtnClicked");
       menuOpen.classList.toggle("menuOpenClicked");
+      menuSlide.classList.toggle("menu-slide-upper");
     });
   });
 
