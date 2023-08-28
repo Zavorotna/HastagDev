@@ -5,7 +5,7 @@ mixin headerLogo(logo, lang, link, altText, numText)
                 img(src=logo, alt=altText)
         .cellphone.d-flex.flex-between
             a.number(href="tel:+380973021025")= numText
-            a.language-switch(data-lang=lang, href=link, onmouseover="changeText(this, '" + (lang === 'ua' ? 'ENG' : 'UA') + "');", onmouseout="changeText(this, '" + lang + "');")= lang
+            a.language-switch(data-lang=lang, href=link, onmouseover="changeText(this, '" + (lang === 'ua' ? 'ENG' : 'UA') + "');", onmouseleave="changeText(this, '" + lang + "');")= lang
 -
     let cardsMenuInfo = {
         general: {

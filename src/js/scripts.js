@@ -1,9 +1,13 @@
 function changeText(element, newText) { //function for change lang Ua to Eng, and Eng to Ua on header
   if (element.innerText !== newText) {
-    element.innerText = newText;
-    element.href = (newText === 'ENG') ? 'indexEng.html' : 'index.html';
+    element.style.opacity = 0
+    setTimeout(() => {
+      element.innerText = newText;
+      element.href = (newText === 'ENG') ? 'indexEng.html' : 'index.html';
+    }, 500)
+    element.style.opacity = 1
   }
-}
+} 
 
 document.addEventListener("DOMContentLoaded", function() {
     var menuBtn = document.getElementById("menuBtn");
