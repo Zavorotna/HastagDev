@@ -7,13 +7,33 @@ html(lang="en")
         title Document
         link(rel="stylesheet", href="css/styles.css")
     body
-        include components/mixins 
-        .svg-container 
-            .my-svg
-        header.wrapper
-            .main-container
-                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
-                .main-project
+        div#menu-slide.slide-default
+            include components/mixins 
+            .svg-container 
+                .my-svg
+            header.wrapper
+                .main-container
+                    //- .main-text  - забрав 50%
+                    +headerLogo(logo)   
+                    .main-project
+            main.portfolio-main
+                .portfolio-wrapper 
+                    h1.title.portfolio-more-title
+                        .content-look-logo
+                            | Потрібно створити логотип якісно та швидко? 
+                            span.blue-text Hashtag Developers
+                            |  до ваших послуг.
+
+                    p.text-normal Логотип - це один з найважливіших елементів будь-якого бізнесу. Він є візуальним символом, який представляє вашу компанію і стає визначним знаком вашого бренду. Один з головних аспектів важливості логотипу полягає у його візуальній ідентичності. Логотип створює унікальний образ вашої компанії, який відрізняє вас від конкурентів і допомагає клієнтам розпізнавати вас серед інших. Якщо логотип відображає вашу унікальність і цінності, він може стати потужним засобом розпізнаваності бренду.
+                    h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
+                    .portfolio-slider-look-logo.portfolio-img-smaller.portfolio-img-smaller-margin.no-odject-fit
+                        +sliderLookAll(sliderLookAll.img1)
+                        +sliderLookAll(sliderLookAll.img2)
+                        +sliderLookAll(sliderLookAll.img3)
+                        +sliderLookAll(sliderLookAll.img4)
+                    .submit.portfolio-submit-margin 
+                        form(action="", method="post") 
+                            button(type="submit") замовити
         .menuButton#menuBtn
             .menuText
                 p М
