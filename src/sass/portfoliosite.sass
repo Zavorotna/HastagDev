@@ -61,6 +61,12 @@ h2.header-description
     column-gap: 30rem
 .blue-cta
     +cta($fixed: true)
+    transition: all .5s ease
+    &:hover
+        transform: scale(1.1)
 
 .empty-cta
     +cta($fixed: false)
+    transition: all .5s ease
+    &:hover
+        transform: scale(1.1)

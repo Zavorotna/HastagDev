@@ -11,6 +11,9 @@ body
     background-color: #333
     background-image: url(../img/arrow-background.svg)
 
+.hidden
+    overflow: hidden
+
 a
     display: inline-block
     text-decoration: none
@@ -53,9 +56,9 @@ ul
     z-index: -1
 
 .wrapper
-    margin: 0 25rem
+    padding: 0 25rem
     +media(768)
-        margin: 0 50rem
+        padding: 0 50rem
 
 .container 
     margin: 0 0 0 50rem 
@@ -93,13 +96,13 @@ ul
     border-radius: 13.464vh
     animation: elipse1 15s infinite
     animation-delay: 1s
+    font-family: Arial, Helvetica, sans-serif
     
     @keyframes elipse1
         0%,100%
             opacity: 1
         50%
             opacity: 0
-         
 
 .elipse2
     width: 19.04vw
@@ -151,15 +154,37 @@ ul
         50%
             opacity: 0
 
+.fixed-header
+    padding-top: 100rem
+
 .top-navigation
-    padding-top: 30rem
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    padding: 30rem 30rem
     text-align: center
     align-items: center
     justify-content: center
     row-gap: 40rem
+    z-index: 5
     +media(425)
         justify-content: space-between
         row-gap: 0
+
+.fixed-navigation
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 105rem
+    z-index: 3
+    transition: all .5s ease
+
+.scrolled 
+    transition: all .5s ease
+    background-color: #fff
+    opacity: 0.5
 
 .logo
     img
@@ -167,11 +192,11 @@ ul
         height: 45rem
         flex-shrink: 0
 
-.cellphone 
-    width: 170rem
+.cellphone
+    width: 250rem
     +media(390)
-        width: 200rem
-        justify-content: center
+        max-width: 200rem
+        justify-content: flex-start
         column-gap: 30rem
     a
         color: #fff
@@ -183,12 +208,17 @@ ul
 
 .number
     font-weight: 600
+    transition: all .5s ease
+    &:hover
+        transform: scale(1.1)
 
 .language-switch
+    transition: all .5s ease
     &:hover
         opacity: 0.3
         animation: color 1s forwards
-        
+        transform: scale(1.1)
+
 @keyframes color
     0%
         opacity: 0.2
@@ -294,6 +324,9 @@ ul
     height: 120rem
     background-color: #333
     transform: translateX(-50%)
+    transition: all .5s ease
+    &:hover
+        transform: translateX(-50%) scale(1.1)
 
 .center-main-button
     padding: 37rem 90rem
@@ -457,6 +490,9 @@ ul
     line-height: normal
     letter-spacing: 0.75rem
     text-transform: uppercase
+    transition: all .5s ease
+    &:hover
+        transform: scale(1.1)
 
 .arrow
     position: relative
@@ -748,6 +784,7 @@ h1.title.portfolio-margin
 .slide-default
     transform: translateY(0rem)
     transition: 1s
+
 .menu-slide-upper
     filter: blur(2px)
     transform: translateY(-500rem)

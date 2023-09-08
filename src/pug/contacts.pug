@@ -8,15 +8,15 @@ html(lang="en")
         link(rel="stylesheet", href="css/styles.css")
         
     body
-        //- test1
-        div#menu-slide.slide-default
-            include components/mixins
-            .svg-container 
-                .my-svg
-            header.wrapper
-                .main-container
-                    +headerLogo(logo)   
+        include components/mixins
+        .svg-container 
+            .my-svg
+        header.fixed-header
+            .fixed-navigation
+            .wrapper 
+                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
                     .main-project
+        div#menu-slide.slide-default
             main.wrapper.contacts-wrap
                 h1.title Контакти
                 .main-contacts.d-flex.flex-wrap

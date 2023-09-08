@@ -12,10 +12,13 @@ html(lang="en")
         include components/sitemixin
         .svg-container 
             .my-svg
-        header.container
-            +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')
-        main
-            +oursWorks(site.westRecycling)
+        header.fixed-header
+            .fixed-navigation
+            .wrapper 
+                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
+        div#menu-slide.slide-default
+            main
+                +oursWorks(site.westRecycling)
         .menuButton#menuBtn
                 .menuText
                     p М

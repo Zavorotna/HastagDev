@@ -6,8 +6,18 @@ function changeText(element, newText) { //function for change lang Ua to Eng, an
       element.href = (newText === 'ENG') ? 'indexEng.html' : 'index.html';
     }, 500)
     element.style.opacity = 1
-  }
+  } //переробити на innerhtml
 } 
+
+// скрипт для фіксованого хедеру на скрол
+window.addEventListener('scroll', function () {
+  const scrollFixed = document.querySelector(".fixed-navigation")
+  if (window.scrollY > 0) {
+    scrollFixed.classList.add('scrolled')
+  } else {
+    scrollFixed.classList.remove('scrolled')
+  }
+})
 
 document.addEventListener("DOMContentLoaded", function() {
     var menuBtn = document.getElementById("menuBtn");

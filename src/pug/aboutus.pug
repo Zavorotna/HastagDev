@@ -13,102 +13,103 @@ html(lang="en")
         include components/mixins
         .svg-container 
             .my-svg
-        header.wrapper
-            .main-container.flex-between.flex-wrap
-            .fixed-header
-            +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025') 
-            .menuButton#menuBtn.menuBtn
-                .menuText
-                    p М
-                    p е
-                    p н
-                    p ю
-            div.menuOpen.open#menuOpen.menuOpen
-                .cardsOverflow.d-flex.wrapper.flex-between
-                    +cardsMenuInfo(cardsMenuInfo.general)
-                    +cardsMenuInfo(cardsMenuInfo.aboutUs)
-                    +cardsMenuInfo(cardsMenuInfo.portfolio)
-                    +cardsMenuInfo(cardsMenuInfo.contacts)
-        main
-            section.our-proposition.main-wrapper
-                h1.name-about Давайте додамо вашому бізнесу фарб
-                .description-us.d-flex
-                    .emptu-box
-                    .description-block
-                        h2 Хто ми такі, та чим займаємось?
-                        p Hashtag developers це веб-студія, яка надає високоякісні послуги з розробки веб-сайтів та веб-додатків. Ми працюємо з клієнтами по всьому світу, допомагаючи їм створювати вражаючі та ефективні веб-продукти, які привертають увагу та забезпечують результати.
-            section.service.main-wrapper
-                h2.our-service наші послуги
-                ul.d-flex.main-menu 
-                    li.menu 
-                        a.header-menu(href="#") Розробка сайтів
-                        ul.sub-menu 
-                            li 
-                                a(href="#") Сайт - візитка
-                            li 
-                                a(href="#") Landing page
-                            li 
-                                a(href="#") Корпоративний сайт
-                            li 
-                                a(href="#") Інтернет - магазин
-                            li 
-                                a(href="#") Сайт - портфоліо
-                    li.menu 
-                        a.header-menu(href="#") Дизайн
-                        ul.sub-menu  
-                            li 
-                                a(href="#") Логотип
-                            li 
-                                a(href="#") Бренд - бук
-                            li 
-                                a(href="#") Дизайн сайту
-                            li 
-                                a(href="#") Візитки
-                            li 
-                                a(href="#") Рекламні креативи
-                    li.menu 
-                        a.header-menu(href="#") Маркетинг
-                        ul.sub-menu  
-                            li 
-                                a(href="#") Таргетована реклама
-                            li 
-                                a(href="#") SEO - просування сайту
-                            li 
-                                a(href="#") Ведення соцмереж
-                            li 
-                                a(href="#") Реклама гугл
-                            li 
-                                a(href="#") Контекстна реклама
-                    li.menu 
-                        a.header-menu(href="#") Технічні послуги
-                        ul.sub-menu  
-                            li 
-                                a(href="#") Підтримка сайту
-                            li 
-                                a(href="#") Аудит сайту
-                            li 
-                                a(href="#") Налаштування хостингу
-                            li 
-                                a(href="#") Інтернет - магазин
-            section.portfolio-main.aboutus-portfolio-main
-                .descript-portfolio.d-flex 
-                    h2.our-portfolio Наше портфоліо
-                    p
-                        a.arrow.more(href="#") Детальніше           
-                .portfolio-slider.aboutus-portfolio
-                    .portfolio-slider-look-all.tabs-block.aboutus-portfolio.d-flex#slideLookAll
-                        +sliderLookAll(sliderLookAll.img1, "blue-text")
-                        +sliderLookAll(sliderLookAll.img2, "blue-text")
-                        +sliderLookAll(sliderLookAll.img3, "blue-text")
-                        +sliderLookAll(sliderLookAll.img4, "blue-text")
-            section.main-wrapper.team-section
-                h3.our-team Наша команда
-                +ourTeam(ourTeam.director)
-                +ourTeam(ourTeam.designer)
-                +ourTeam(ourTeam.developer1)
-                +ourTeam(ourTeam.developer2)
-                +ourTeam(ourTeam.developer3 )
-        .main-wrapper            
-            +footerContact(footer)
+        header.fixed-header
+            .fixed-navigation
+            .wrapper 
+                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
+        div#menu-slide.slide-default
+            main
+                section.our-proposition.main-wrapper
+                    h1.name-about Давайте додамо вашому бізнесу фарб
+                    .description-us.d-flex
+                        .emptu-box
+                        .description-block
+                            h2 Хто ми такі, та чим займаємось?
+                            p Hashtag developers це веб-студія, яка надає високоякісні послуги з розробки веб-сайтів та веб-додатків. Ми працюємо з клієнтами по всьому світу, допомагаючи їм створювати вражаючі та ефективні веб-продукти, які привертають увагу та забезпечують результати.
+                section.service.main-wrapper
+                    h2.our-service наші послуги
+                    ul.d-flex.main-menu 
+                        li.menu 
+                            a.header-menu(href="#") Розробка сайтів
+                            ul.sub-menu 
+                                li 
+                                    a(href="#") Сайт - візитка
+                                li 
+                                    a(href="#") Landing page
+                                li 
+                                    a(href="#") Корпоративний сайт
+                                li 
+                                    a(href="#") Інтернет - магазин
+                                li 
+                                    a(href="#") Сайт - портфоліо
+                        li.menu 
+                            a.header-menu(href="#") Дизайн
+                            ul.sub-menu  
+                                li 
+                                    a(href="#") Логотип
+                                li 
+                                    a(href="#") Бренд - бук
+                                li 
+                                    a(href="#") Дизайн сайту
+                                li 
+                                    a(href="#") Візитки
+                                li 
+                                    a(href="#") Рекламні креативи
+                        li.menu 
+                            a.header-menu(href="#") Маркетинг
+                            ul.sub-menu  
+                                li 
+                                    a(href="#") Таргетована реклама
+                                li 
+                                    a(href="#") SEO - просування сайту
+                                li 
+                                    a(href="#") Ведення соцмереж
+                                li 
+                                    a(href="#") Реклама гугл
+                                li 
+                                    a(href="#") Контекстна реклама
+                        li.menu 
+                            a.header-menu(href="#") Технічні послуги
+                            ul.sub-menu  
+                                li 
+                                    a(href="#") Підтримка сайту
+                                li 
+                                    a(href="#") Аудит сайту
+                                li 
+                                    a(href="#") Налаштування хостингу
+                                li 
+                                    a(href="#") Інтернет - магазин
+                section.portfolio-main.aboutus-portfolio-main
+                    .descript-portfolio.d-flex 
+                        h2.our-portfolio Наше портфоліо
+                        p
+                            a.arrow.more(href="#") Детальніше           
+                    .portfolio-slider.aboutus-portfolio
+                        .portfolio-slider-look-all.tabs-block.aboutus-portfolio.d-flex#slideLookAll
+                            +sliderLookAll(sliderLookAll.img1, "blue-text")
+                            +sliderLookAll(sliderLookAll.img2, "blue-text")
+                            +sliderLookAll(sliderLookAll.img3, "blue-text")
+                            +sliderLookAll(sliderLookAll.img4, "blue-text")
+                section.main-wrapper.team-section
+                    h3.our-team Наша команда
+                    +ourTeam(ourTeam.director)
+                    +ourTeam(ourTeam.designer)
+                    +ourTeam(ourTeam.developer1)
+                    +ourTeam(ourTeam.developer2)
+                    +ourTeam(ourTeam.developer3 )
+            .main-wrapper            
+                +footerContact(footer)
+        .menuButton#menuBtn.menuBtn
+            .menuText
+                p М
+                p е
+                p н
+                p ю
+        div.menuOpen.open#menuOpen.menuOpen
+            .cardsOverflow.d-flex.wrapper.flex-between
+                +cardsMenuInfo(cardsMenuInfo.general)
+                +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                +cardsMenuInfo(cardsMenuInfo.portfolio)
+                +cardsMenuInfo(cardsMenuInfo.contacts)
 
         script(src="js/scripts.js") 

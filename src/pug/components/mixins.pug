@@ -1,11 +1,11 @@
 mixin headerLogo(logo, lang, link, altText, numText)
-    .top-navigation.d-flex.flex-wrap.fixed-navigation
-        .logo.logo-fixed
+    .top-navigation.d-flex.flex-wrap
+        .logo
             a(href=link)
                 img(src=logo, alt=altText)
         .cellphone.d-flex.flex-between
-            a.number(href="tel:+380973021025")= numText
-            a.language-switch(data-lang=lang, href=link, onmouseover="changeText(this, '" + (lang === 'ua' ? 'ENG' : 'UA') + "');", onmouseleave="changeText(this, '" + lang + "');")= lang
+            a.number(href="tel:+380973021025") 0973021025
+            a.language-switch(href="index.html") UA
 -
     let cardsMenuInfo = {
         general: {

@@ -6,91 +6,92 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
         link(rel="stylesheet", href="css/styles.css")
-    body
+    body.hidden
         include components/mixins
-        .svg-container 
-            .my-svg
-        header.container
-            .main-container.d-flex.flex-between
-                .main-text 
-                    span.elipse-box.elipse1
-                    span.elipse-box.elipse2
-                    span.elipse-box.elipse3
-                    span.elipse-box.elipse4
-                    +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
-                    .name-company
-                        h1 Hashtag, Дизайн агенція та веб-розробка
-                        h2.main-description Створення сайтів будь-якого ступеня складності. Розкрутка та просування сайту. Послуги з обслуговування та підтримки сайту. 
-                .main-project
-                    .carousel.d-flex
-                        .left-vertical
-                            .down-block
-                                picture 
-                                    img.image(src="img/treemcb.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/decstop.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/card.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/treemcb.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/decstop.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/card.png", alt="")
-                        .center 
-                            .up-block.center-block
-                                picture 
-                                    img.image(src="img/mackbook.png", alt="")
-                            .up-block.center-block
-                                picture 
-                                    img.image(src="img/magazine.png", alt="")
-                            .up-block.center-block
-                                picture 
-                                    img.image(src="img/website.png", alt="")
-                            .up-block.center-block
-                                picture 
-                                    img.image(src="img/mackbook.png", alt="")
-                            .up-block.center-block
-                                picture 
-                                    img.image(src="img/magazine.png", alt="")
-                            .up-block.center-block
-                                picture 
-                                    img.image(src="img/website.png", alt="")
-                        .right-vertical
-                            .down-block
-                                picture 
-                                    img.image(src="img/decstop.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/note.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/annalogo.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/decstop.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/note.png", alt="")
-                            .down-block
-                                picture 
-                                    img.image(src="img/annalogo.png", alt="")
-            a(href="#")
-                .center-button
-                    .center-main-button
-                        p.portfolio.arrow Портфоліо
-                        p.button-text Брендинг - Розробка - дизайн
-            .menuButton#menuBtn
-                .menuText
-                    p М
-                    p е
-                    p н
-                    p ю
+        div#menu-slide.slide-default
+            .svg-container 
+                .my-svg
+            header.container
+                .main-container.d-flex.flex-between
+                    .main-text 
+                        span.elipse-box.elipse1
+                        span.elipse-box.elipse2
+                        span.elipse-box.elipse3
+                        span.elipse-box.elipse4
+                        +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
+                        .name-company
+                            h1 Hashtag, Дизайн агенція та веб-розробка
+                            h2.main-description Створення сайтів будь-якого ступеня складності. Розкрутка та просування сайту. Послуги з обслуговування та підтримки сайту. 
+                    .main-project
+                        .carousel.d-flex
+                            .left-vertical
+                                .down-block
+                                    picture 
+                                        img.image(src="img/treemcb.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/decstop.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/card.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/treemcb.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/decstop.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/card.png", alt="")
+                            .center 
+                                .up-block.center-block
+                                    picture 
+                                        img.image(src="img/mackbook.png", alt="")
+                                .up-block.center-block
+                                    picture 
+                                        img.image(src="img/magazine.png", alt="")
+                                .up-block.center-block
+                                    picture 
+                                        img.image(src="img/website.png", alt="")
+                                .up-block.center-block
+                                    picture 
+                                        img.image(src="img/mackbook.png", alt="")
+                                .up-block.center-block
+                                    picture 
+                                        img.image(src="img/magazine.png", alt="")
+                                .up-block.center-block
+                                    picture 
+                                        img.image(src="img/website.png", alt="")
+                            .right-vertical
+                                .down-block
+                                    picture 
+                                        img.image(src="img/decstop.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/note.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/annalogo.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/decstop.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/note.png", alt="")
+                                .down-block
+                                    picture 
+                                        img.image(src="img/annalogo.png", alt="")
+                a(href="#")
+                    .center-button
+                        .center-main-button
+                            p.portfolio.arrow Портфоліо
+                            p.button-text Брендинг - Розробка - дизайн
+        .menuButton#menuBtn
+            .menuText
+                p М
+                p е
+                p н
+                p ю
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)

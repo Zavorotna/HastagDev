@@ -13,10 +13,17 @@ html(lang="en")
         include components/sitemixin
         .svg-container 
             .my-svg
-        header.container
-            +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')
-        main
-            +oursWorks(site.highWay)
+        header.fixed-header
+            .fixed-navigation
+            .wrapper 
+                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
+        div#menu-slide.slide-default
+            main
+                +oursWorks(site.highWay)
+        
+        .main-wrapper            
+            +footerContact(footer)
+            
         .menuButton#menuBtn
                 .menuText
                     p М
@@ -29,8 +36,5 @@ html(lang="en")
                 +cardsMenuInfo(cardsMenuInfo.aboutUs)
                 +cardsMenuInfo(cardsMenuInfo.portfolio)
                 +cardsMenuInfo(cardsMenuInfo.contacts)
-        
-        .main-wrapper            
-            +footerContact(footer)
 
         script(src="js/scripts.js") 

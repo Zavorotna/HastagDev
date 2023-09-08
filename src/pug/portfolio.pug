@@ -7,15 +7,15 @@ html(lang="en")
         title Document
         link(rel="stylesheet", href="css/styles.css")
     body
+        include components/mixins 
+        .svg-container 
+            .my-svg
+        header.fixed-header
+            .fixed-navigation
+            .wrapper 
+                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
+                .main-project
         div#menu-slide.slide-default
-            include components/mixins 
-            .svg-container 
-                .my-svg
-            header.wrapper
-                .main-container
-                    //- .main-text  - забрав 50%
-                    +headerLogo(logo)   
-                    .main-project
             main.portfolio-main
                 //- потрібно зробити щоб при кліку на #lookall , для .content-look-all присвоювався клас display, а для інших класів таких як
                 .portfolio-wrapper
