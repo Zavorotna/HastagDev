@@ -19,55 +19,55 @@ html(lang="en")
             main.portfolio-main
                 //- потрібно зробити щоб при кліку на #lookall , для .content-look-all присвоювався клас display, а для інших класів таких як
                 .portfolio-wrapper
-                    h1.title.portfolio-margin 
-                        .content-look-all#contentAll
+                    .title.portfolio-margin 
+                        .content-title.content-look-all#contentAll(data-value="1")
                             | Ми розуміємо, що кожен бізнес має свої унікальні потреби, тому ми пропонуємо  
                             span.blue-text індивідуальний підхід 
                             | до кожного проекту.
-                        .content-look-sites#contentSites
+                        .content-title.content-look-sites#contentSites(data-value="2")
                             | Знайдемо найкраще вирішення проблем вашого бізнесу. Створимо 
                             span.blue-text сайт 
                             | вашої мрії.
-                        .content-look-logo#contentLogo
+                        .content-title.content-look-logo#contentLogo(data-value="3")
                             | Потрібно створити логотип якісно та швидко? 
                             span.blue-text Hashtag Developers
                             |  до ваших послуг.
-                        .content-look-cards#contentCards
+                        .content-title.content-look-cards#contentCards(data-value="4")
                             span.blue-text Візитки 
                             | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
-                        .content-look-reklam#contentReklam
+                        .content-title.content-look-reklam#contentReklam(data-value="5")
                             span.blue-text Рекламні креативи 
                             | є ефективним інструментом для просування бізнесу і залучення уваги цільової аудиторії.
                     .portfolio-slider-nav
                         ul.portfolio-slider-ul
-                            li.title-h3#lookall(href="#slideLookAll") переглянути усе
-                            li.title-h3#lookSites(href="#slideLookSites") Сайти
-                            li.title-h3#lookLogo(href="#slideLookLogo") логотипи
-                            li.title-h3#lookCards(href="#slideLookCard") візитки
-                            li.title-h3#reklamCreat(href="#slideLookReklam") рекламні креативи
+                            li.title-h3#lookall(href="#slideLookAll")(data-value="1") переглянути усе
+                            li.title-h3#lookSites(href="#slideLookSites")(data-value="2") Сайти
+                            li.title-h3#lookLogo(href="#slideLookLogo")(data-value="3") логотипи
+                            li.title-h3#lookCards(href="#slideLookCard")(data-value="4") візитки
+                            li.title-h3#reklamCreat(href="#slideLookReklam")(data-value="5") рекламні креативи
                             
                 .portfolio-slider 
-                    .portfolio-slider-look-all.tabs-block.d-flex#slideLookAll
+                    .portfolio-slider-look-all.tabs-block.d-flex#slideLookAll(data-value="1")
                         +sliderLookAll(sliderLookAll.img1)
                         +sliderLookAll(sliderLookAll.img2)
                         +sliderLookAll(sliderLookAll.img3)
                         +sliderLookAll(sliderLookAll.img4)
-                    .portfolio-slider-look-sites.tabs-block.d-flex#slideLookSites
+                    .portfolio-slider-look-sites.tabs-block.d-flex#slideLookSites(data-value="2")
                         +sliderLookSite(sliderLookSite.img1)
                         +sliderLookSite(sliderLookSite.img2)
                         +sliderLookSite(sliderLookSite.img3)
                         +sliderLookSite(sliderLookSite.img4)
-                    .portfolio-slider-look-logo.tabs-block.d-flex#slideLookLogo 
+                    .portfolio-slider-look-logo.tabs-block.d-flex#slideLookLogo(data-value="3") 
                         +sliderLookLogo(sliderLookLogo.img1)
                         +sliderLookLogo(sliderLookLogo.img2)
                         +sliderLookLogo(sliderLookLogo.img3)
                         +sliderLookLogo(sliderLookLogo.img4)
-                    .portfolio-slider-look-card.tabs-block.d-flex#slideLookCard 
+                    .portfolio-slider-look-card.tabs-block.d-flex#slideLookCard(data-value="4") 
                         +sliderLookCard(sliderLookCard.img1)
                         +sliderLookCard(sliderLookCard.img2)
                         +sliderLookCard(sliderLookCard.img3)
                         +sliderLookCard(sliderLookCard.img4)
-                    .portfolio-slider-look-reklam-creatives.tabs-block.d-flex#slideLookReklam 
+                    .portfolio-slider-look-reklam-creatives.tabs-block.d-flex#slideLookReklam(data-value="5") 
                         +sliderLookReklamCreat(sliderLookReklamCreat.img1)
                         +sliderLookReklamCreat(sliderLookReklamCreat.img2)
                         +sliderLookReklamCreat(sliderLookReklamCreat.img3)

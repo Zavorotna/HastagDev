@@ -704,7 +704,11 @@ h1.title.portfolio-margin
         &:first-child
             color: #24D7FF
 
+
+
 .portfolio-slider
+    
+    min-height: 484px
     margin-bottom: 125rem
     overflow-x: scroll 
     &::-webkit-scrollbar
@@ -735,10 +739,16 @@ h1.title.portfolio-margin
 .portfolio-slider div.display
     display: flex
 
+.portfolio-slider 
+    position: relative
 
 .tabs-block 
-    display: none
+    // display: none
+    position: absolute
     transition: 1s
+
+.portfoli-wrap 
+    width: 1900px
 
 .tabs-block:target 
     display: flex
@@ -788,3 +798,4 @@ h1.title.portfolio-margin
 .menu-slide-upper
     filter: blur(2px)
     transform: translateY(-500rem)
+
