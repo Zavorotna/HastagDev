@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
     menuOpen.classList.toggle("menuOpenClicked")
     menuSlide.classList.toggle("menu-slide-upper")
   })
+
+  
 })
 
 

@@ -28,10 +28,12 @@ html(lang="en")
 
                     h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
                     .portfolio-slider-look-card.portfolio-img-smaller.portfolio-img-smaller-margin
-                        +sliderLookCard(sliderLookCard.img1)
-                        +sliderLookCard(sliderLookCard.img2)
-                        +sliderLookCard(sliderLookCard.img3)
-                        +sliderLookCard(sliderLookCard.img4)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookCard(sliderLookCard.img1)
+                            +sliderLookCard(sliderLookCard.img2)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookCard(sliderLookCard.img3)
+                            +sliderLookCard(sliderLookCard.img4)
                     .submit.portfolio-submit-margin 
                         form(action="", method="post") 
                             button(type="submit") замовити

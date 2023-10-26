@@ -27,10 +27,12 @@ html(lang="en")
                     p.text-normal Логотип - це один з найважливіших елементів будь-якого бізнесу. Він є візуальним символом, який представляє вашу компанію і стає визначним знаком вашого бренду. Один з головних аспектів важливості логотипу полягає у його візуальній ідентичності. Логотип створює унікальний образ вашої компанії, який відрізняє вас від конкурентів і допомагає клієнтам розпізнавати вас серед інших. Якщо логотип відображає вашу унікальність і цінності, він може стати потужним засобом розпізнаваності бренду.
                     h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
                     .portfolio-slider-look-logo.portfolio-img-smaller.portfolio-img-smaller-margin.no-odject-fit
-                        +sliderLookAll(sliderLookAll.img1)
-                        +sliderLookAll(sliderLookAll.img2)
-                        +sliderLookAll(sliderLookAll.img3)
-                        +sliderLookAll(sliderLookAll.img4)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookAll(sliderLookAll.img1)
+                            +sliderLookAll(sliderLookAll.img2)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookAll(sliderLookAll.img3)
+                            +sliderLookAll(sliderLookAll.img4)
                     .submit.portfolio-submit-margin 
                         form(action="", method="post") 
                             button(type="submit") замовити
