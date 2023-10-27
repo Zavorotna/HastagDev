@@ -26,14 +26,18 @@ html(lang="en")
                     p.text-normal Розробка рекламних креативів - ключовий елемент успішної рекламної кампанії. Вони візуально привертають увагу, комунікують повідомлення і створюють незабутнє враження. Наша команда професіоналів спеціалізується на створенні унікальних та ефективних рекламних креативів, які допоможуть вашому бренду виділитися серед конкурентів.
                     h3.title-h3.blue-text.portfolio-more-h3-margin Приклади виконаних робіт
                     .portfolio-slider-look-logo.portfolio-img-smaller.portfolio-img-smaller-margin
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img1)
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img3)
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img2)
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img5)
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img6)
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img7)
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img8)
-                        +sliderLookReklamCreat(sliderLookReklamCreat.img9)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img1)
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img3)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img2)
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img5)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img6)
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img7)
+                        .d-flex.flex-between.portfolio-small-img-flex
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img8)
+                            +sliderLookReklamCreat(sliderLookReklamCreat.img9)
 
                     .submit.portfolio-submit-margin 
                         form(action="", method="post") 

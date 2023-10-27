@@ -1,22 +1,22 @@
 const langChange = document.querySelector('.language-switch'),
   langChangeEng = document.querySelector('.language-switchEng')
-if(langChange) {
-  langChange.addEventListener('mouseenter', function() {
+if (langChange) {
+  langChange.addEventListener('mouseenter', function () {
     langChange.href = "indexEng.html"
     langChange.innerText = "ENG"
   })
-  
-  langChange.addEventListener('mouseleave', function() {
+
+  langChange.addEventListener('mouseleave', function () {
     langChange.href = "index.html"
     langChange.innerText = "UA"
   })
-} else if(langChangeEng){
-  langChangeEng.addEventListener('mouseenter', function() {
+} else if (langChangeEng) {
+  langChangeEng.addEventListener('mouseenter', function () {
     langChangeEng.innerText = "UA"
     langChangeEng.href = "index.html"
   })
-  
-  langChangeEng.addEventListener('mouseleave', function() {
+
+  langChangeEng.addEventListener('mouseleave', function () {
     langChangeEng.innerText = "ENG"
     langChangeEng.href = "indexEng.html"
   })
@@ -36,6 +36,7 @@ window.addEventListener('scroll', function () {
   }
 })
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function() {
     const menuBtn = document.getElementById("menuBtn"),
       menuSlide = document.getElementById("menu-slide"),
@@ -218,56 +219,73 @@ startScroll()
 //     reklamCreatCont.style.display = "block";
 //   };
 // }
+=======
+document.addEventListener("DOMContentLoaded", function () {
+  var menuBtn = document.getElementById("menuBtn")
+  var menuSlide = document.getElementById("menu-slide")
+  var menuOpen = document.getElementById("menuOpen")
+
+  menuBtn.addEventListener("click", function () {
+    menuBtn.classList.toggle("menuBtnClicked")
+    menuOpen.classList.toggle("menuOpenClicked")
+    menuSlide.classList.toggle("menu-slide-upper")
+  })
+
+  
+})
+>>>>>>> 96ddfaa8426776aca5e2034d1d3ccdaff4089b34
 
 
 
 
+const portfolioNavItems = document.querySelectorAll('.portfolio-slider-ul li'),
+  tabBlocks = document.querySelectorAll('.tabs-block'),
+  textBlocks = document.querySelectorAll('.content-title')
 
-// // Получаем ссылки на элементы
-// const lookAllLink = document.getElementById('lookall');
-// const lookSitesLink = document.getElementById('lookSites');
-// const lookLogoLink = document.getElementById('lookLogo');
-// const lookCardsLink = document.getElementById('lookCards');
-// const reklamCreatLink = document.getElementById('reklamCreat');
 
-// // Получаем блоки с содержимым
-// const slideLookAll = document.getElementById('slideLookAll');
-// const slideLookSites = document.getElementById('slideLookSites');
-// const slideLookLogo = document.getElementById('slideLookLogo');
-// const slideLookCard = document.getElementById('slideLookCard');
-// const slideLookReklam = document.getElementById('slideLookReklam');
+tabBlocks.forEach((block, index) => {
+  block.style.opacity = index === 0 ? 1 : 0
+  block.style.zIndex = index === 0 ? 2 : 0
+})
 
-// // Функция для скрытия всех блоков с содержимым
-// function hideAllSlides() {
-//   slideLookAll.style.display = 'none';
-//   slideLookSites.style.display = 'none';
-//   slideLookLogo.style.display = 'none';
-//   slideLookCard.style.display = 'none';
-//   slideLookReklam.style.display = 'none';
-// }
+textBlocks.forEach((block, index) => {
+  block.style.display = index === 0 ? 'block' : 'none'
+})
 
-// // Обработчики событий для ссылок
-// lookAllLink.addEventListener('click', function() {
-//   hideAllSlides();
-//   slideLookAll.style.display = 'flex';
-// });
+portfolioNavItems.forEach((item, index) => {
+  item.style.color = '#fff'
+  item.addEventListener('click', () => {
+    const dataValue = item.getAttribute('data-value')
 
-// lookSitesLink.addEventListener('click', function() {
-//   hideAllSlides();
-//   slideLookSites.style.display = 'flex';
-// });
+    portfolioNavItems.forEach((navItem) => {
+      navItem.style.color = '#fff'
+    })
 
-// lookLogoLink.addEventListener('click', function() {
-//   hideAllSlides();
-//   slideLookLogo.style.display = 'flex';
-// });
+    item.style.color = '#24d7ff'
 
-// lookCardsLink.addEventListener('click', function() {
-//   hideAllSlides();
-//   slideLookCard.style.display = 'flex';
-// });
+    textBlocks.forEach((block) => {
+      block.style.display = "none"
+      block.style.transform = "translateY(50px)"
+      block.style.transition = "1s"
+      setTimeout(() => {
+        block.style.transform = "translateY(0px)"
 
-// reklamCreatLink.addEventListener('click', function() {
-//   hideAllSlides();
-//   slideLookReklam.style.display = 'flex';
-// });
+      }, 0)
+    })
+
+    const selectedTextBlock = document.querySelector(`.content-title[data-value="${dataValue}"]`)
+    if (selectedTextBlock) {
+      selectedTextBlock.style.display = 'block'
+    }
+
+    tabBlocks.forEach((block) => {
+      const blockDataValue = block.getAttribute('data-value')
+      block.style.opacity = blockDataValue === dataValue ? 1 : 0
+      block.style.zIndex = blockDataValue === dataValue ? 2 : 0
+    })
+  })
+
+  if (index === 0) {
+    item.style.color = '#24d7ff'
+  }
+})
