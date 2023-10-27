@@ -10,6 +10,7 @@ body
     font-family: Open Sans
     background-color: #333
     background-image: url(../img/arrow-background.svg)
+    box-sizing: border-box
 
 .hidden
     overflow: hidden
@@ -30,6 +31,8 @@ h1
     line-height: 75px
     text-transform: uppercase
     +media(768)
+        font-size: 40rem
+    +media(1440)
         font-size: 60rem
 
 h1, h2, h3 
@@ -90,7 +93,7 @@ ul
 .elipse1
     width: 10.95vw
     height: 13.464vh
-    top: 25%
+    top: 45%
     left: 0
     background: rgba(36, 215, 255, 0.80)
     border-radius: 13.464vh
@@ -112,7 +115,6 @@ ul
     background: rgba(36, 215, 255, 0.60)
     border-radius: 23.41vh
     animation: elipse2 12s infinite
-    
     @keyframes elipse2
         0%,100%
             opacity: 1
@@ -124,22 +126,21 @@ ul
     height: 9.25vh
     background: #24D7FF
     border-radius: 13.10vh
-    top: 70%
+    bottom: -40%
     left: 50%
     transform: translate(-50% -70%)
     animation: elipse1 10s infinite
     animation-delay: 3s
-    
     @keyframes elipse1
         0%,100%
             opacity: 1
         50%
-            opacity: 0
+            opacity: 0.3
 
 .elipse4
     width: 18.73vw
     height: 23.08vh
-    bottom: 0
+    bottom: -80%
     right: 0
     border-radius: 23.08vh
     background: rgba(36, 215, 255, 0.80)
@@ -233,11 +234,12 @@ ul
   
 .name-company
     position: relative
-    top: 50%
-    transform: translateY(-50%)
+    top: 30%
+
 
 .main-project
     position: relative
+    width: 100%
     max-width: 948rem
 
 .main-description
@@ -246,54 +248,55 @@ ul
     font-style: normal
     font-weight: 400
     +media(768)
+        font-size: 20rem
+    +media(1440)
         font-size: 25rem
 
 .carousel
     width: 100%
     max-height: 100vh
     justify-content: center
-    border-left: 15rem solid #292929
-    border-right: 15rem solid #292929 
         
     
 .center
     position: relative
     width: 300rem
     top: -40%
-    left: 3%
+    left: 0.5%
     transform: translateY(-35%)
 
 .up-block
     min-width: 200rem
+    height: 500rem
     background-color: #ccc
     border: 10rem solid #292929
     border-top: 5rem solid #292929
     border-bottom: 5rem solid #292929
     filter: grayscale(1)
+    box-sizing: border-box
     // transition: 1s all ease
     &:hover
         filter: grayscale(0)
     +media(768)
         min-width: 200rem
     +media(1220)
-        min-width: 250rem
-    +media(1440)
-        min-width: 350rem
+        min-width: 300rem
         
 .left-vertical,
 .right-vertical
     position: relative
-    // width: 100%
     width: 220px
 
 .down-block,
 .down-block-right
-    left: 10%
+    left: 2%
     min-width: 150rem
+    height: 300rem
     background-color: #fff
     border-top: 5rem solid #292929
     border-bottom: 5rem solid #292929
     transition: grayscale 1s ease
+    // box-sizing: border-box
     filter: grayscale(1)
     &:hover
         filter: grayscale(0)
@@ -304,7 +307,12 @@ ul
         min-width: 200rem
 
 .down-block 
-    left: 20%
+    left: 4%
+    border-left: 15rem solid #292929
+
+.down-block-right
+    border-right: 15rem solid #292929 
+
 .image
     width: 100%
     height: 100%
@@ -312,7 +320,7 @@ ul
 
 .center-button
     position: absolute
-    top: 60%
+    bottom: -70%
     left: 50%
     width: 350rem
     height: 120rem

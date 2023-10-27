@@ -36,23 +36,24 @@ window.addEventListener('scroll', function () {
   }
 })
 
-document.addEventListener("DOMContentLoaded", function() {
-    const menuBtn = document.getElementById("menuBtn"),
-      menuSlide = document.getElementById("menu-slide"),
-      menuOpen = document.getElementById("menuOpen")
+// document.addEventListener("DOMContentLoaded", function() {
+//     const menuBtn = document.getElementById("menuBtn"),
+//       menuSlide = document.getElementById("menu-slide"),
+//       menuOpen = document.getElementById("menuOpen")
   
-    menuBtn.addEventListener("click", function() {
-      menuBtn.classList.toggle("menuBtnClicked")
-      menuOpen.classList.toggle("menuOpenClicked")
-      menuSlide.classList.toggle("menu-slide-upper")
-    })
-  })
+//     menuBtn.addEventListener("click", function() {
+//       menuBtn.classList.toggle("menuBtnClicked")
+//       menuOpen.classList.toggle("menuOpenClicked")
+//       menuSlide.classList.toggle("menu-slide-upper")
+//     })
+//   })
 
 // карусель зображень на гол сторінці
 
 const carouselVertical = document.querySelector(".left-vertical"),
   carouselVerticalRight = document.querySelector(".right-vertical"),
-  carouselVerticalCenter = document.querySelector(".center")
+  carouselVerticalCenter = document.querySelector(".center"),
+  carouselBlock = document.querySelector(".carousel")
 
 let itemsImg = [...document.querySelectorAll(".down-block")],
   itemsImgRight = [...document.querySelectorAll(".down-block-right")],
@@ -131,11 +132,11 @@ function stopScroll() {
   clearInterval(autoScrollInterval)
 }
 
-carouselVertical.addEventListener("mouseenter", () => {
+carouselBlock.addEventListener("mouseenter", () => {
   stopScroll()
 })
 
-carouselVertical.addEventListener("mouseleave", () => {
+carouselBlock.addEventListener("mouseleave", () => {
   startScroll()
 })
 
@@ -218,7 +219,7 @@ startScroll()
 //     reklamCreatCont.style.display = "block";
 //   };
 // }
-=======
+
 document.addEventListener("DOMContentLoaded", function () {
   var menuBtn = document.getElementById("menuBtn")
   var menuSlide = document.getElementById("menu-slide")
@@ -232,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 })
->>>>>>> 96ddfaa8426776aca5e2034d1d3ccdaff4089b34
+// >>>>>>> 96ddfaa8426776aca5e2034d1d3ccdaff4089b34
 
 
 
