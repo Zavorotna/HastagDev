@@ -237,10 +237,8 @@ ul
     transform: translateY(-50%)
 
 .main-project
-    display: none
-    +media(768)
-        display: block
-        max-width: 948rem
+    position: relative
+    max-width: 948rem
 
 .main-description
     color: #fff
@@ -253,19 +251,17 @@ ul
 .carousel
     width: 100%
     max-height: 100vh
-    overflow: hidden
     justify-content: center
-
-.left-vertical
     border-left: 15rem solid #292929
-
+    border-right: 15rem solid #292929 
+        
+    
 .center
     position: relative
+    width: 300rem
     top: -40%
+    left: 3%
     transform: translateY(-35%)
-
-.right-vertical
-    border-right: 15rem solid #292929
 
 .up-block
     min-width: 200rem
@@ -274,8 +270,7 @@ ul
     border-top: 5rem solid #292929
     border-bottom: 5rem solid #292929
     filter: grayscale(1)
-    transition: 1s all ease
-    animation: center 25s linear infinite
+    // transition: 1s all ease
     &:hover
         filter: grayscale(0)
     +media(768)
@@ -284,33 +279,32 @@ ul
         min-width: 250rem
     +media(1440)
         min-width: 350rem
-    @keyframes center 
-        0%
-            transform: translateY(0)
-        100% 
-            transform: translateY(-100%)
-      
-.down-block
+        
+.left-vertical,
+.right-vertical
+    position: relative
+    // width: 100%
+    width: 220px
+
+.down-block,
+.down-block-right
+    left: 10%
     min-width: 150rem
     background-color: #fff
     border-top: 5rem solid #292929
     border-bottom: 5rem solid #292929
-    transition: 1s all ease
+    transition: grayscale 1s ease
     filter: grayscale(1)
-    animation: down 25s linear infinite
     &:hover
         filter: grayscale(0)
     +media(768)
         min-width: 150rem
     +media(1220)
+        width: 200rem
         min-width: 200rem
-    +media(1440)
-        min-width: 200rem
-    @keyframes down 
-        0%
-            transform: translateY(-100%) 
-        100% 
-            transform: translateY(0%)
+
+.down-block 
+    left: 20%
 .image
     width: 100%
     height: 100%

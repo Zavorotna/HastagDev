@@ -26,24 +26,120 @@ if(langChange) {
 // скрипт для фіксованого хедеру на скрол
 window.addEventListener('scroll', function () {
   const scrollFixed = document.querySelector(".fixed-navigation")
-  if (window.scrollY > 0) {
-    scrollFixed.classList.add('scrolled')
-  } else {
-    scrollFixed.classList.remove('scrolled')
+  if(scrollFixed) {
+    if (window.scrollY > 0) {
+      scrollFixed.classList.add('scrolled')
+    } else {
+      scrollFixed.classList.remove('scrolled')
+    }
+
   }
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-    var menuBtn = document.getElementById("menuBtn");
-    var menuSlide = document.getElementById("menu-slide");
-    var menuOpen = document.getElementById("menuOpen");
+    const menuBtn = document.getElementById("menuBtn"),
+      menuSlide = document.getElementById("menu-slide"),
+      menuOpen = document.getElementById("menuOpen")
   
     menuBtn.addEventListener("click", function() {
-      menuBtn.classList.toggle("menuBtnClicked");
-      menuOpen.classList.toggle("menuOpenClicked");
-      menuSlide.classList.toggle("menu-slide-upper");
-    });
-  });
+      menuBtn.classList.toggle("menuBtnClicked")
+      menuOpen.classList.toggle("menuOpenClicked")
+      menuSlide.classList.toggle("menu-slide-upper")
+    })
+  })
+
+// карусель зображень на гол сторінці
+
+const carouselVertical = document.querySelector(".left-vertical"),
+  carouselVerticalRight = document.querySelector(".right-vertical"),
+  carouselVerticalCenter = document.querySelector(".center")
+
+let itemsImg = [...document.querySelectorAll(".down-block")],
+  itemsImgRight = [...document.querySelectorAll(".down-block-right")],
+  itemsImgCenter = [...document.querySelectorAll(".up-block")],
+  itemsImgCenterHeight = itemsImgCenter[0].offsetHeight,
+  itemsImgheightRight = itemsImgRight[0].offsetHeight,
+  itemsImgheight = itemsImg[0].offsetHeight
+  let step = 1
+
+  for(let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+    if(itemsImg) {
+      const cloneImg = itemsImg[i].cloneNode(true)
+      carouselVertical.appendChild(cloneImg)
+    }
+    if(itemsImgRight) {
+      const cloneImgRight = itemsImgRight[i].cloneNode(true)
+      carouselVerticalRight.appendChild(cloneImgRight)
+    }
+    if(itemsImgCenter) {
+      const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
+      carouselVerticalCenter.appendChild(cloneImgCenter)
+    }
+  }
+  itemsImg = [...document.querySelectorAll(".down-block")]
+  itemsImgRight = [...document.querySelectorAll(".down-block-right")]
+  itemsImgCenter = [...document.querySelectorAll(".up-block")]
+
+  for(let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+    if(itemsImg) {
+      itemsImg[i].style.position = "absolute"
+      itemsImg[i].style.top = `${itemsImgheight * i}rem`
+    }
+    if(itemsImgRight) {
+      itemsImgRight[i].style.position = "absolute"
+      itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
+    }
+    if(itemsImgCenter) {
+      itemsImgCenter[i].style.position = "absolute"
+      itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
+    }
+  }
+  
+function updateCarouselImg() {
+  for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+
+    let currentTop = parseFloat(itemsImg[i].style.top),
+      currentTopRight = parseFloat(itemsImgRight[i].style.top),
+      currentTopCenter = parseFloat(itemsImgCenter[i].style.top)
+
+    currentTop += step
+    currentTopRight += step
+    currentTopCenter -= step
+
+    if (currentTop >= window.innerHeight) {
+        currentTop = -305
+    }
+    if (currentTopCenter <= -605) {
+      currentTopCenter = window.innerHeight;
+  }
+
+    itemsImg[i].style.top = currentTop + "rem"
+    itemsImgRight[i].style.top = currentTop + "rem"
+    itemsImgCenter[i].style.top = currentTopCenter + "rem"
+  }
+}
+
+updateCarouselImg()
+
+function startScroll() {
+  autoScrollInterval = setInterval(() => {
+    updateCarouselImg()
+  }, 20)
+}
+
+function stopScroll() {
+  clearInterval(autoScrollInterval)
+}
+
+carouselVertical.addEventListener("mouseenter", () => {
+  stopScroll()
+})
+
+carouselVertical.addEventListener("mouseleave", () => {
+  startScroll()
+})
+
+startScroll()
 
 // let lookAll = document.getElementById("lookall");
 // let lookSites = document.getElementById("lookSites");
