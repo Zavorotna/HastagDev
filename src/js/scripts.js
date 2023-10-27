@@ -36,7 +36,6 @@ window.addEventListener('scroll', function () {
   }
 })
 
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function() {
     const menuBtn = document.getElementById("menuBtn"),
       menuSlide = document.getElementById("menu-slide"),
