@@ -23,10 +23,67 @@ if (langChange) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  console.log(1);
+  const portfolioNavItems = document.querySelectorAll('.portfolio-slider-ul li'),
+    tabBlocks = document.querySelectorAll('.tabs-block'),
+    textBlocks = document.querySelectorAll('.content-title')
+  
+  console.log(portfolioNavItems);
+  
+  tabBlocks.forEach((block, index) => {
+    block.style.opacity = index === 0 ? 1 : 0
+    block.style.zIndex = index === 0 ? 2 : 0
+  })
+  console.log("hi");
+  textBlocks.forEach((block, index) => {
+  
+    block.style.display = index === 0 ? 'block' : 'none'
+  })
+  
+  portfolioNavItems.forEach((item, index) => {
+    item.style.color = '#fff'
+    item.addEventListener('click', () => {
+      const dataValue = item.getAttribute('data-value')
+  
+      portfolioNavItems.forEach((navItem) => {
+        navItem.style.color = '#fff'
+      })
+  
+      item.style.color = '#24d7ff'
+  
+      textBlocks.forEach((block) => {
+        block.style.display = "none"
+        block.style.transform = "translateY(50px)"
+        block.style.transition = "1s"
+        setTimeout(() => {
+          block.style.transform = "translateY(0px)"
+  
+        }, 0)
+      })
+  
+      const selectedTextBlock = document.querySelector(`.content-title[data-value="${dataValue}"]`)
+      if (selectedTextBlock) {
+        selectedTextBlock.style.display = 'block'
+      }
+  
+      tabBlocks.forEach((block) => {
+        const blockDataValue = block.getAttribute('data-value')
+        block.style.opacity = blockDataValue === dataValue ? 1 : 0
+        block.style.zIndex = blockDataValue === dataValue ? 2 : 0
+      })
+    })
+  
+    if (index === 0) {
+      item.style.color = '#24d7ff'
+    }
+  })
+})
+
 // скрипт для фіксованого хедеру на скрол
 window.addEventListener('scroll', function () {
   const scrollFixed = document.querySelector(".fixed-navigation")
-  if(scrollFixed) {
+  if (scrollFixed) {
     if (window.scrollY > 0) {
       scrollFixed.classList.add('scrolled')
     } else {
@@ -36,6 +93,7 @@ window.addEventListener('scroll', function () {
   }
 })
 
+<<<<<<< HEAD
 // document.addEventListener("DOMContentLoaded", function() {
 //     const menuBtn = document.getElementById("menuBtn"),
 //       menuSlide = document.getElementById("menu-slide"),
@@ -47,6 +105,19 @@ window.addEventListener('scroll', function () {
 //       menuSlide.classList.toggle("menu-slide-upper")
 //     })
 //   })
+=======
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.querySelector(".menuButton"),
+    menuSlide = document.getElementById("menu-slide"),
+    menuOpen = document.getElementById("menuOpen")
+
+  menuBtn.addEventListener("click", function () {
+    menuBtn.classList.toggle("menuBtnClicked")
+    menuOpen.classList.toggle("menuOpenClicked")
+    menuSlide.classList.toggle("menu-slide-upper")
+  })
+})
+>>>>>>> f688cda53d63b1b8c10864a6fbfc7ed8ff97b12d
 
 // карусель зображень на гол сторінці
 
@@ -61,41 +132,41 @@ let itemsImg = [...document.querySelectorAll(".down-block")],
   itemsImgCenterHeight = itemsImgCenter[0].offsetHeight,
   itemsImgheightRight = itemsImgRight[0].offsetHeight,
   itemsImgheight = itemsImg[0].offsetHeight
-  let step = 1
+let step = 1
 
-  for(let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-    if(itemsImg) {
-      const cloneImg = itemsImg[i].cloneNode(true)
-      carouselVertical.appendChild(cloneImg)
-    }
-    if(itemsImgRight) {
-      const cloneImgRight = itemsImgRight[i].cloneNode(true)
-      carouselVerticalRight.appendChild(cloneImgRight)
-    }
-    if(itemsImgCenter) {
-      const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
-      carouselVerticalCenter.appendChild(cloneImgCenter)
-    }
+for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+  if (itemsImg) {
+    const cloneImg = itemsImg[i].cloneNode(true)
+    carouselVertical.appendChild(cloneImg)
   }
-  itemsImg = [...document.querySelectorAll(".down-block")]
-  itemsImgRight = [...document.querySelectorAll(".down-block-right")]
-  itemsImgCenter = [...document.querySelectorAll(".up-block")]
+  if (itemsImgRight) {
+    const cloneImgRight = itemsImgRight[i].cloneNode(true)
+    carouselVerticalRight.appendChild(cloneImgRight)
+  }
+  if (itemsImgCenter) {
+    const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
+    carouselVerticalCenter.appendChild(cloneImgCenter)
+  }
+}
+itemsImg = [...document.querySelectorAll(".down-block")]
+itemsImgRight = [...document.querySelectorAll(".down-block-right")]
+itemsImgCenter = [...document.querySelectorAll(".up-block")]
 
-  for(let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-    if(itemsImg) {
-      itemsImg[i].style.position = "absolute"
-      itemsImg[i].style.top = `${itemsImgheight * i}rem`
-    }
-    if(itemsImgRight) {
-      itemsImgRight[i].style.position = "absolute"
-      itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
-    }
-    if(itemsImgCenter) {
-      itemsImgCenter[i].style.position = "absolute"
-      itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
-    }
+for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+  if (itemsImg) {
+    itemsImg[i].style.position = "absolute"
+    itemsImg[i].style.top = `${itemsImgheight * i}rem`
   }
-  
+  if (itemsImgRight) {
+    itemsImgRight[i].style.position = "absolute"
+    itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
+  }
+  if (itemsImgCenter) {
+    itemsImgCenter[i].style.position = "absolute"
+    itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
+  }
+}
+
 function updateCarouselImg() {
   for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
 
@@ -108,11 +179,11 @@ function updateCarouselImg() {
     currentTopCenter -= step
 
     if (currentTop >= window.innerHeight) {
-        currentTop = -305
+      currentTop = -305
     }
     if (currentTopCenter <= -605) {
       currentTopCenter = window.innerHeight;
-  }
+    }
 
     itemsImg[i].style.top = currentTop + "rem"
     itemsImgRight[i].style.top = currentTop + "rem"
@@ -142,12 +213,12 @@ carouselBlock.addEventListener("mouseleave", () => {
 
 startScroll()
 
-// let lookAll = document.getElementById("lookall");
-// let lookSites = document.getElementById("lookSites");
-// let lookLogo = document.getElementById("lookLogo");
-// let lookCards = document.getElementById("lookCards");
-// let reklamCreat = document.getElementById("reklamCreat");
+// document.addEventListener("DOMContentLoaded", function () {
+//   var menuBtn = document.getElementById("menuBtn")
+//   var menuSlide = document.getElementById("menu-slide")
+//   var menuOpen = document.getElementById("menuOpen")
 
+<<<<<<< HEAD
 // let lookAllCont = document.getElementById("contentAll");
 // let lookSitesCont = document.getElementById("contentSites");
 // let lookLogoCont = document.getElementById("contentLogo");
@@ -234,58 +305,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
 })
 // >>>>>>> 96ddfaa8426776aca5e2034d1d3ccdaff4089b34
+=======
+//   menuBtn.addEventListener("click", function () {
+//     menuBtn.classList.toggle("menuBtnClicked")
+//     menuOpen.classList.toggle("menuOpenClicked")
+//     menuSlide.classList.toggle("menu-slide-upper")
+//   })
+>>>>>>> f688cda53d63b1b8c10864a6fbfc7ed8ff97b12d
 
 
+// })
 
 
-const portfolioNavItems = document.querySelectorAll('.portfolio-slider-ul li'),
-  tabBlocks = document.querySelectorAll('.tabs-block'),
-  textBlocks = document.querySelectorAll('.content-title')
-
-
-tabBlocks.forEach((block, index) => {
-  block.style.opacity = index === 0 ? 1 : 0
-  block.style.zIndex = index === 0 ? 2 : 0
-})
-
-textBlocks.forEach((block, index) => {
-  block.style.display = index === 0 ? 'block' : 'none'
-})
-
-portfolioNavItems.forEach((item, index) => {
-  item.style.color = '#fff'
-  item.addEventListener('click', () => {
-    const dataValue = item.getAttribute('data-value')
-
-    portfolioNavItems.forEach((navItem) => {
-      navItem.style.color = '#fff'
-    })
-
-    item.style.color = '#24d7ff'
-
-    textBlocks.forEach((block) => {
-      block.style.display = "none"
-      block.style.transform = "translateY(50px)"
-      block.style.transition = "1s"
-      setTimeout(() => {
-        block.style.transform = "translateY(0px)"
-
-      }, 0)
-    })
-
-    const selectedTextBlock = document.querySelector(`.content-title[data-value="${dataValue}"]`)
-    if (selectedTextBlock) {
-      selectedTextBlock.style.display = 'block'
-    }
-
-    tabBlocks.forEach((block) => {
-      const blockDataValue = block.getAttribute('data-value')
-      block.style.opacity = blockDataValue === dataValue ? 1 : 0
-      block.style.zIndex = blockDataValue === dataValue ? 2 : 0
-    })
-  })
-
-  if (index === 0) {
-    item.style.color = '#24d7ff'
-  }
-})

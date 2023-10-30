@@ -79,6 +79,7 @@ mixin footerContact(footer)
             titleBlue: "wrau",
             titleNormal: " | Асоціація переробки відходів",
             href: "portfolio-sites.html",
+            hrefPortfolio: "westrecycling.html"
         },
         img3: {
             img: "img/highway.png",
@@ -93,16 +94,18 @@ mixin footerContact(footer)
             titleBlue: "k-yarmarock",
             titleNormal: " | Продаж килимів",
             href: "portfolio-sites.html",
+            hrefPortfolio: "kyarmarok.html",
         },
     }
 
-mixin sliderLookAll(slider, color)
+mixin sliderLookAll(slider, color, isPortfolio)
     .card-slider
-        a(href=slider.href) 
+        a(href= isPortfolio ? slider.hrefPortfolio : slider.href)
         img(src=slider.img, alt=slider.alt)
         h3.title-h3(class=color)
             span.blue-text= slider.titleBlue
             | #{slider.titleNormal}
+
 
 -
     let sliderLookSite = {
@@ -119,6 +122,7 @@ mixin sliderLookAll(slider, color)
             titleBlue: "wrau",
             titleNormal: " | Асоціація переробки відходів",
             href: "portfolio-sites.html",
+            hrefPortfolio: "westrecycling.html"
         },
         img3: {
             img: "img/highway.png",
@@ -133,16 +137,18 @@ mixin sliderLookAll(slider, color)
             titleBlue: "k-yarmarock",
             titleNormal: " | Продаж килимів",
             href: "portfolio-sites.html",
+            hrefPortfolio: "kyarmarok.html",
         },
     }
 
-mixin sliderLookSite(slider)
+mixin sliderLookSite(slider, isPortfolio)
     .card-slider
-        a(href=slider.href) 
+        a(href= isPortfolio ? slider.hrefPortfolio : slider.href)
         img(src=slider.img, alt=slider.alt)
         h3.title-h3
             span.blue-text= slider.titleBlue
             | #{slider.titleNormal}
+
 
 
 -
@@ -190,12 +196,13 @@ mixin sliderLookSite(slider)
             titleBlue: "waste recycling association of ukraine",
             titleNormal: " | Асоціація переробки України",
             href: "portfolio-logo.html",
+            hrefPortfolio: "westrecycling.html"
         },
     }
 
-mixin sliderLookLogo(slider2)
+mixin sliderLookLogo(slider2, isPortfolio)
     .card-slider
-        a(href=slider2.href) 
+        a(href= isPortfolio ? slider2.hrefPortfolio : slider2.href) 
         img(src=slider2.img, alt=slider2.alt)
         h3.title-h3
             span.blue-text= slider2.titleBlue

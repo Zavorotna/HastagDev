@@ -1,6 +1,8 @@
 @import components/mixins
 html 
-    font-size: 1px
+    font-size: 0.8px
+    +media(769)
+        font-size: 1px
     +media(2200)
         font-size: 2px
 
@@ -358,14 +360,29 @@ ul
 .menuOpen
     position: fixed
     left: -200%
-    bottom: 23rem
     width: 100%
     min-height: 500rem
     transition: 0.5s
+    overflow-y: scroll
+    height: 60vh
+    &::-webkit-scrollbar
+        height: 8rem
+        background: transparent
+    
+    &::-webkit-scrollbar-thumb 
+        background-color:  transparent
+
+    +media(624)
+        bottom: 23rem
+        height: auto
 
 .menuOpenClicked
     left: 0
-    bottom: 23rem
+    bottom: 50%
+    transform: translateY(50%)
+    +media(624)
+        transform: translateY(0)
+        bottom: 23rem
 
 .menuNavCard
     &:first-child
@@ -405,7 +422,7 @@ ul
             
 .cardImage 
     border-radius: 13rem
-    width: 360rem
+    min-width: 360rem
     min-height: 177rem
     background: url(../img/cover.jpg), lightgray -1.376rem 0rem / 112% 100% no-repeat
     background-size: 103% 103%
@@ -431,8 +448,12 @@ ul
     margin-bottom: 10rem
 
 .cardsOverflow
+    row-gap: 20rem
     column-gap: 5rem
     flex-wrap: wrap
+    justify-content: center
+    +media(624)
+        justify-content: space-between
 .menuButton
     position: fixed
     z-index: 2
@@ -523,29 +544,37 @@ ul
 .title
     color: #FFF
     /* h1 */
+    font-size: 30rem
     font-style: normal
-    font-size: 50rem
     font-weight: 800
-    line-height: 75rem
+    line-height: 1.25em
     text-transform: uppercase
     margin: 0
+    +media(425)
+        font-size: 40rem
+    +media(608)
+        font-size: 50rem
     +media(961)
         font-size: 60rem
 
 .title-h3
     /* h3 */
     color: #fff
-    font-size: 24rem
     font-style: normal
+    font-size: 20rem
     font-weight: 600
     line-height: normal
     letter-spacing: -1.08rem
     text-transform: uppercase
+    +media(425)
+        font-size: 24rem
+
 
 .main-contacts
     padding-top: 25rem
     margin-bottom: 50rem
     column-gap: 74rem
+    row-gap: 30rem
     .title-h3
         color: #24D7FF
 .container-contacts
@@ -567,10 +596,11 @@ input, textarea
     label
         display: inline-block
     input:not(input[type=file])
-        max-width: 400rem
         padding: 0 10rem
         width: 100%
         margin-bottom: 21rem
+
+
     textarea
         max-width: 870rem
         padding: 10rem
@@ -592,14 +622,16 @@ input[type=file]
 .contacts-wrap
     max-width: 870rem
     padding: 0 50rem 
-    margin: 0 auto !important
+    margin: 0 auto 
+    padding-bottom: 20rem !important
 
 .no-odject-fit img
-    object-fit: contain !important
+    object-fit: contain 
     
 .for-small-input
     width: 100%
-    max-width: 400rem
+    +media(728)
+        max-width: calc(50% - 5rem)
 
 .contact-message-area
     width: 100%
@@ -642,7 +674,8 @@ input[type=file]
         font-weight: 400
         line-height: normal
         letter-spacing: 0.6rem
-.title-absolute
+
+.title-absolute-container
     margin-bottom: 29rem
 
 .for-small-input > h3, .for-large-input > h3
@@ -696,12 +729,15 @@ h1.title.portfolio-margin
     display: flex
     justify-content: space-between
     flex-wrap: wrap
-    text-align: center
+    text-align: left
     row-gap: 20rem
     column-gap: 20rem
     padding: 0
     margin-bottom: 44rem
+    +media(768)
+        text-align: center
     li 
+        width: 100%
         list-style-type: none
         cursor: pointer
         color: #fff
@@ -709,6 +745,8 @@ h1.title.portfolio-margin
             color: #24D7FF
         &:first-child
             color: #24D7FF
+        +media(768)
+            width: auto
 
 .content-title
     display: none
