@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const carouselVertical = document.querySelector(".left-vertical"),
   carouselVerticalRight = document.querySelector(".right-vertical"),
   carouselVerticalCenter = document.querySelector(".center"),
-  carouselBlock = document.querySelector(".carousel")
+  carouselBlock = document.querySelector(".main-project")
 
 let itemsImg = [...document.querySelectorAll(".down-block")],
   itemsImgRight = [...document.querySelectorAll(".down-block-right")],
