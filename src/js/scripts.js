@@ -93,19 +93,19 @@ window.addEventListener('scroll', function () {
   }
 })
 
-<<<<<<< HEAD
-// document.addEventListener("DOMContentLoaded", function() {
-//     const menuBtn = document.getElementById("menuBtn"),
-//       menuSlide = document.getElementById("menu-slide"),
-//       menuOpen = document.getElementById("menuOpen")
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuBtn = document.getElementById("menuBtn"),
+      menuSlide = document.getElementById("menu-slide"),
+      menuOpen = document.getElementById("menuOpen")
   
-//     menuBtn.addEventListener("click", function() {
-//       menuBtn.classList.toggle("menuBtnClicked")
-//       menuOpen.classList.toggle("menuOpenClicked")
-//       menuSlide.classList.toggle("menu-slide-upper")
-//     })
-//   })
-=======
+    menuBtn.addEventListener("click", function() {
+      menuBtn.classList.toggle("menuBtnClicked")
+      menuOpen.classList.toggle("menuOpenClicked")
+      menuSlide.classList.toggle("menu-slide-upper")
+    })
+  })
+
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.querySelector(".menuButton"),
     menuSlide = document.getElementById("menu-slide"),
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuSlide.classList.toggle("menu-slide-upper")
   })
 })
->>>>>>> f688cda53d63b1b8c10864a6fbfc7ed8ff97b12d
+
 
 // карусель зображень на гол сторінці
 
@@ -218,7 +218,7 @@ startScroll()
 //   var menuSlide = document.getElementById("menu-slide")
 //   var menuOpen = document.getElementById("menuOpen")
 
-<<<<<<< HEAD
+
 // let lookAllCont = document.getElementById("contentAll");
 // let lookSitesCont = document.getElementById("contentSites");
 // let lookLogoCont = document.getElementById("contentLogo");
@@ -304,14 +304,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 })
-// >>>>>>> 96ddfaa8426776aca5e2034d1d3ccdaff4089b34
-=======
+
 //   menuBtn.addEventListener("click", function () {
 //     menuBtn.classList.toggle("menuBtnClicked")
 //     menuOpen.classList.toggle("menuOpenClicked")
 //     menuSlide.classList.toggle("menu-slide-upper")
 //   })
->>>>>>> f688cda53d63b1b8c10864a6fbfc7ed8ff97b12d
+
 
 
 // })
