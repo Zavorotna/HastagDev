@@ -20,7 +20,7 @@ export const browserSyncFunc = () => {
             baseDir: "docs"
         },
         open: true,
-        browser: "chrome"
+        browser: "brave"
         //port: 8080
     })
 }
