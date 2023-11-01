@@ -10,11 +10,9 @@ html(lang="en")
         include components/mixins 
         .svg-container 
             .my-svg
-        header.fixed-header
+        header.fixed-header.container
             .fixed-navigation
-            .wrapper 
                 +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
-                //- .main-project
         div#menu-slide.slide-default
             main.portfolio-main
                 //- потрібно зробити щоб при кліку на #lookall , для .content-look-all присвоювався клас display, а для інших класів таких як

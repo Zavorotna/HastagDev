@@ -121,52 +121,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // карусель зображень на гол сторінці
 
-const carouselVertical = document.querySelector(".left-vertical"),
+const carouselBlock = document.querySelector(".main-project")
+
+if(carouselBlock) {
+  const carouselVertical = document.querySelector(".left-vertical"),
   carouselVerticalRight = document.querySelector(".right-vertical"),
-  carouselVerticalCenter = document.querySelector(".center"),
-  carouselBlock = document.querySelector(".main-project")
+  carouselVerticalCenter = document.querySelector(".center")
 
-let itemsImg = [...document.querySelectorAll(".down-block")],
-  itemsImgRight = [...document.querySelectorAll(".down-block-right")],
-  itemsImgCenter = [...document.querySelectorAll(".up-block")],
-  itemsImgCenterHeight = itemsImgCenter[0].offsetHeight,
-  itemsImgheightRight = itemsImgRight[0].offsetHeight,
-  itemsImgheight = itemsImg[0].offsetHeight
-let step = 1
+  let itemsImg = [...document.querySelectorAll(".down-block")],
+    itemsImgRight = [...document.querySelectorAll(".down-block-right")],
+    itemsImgCenter = [...document.querySelectorAll(".up-block")],
+    itemsImgCenterHeight = itemsImgCenter[0].offsetHeight,
+    itemsImgheightRight = itemsImgRight[0].offsetHeight,
+    itemsImgheight = itemsImg[0].offsetHeight
+  let step = 1
 
-for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-  if (itemsImg) {
-    const cloneImg = itemsImg[i].cloneNode(true)
-    carouselVertical.appendChild(cloneImg)
+  
+  for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+    if (itemsImg) {
+      const cloneImg = itemsImg[i].cloneNode(true)
+      carouselVertical.appendChild(cloneImg)
+    }
+    if (itemsImgRight) {
+      const cloneImgRight = itemsImgRight[i].cloneNode(true)
+      carouselVerticalRight.appendChild(cloneImgRight)
+    }
+    if (itemsImgCenter) {
+      const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
+      carouselVerticalCenter.appendChild(cloneImgCenter)
+    }
   }
-  if (itemsImgRight) {
-    const cloneImgRight = itemsImgRight[i].cloneNode(true)
-    carouselVerticalRight.appendChild(cloneImgRight)
-  }
-  if (itemsImgCenter) {
-    const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
-    carouselVerticalCenter.appendChild(cloneImgCenter)
-  }
+  itemsImg = [...document.querySelectorAll(".down-block")]
+  itemsImgRight = [...document.querySelectorAll(".down-block-right")]
+  itemsImgCenter = [...document.querySelectorAll(".up-block")]
+  
+  for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+    if (itemsImg) {
+      itemsImg[i].style.position = "absolute"
+      itemsImg[i].style.top = `${itemsImgheight * i}rem`
+    }
+    if (itemsImgRight) {
+      itemsImgRight[i].style.position = "absolute"
+      itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
+    }
+    if (itemsImgCenter) {
+      itemsImgCenter[i].style.position = "absolute"
+      itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
+    }
 }
-itemsImg = [...document.querySelectorAll(".down-block")]
-itemsImgRight = [...document.querySelectorAll(".down-block-right")]
-itemsImgCenter = [...document.querySelectorAll(".up-block")]
-
-for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-  if (itemsImg) {
-    itemsImg[i].style.position = "absolute"
-    itemsImg[i].style.top = `${itemsImgheight * i}rem`
-  }
-  if (itemsImgRight) {
-    itemsImgRight[i].style.position = "absolute"
-    itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
-  }
-  if (itemsImgCenter) {
-    itemsImgCenter[i].style.position = "absolute"
-    itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
-  }
-}
-
 function updateCarouselImg() {
   for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
 
@@ -212,6 +214,8 @@ carouselBlock.addEventListener("mouseleave", () => {
 })
 
 startScroll()
+}
+
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   var menuBtn = document.getElementById("menuBtn")

@@ -1,20 +1,24 @@
 @import components/mixins
 
 .main-wrapper
-    margin: 0 20rem
-    +media(1024)
-        margin: 0 180rem
-    +media(1440)
-        margin-left: 221rem
+    padding: 0 15rem
+    margin: 0 auto
+    max-width: 900rem
+    +media(1400)
+        max-width: 1200rem
+    +media(1600)
+        max-width: 1480rem
 
 .our-proposition
-    padding: 87rem 0 153rem
+    padding: 50rem 15rem
+    +media(768)
+        padding: 187rem 15rem 153rem
 
 .name-about
     max-width: 750rem
     padding-bottom: 36rem
     color: #fff
-    font-size: 25rem
+    font-size: 35rem
     font-style: normal
     font-weight: 800
     line-height: 1.25em
@@ -56,21 +60,32 @@
 .our-team
     padding-bottom: 27rem
     color: #fff
-    font-size: 60rem
-    font-style: normal
+    font-size: 30rem
     font-weight: 800
     line-height: 1.25em
     text-transform: uppercase
+    +media(768)
+        font-size: 60rem
 
 .main-menu
     flex-wrap: wrap
     justify-content: space-between
-    row-gap: 40rem
+    row-gap: 20rem
+    +media(485)
+        justify-content: flex-start
+    +media(744)
+        justify-content: space-between
+        column-gap: 0
     +media(1440)
         column-gap: 50rem
+        
 .menu
-    width: 217rem
-    
+    width: 240rem
+    +media(530)
+        width: 300rem
+    +media(744)
+        width: 217rem   
+
 .header-menu
     padding-bottom: 20rem
     display: inline-block
@@ -92,8 +107,10 @@
         line-height: normal   
 
 .aboutus-portfolio-main
-    padding-top: 46rem
-    margin-left: 180rem
+    margin: 0 0 0 15rem
+    +media(768)
+        padding-top: 46rem
+        margin-left: 180rem
 
 .aboutus-portfolio-main
     div.aboutus-portfolio
@@ -140,14 +157,17 @@
 
 .team-name,
 .team-position
-    padding: 30rem 0
+    padding: 15rem 0
     text-align: center
     color: #fff
-    font-size: 36rem
+    font-size: 20rem
     font-style: normal
     font-weight: 600
     line-height: 1.67em
     text-transform: uppercase
+    +media(768)
+        padding: 30rem 0
+        font-size: 36rem
 
 .team-position
     color: #24d7ff
