@@ -4,12 +4,7 @@ img
     height: 100%
     object-fit: cover
 
-.main-wrapper-site
-    margin: 0 160rem
-    +media(1440)
-        margin: 0 221rem
-
-.main-preentation-block
+.main-presentation-block
     padding: 105rem 0
     +media(1440)
         padding: 135rem 0
@@ -33,11 +28,15 @@ img
         font-size: 18rem
 
 .main-site-block
+    flex-wrap: wrap-reverse
     padding-bottom: 90rem  
-    column-gap: 50rem   
+    column-gap: 50rem
+    +media(768)
+        flex-wrap: nowrap
 
 .picture-block 
-    max-width: 50%
+    width: 100%
+    max-width: 738rem
     flex-direction: column
     row-gap: 50rem
 
@@ -51,8 +50,10 @@ h2.header-description
     text-transform: uppercase
 
 .description-block
+    padding-bottom: 120rem
     flex-direction: column
     row-gap: 85rem
+    width: 100%
 
 .descript
     padding: 15rem 0

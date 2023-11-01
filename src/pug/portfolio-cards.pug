@@ -3,18 +3,16 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="viewport" content="width=device-width, uset-scalabel=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         title Document
         link(rel="stylesheet", href="css/styles.css")
     body
         include components/mixins 
         .svg-container 
             .my-svg
-        header.fixed-header
+        header.fixed-header.container
             .fixed-navigation
-            .wrapper 
                 +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
-                .main-project
         div#menu-slide.slide-default
             main.portfolio-main
                 .portfolio-wrapper 
