@@ -360,13 +360,15 @@ ul
     min-height: 500rem
     transition: 0.5s
     overflow-y: scroll
+    overflow-x: hidden
     height: 60vh
     &::-webkit-scrollbar
+        width: 5rem
         height: 8rem
         background: transparent
     
     &::-webkit-scrollbar-thumb 
-        background-color:  transparent
+        background-color:  rgba(#24D7FF, 0.8)
 
     +media(624)
         bottom: 23rem
