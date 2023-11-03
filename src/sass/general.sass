@@ -758,6 +758,7 @@ h1.title.portfolio-margin
 .content-title
     display: none
 
+
 .portfolio-slider
     min-height: 484px
     margin-bottom: 125rem
@@ -788,14 +789,17 @@ h1.title.portfolio-margin
     & img
         // min-width: 300px
         width: 95%
-        height: 25vh
+        height: 48%
         object-fit: cover
         +media(450)
-            min-height: 400rem
+            // min-height: 400rem
+            height: 45vw
             width: 85vw
+            max-width: 750rem
+            max-height: 400rem
 
-        +media(870)
-            width: 750rem
+        // +media(870)
+        //     width: 750rem
     .card-slider img
         margin-bottom: 28rem
         
