@@ -332,8 +332,9 @@ function updatePosition(elipse) {
   const topRand = rand(1, 100),
     leftRand = rand(1, 100),
     intervalPos = setInterval(() => {
-      const currentTopElipse = parseFloat(elipse.style.top) || 1,
-        currentLeftElipse = parseFloat(elipse.style.left) || 1
+      console.log(elipse.style.top);
+      const currentTopElipse = parseFloat(elipse.style.top) || topRand + 20,
+        currentLeftElipse = parseFloat(elipse.style.left) || leftRand + 20
 
       if (currentLeftElipse < leftRand) {
         elipse.style.left = `${currentLeftElipse + stepRand}%`
