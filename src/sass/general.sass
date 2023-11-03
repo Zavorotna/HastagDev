@@ -368,13 +368,15 @@ ul
     min-height: 500rem
     transition: 0.5s
     overflow-y: scroll
+    overflow-x: hidden
     height: 60vh
     &::-webkit-scrollbar
+        width: 5rem
         height: 8rem
         background: transparent
     
     &::-webkit-scrollbar-thumb 
-        background-color:  transparent
+        background-color:  rgba(#24D7FF, 0.8)
 
     +media(624)
         bottom: 23rem
@@ -462,7 +464,7 @@ ul
 .menuButton
     position: fixed
     z-index: 2
-    bottom: 60rem
+    bottom: 30rem
     transition: 1s
     left: 50rem
     &::before
@@ -771,6 +773,7 @@ h1.title.portfolio-margin
         overflow-x: scroll 
         overflow-y: hidden 
     &::-webkit-scrollbar
+        width: 5rem
         height: 8rem
         background: transparent
     
@@ -789,7 +792,7 @@ h1.title.portfolio-margin
         +media(450)
             display: flex
     & img
-        min-width: 300px
+        // min-width: 300px
         width: 95%
         height: 25vh
         object-fit: cover

@@ -110,8 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.querySelector(".menuButton"),
     menuSlide = document.getElementById("menu-slide"),
     menuOpen = document.getElementById("menuOpen")
+    body = document.querySelector("body")
 
   menuBtn.addEventListener("click", function () {
+    body.classList.toggle("hidden")
     menuBtn.classList.toggle("menuBtnClicked")
     menuOpen.classList.toggle("menuOpenClicked")
     menuSlide.classList.toggle("menu-slide-upper")
