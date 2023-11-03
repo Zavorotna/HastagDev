@@ -96,69 +96,63 @@ ul
 .elipse-box
     position: absolute
     filter: blur(4.66vw)
+    background: rgba(36, 215, 255, 1)
+    border-radius: 50%
+    transition: left 10s top 10s
     z-index: -1
 
 .elipse1
-    width: 10.95vw
+    width: 11vw
     height: 10vh
-    top: 0
-    left: 0
-    background: rgba(36, 215, 255, 1)
-    border-radius: 13.464vh
+    top: 25%
+    left: 15%
     animation: elipse1 15s infinite
     animation-delay: 1s 
-    @keyframes elipse1
-        0%,100%
-            opacity: 1
-        50%
-            opacity: 0
 
 .elipse2
-    width: 19.04vw
+    width: 20vw
     height: 19vh
-    top: 0
-    right: 0
-    background: rgba(36, 215, 255, 1)
-    border-radius: 23.41vh
-    animation: elipse2 12s infinite
-    @keyframes elipse2
-        0%,100%
-            opacity: 1
-        50%
-            opacity: 0
+    top: 10%
+    right: 50%
+    animation: elipse1 12s infinite
 
 .elipse3
-    width: 7.524vw
+    width: 9vw
     height: 8vh
-    background: #24D7FF
-    border-radius: 13.10vh
-    bottom: 0%
-    left: 0
+    bottom: 25%
+    left: 25%
     animation: elipse1 10s infinite
     animation-delay: 3s
-    @keyframes elipse1
-        0%,100%
-            opacity: 1
-        50%
-            opacity: 0.3
 
 .elipse4
-    width: 18.73vw
+    width: 18vw
     height: 15vh
-    bottom: 0%
+    bottom: 25%
     right: 50%
-    border-radius: 23.08vh
-    background: rgba(36, 215, 255, 1)
     animation: elipse1 20s infinite
     animation-delay: 2s
     transform: translateX(-50%)
     +media(768)
         right: -50% 
-    @keyframes elipse1
-        0%,100%
-            opacity: 1
-        50%
-            opacity: 0
+
+.elipse5
+    width: 24vw
+    height: 24vh
+    top: 45%
+    right: 50%
+    animation: elipse1 20s infinite
+    animation-delay: 2s
+    transform: translateX(-50%)
+    +media(768)
+        right: -50% 
+
+@keyframes elipse1
+    0%,100%
+        opacity: 1
+    25%
+        opacity: 0.3
+    50%
+        opacity: 0.5
 
 .fixed-header
     padding-top: 100rem

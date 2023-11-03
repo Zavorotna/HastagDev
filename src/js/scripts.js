@@ -311,31 +311,53 @@ document.addEventListener("DOMContentLoaded", function () {
   
 })
 
-const buttonMain = document.querySelector(".btn-href"),
-  hrefMain = buttonMain.getAttribute("href"),
-  arrowMain = document.querySelector("#arrow-main")
+const buttonMain = document.querySelector(".btn-href")
+if(buttonMain) {
+  const hrefMain = buttonMain.getAttribute("href")
     
-buttonMain.addEventListener("click", function() {
-    window.location.href = hrefMain
-})
+  buttonMain.addEventListener("click", function() {
+      window.location.href = hrefMain
+  })
+
+}
 
 function rand(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-const elipseBox = document.querySelectorAll(".elipse-box")
+const elipseBox = [...document.querySelectorAll(".elipse-box")],
+  stepRand = 0.1
 
-console.log(elipseBox);
-function updatePosition() {
-  intervalPos = setInterval(() => {
-    elipseBox.forEach((item) => {
-      stepPos = 1
+function updatePosition(elipse) {
+  const topRand = rand(1, 100),
+    leftRand = rand(1, 100),
+    intervalPos = setInterval(() => {
+      const currentTopElipse = parseFloat(elipse.style.top) || 1,
+        currentLeftElipse = parseFloat(elipse.style.left) || 1
 
-      item.style.left = `${rand(1,100)}%`
-    })
-  }, 5000)
+      if (currentLeftElipse < leftRand) {
+        elipse.style.left = `${currentLeftElipse + stepRand}%`
+      } else if (currentLeftElipse > leftRand) {
+        elipse.style.left = `${currentLeftElipse - stepRand}%`
+      }
+
+      if (currentTopElipse < topRand) {
+        elipse.style.top = `${currentTopElipse + stepRand}%`
+      } else if (currentTopElipse > topRand) {
+        elipse.style.top = `${currentTopElipse - stepRand}%`
+      }
+
+      if (currentTopElipse === topRand && currentLeftElipse === leftRand) {
+        clearInterval(intervalPos)
+        updatePosition(elipse)
+      }
+    }, 100)
 }
-updatePosition()
+
+elipseBox.forEach((elipse) => {
+  updatePosition(elipse)
+})
+
 
 //   menuBtn.addEventListener("click", function () {
 //     menuBtn.classList.toggle("menuBtnClicked")
