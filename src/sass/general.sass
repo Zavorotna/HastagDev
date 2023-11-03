@@ -626,11 +626,13 @@ input[type=file]
     background-color: transparent
     outline: none
     min-height: 40rem
-.contacts-wrap
+.wrapper.contacts-wrap
     max-width: 870rem
     padding: 0 50rem 
     margin: 0 auto 
     padding-bottom: 20rem !important
+    +media(768)
+        padding-top: 105rem
 
 .no-odject-fit img
     object-fit: contain 
