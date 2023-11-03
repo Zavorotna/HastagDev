@@ -309,6 +309,32 @@ document.addEventListener("DOMContentLoaded", function () {
   
 })
 
+const buttonMain = document.querySelector(".btn-href"),
+  hrefMain = buttonMain.getAttribute("href"),
+  arrowMain = document.querySelector("#arrow-main")
+    
+buttonMain.addEventListener("click", function() {
+    window.location.href = hrefMain
+})
+
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+const elipseBox = document.querySelectorAll(".elipse-box")
+
+console.log(elipseBox);
+function updatePosition() {
+  intervalPos = setInterval(() => {
+    elipseBox.forEach((item) => {
+      stepPos = 1
+
+      item.style.left = `${rand(1,100)}%`
+    })
+  }, 5000)
+}
+updatePosition()
+
 //   menuBtn.addEventListener("click", function () {
 //     menuBtn.classList.toggle("menuBtnClicked")
 //     menuOpen.classList.toggle("menuOpenClicked")
