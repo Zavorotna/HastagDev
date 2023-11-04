@@ -768,6 +768,8 @@ h1.title.portfolio-margin
 
 .content-title
     display: none
+    &:first-child
+        display: block
 
 
 .portfolio-slider
@@ -836,6 +838,10 @@ h1.title.portfolio-margin
     // display: none
     position: absolute
     transition: 1s
+    opacity: 0
+    &:first-child
+        opacity: 1
+
 
 .portfoli-wrap 
     width: 1900px
