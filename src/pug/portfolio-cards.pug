@@ -8,53 +8,54 @@ html(lang="en")
         link(rel="stylesheet", href="css/styles.css")
     body
         include components/mixins 
-        .svg-container 
-            .my-svg
-        header.fixed-header.container
-            .fixed-navigation
-                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
-        div#menu-slide.slide-default
-            span.elipse-box.elipse1
-            span.elipse-box.elipse2
-            span.elipse-box.elipse3
-            span.elipse-box.elipse4
-            span.elipse-box.elipse5
-            main.portfolio-main
-                .portfolio-wrapper 
-                    .title.portfolio-more-title
-                        .content-look-cards
-                            span.blue-text Візитки 
-                            | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
+        .hidden
+            .svg-container 
+                .my-svg
+            header.fixed-header.container
+                .fixed-navigation
+                    +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
+            div#menu-slide.slide-default
+                span.elipse-box.elipse1
+                span.elipse-box.elipse2
+                span.elipse-box.elipse3
+                span.elipse-box.elipse4
+                span.elipse-box.elipse5
+                main.portfolio-main
+                    .portfolio-wrapper 
+                        .title.portfolio-more-title
+                            .content-look-cards
+                                span.blue-text Візитки 
+                                | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
 
-                    .text-normal 
-                        p Візитка - це компактний інструмент, який має великий потенціал для встановлення контакту з клієнтами і розширення бізнес-мережі.
-                            |  Починаючи з дизайну, візитка створює перший враження про ваш бізнес. Чистий, професійний та візуально привабливий дизайн візитки засвідчує вашу дбайливість про деталі і професіоналізм. Вона відображає вашу унікальність та ідентичність бренду, створюючи візуальне відображення вашої компанії.
+                        .text-normal 
+                            p Візитка - це компактний інструмент, який має великий потенціал для встановлення контакту з клієнтами і розширення бізнес-мережі.
+                                |  Починаючи з дизайну, візитка створює перший враження про ваш бізнес. Чистий, професійний та візуально привабливий дизайн візитки засвідчує вашу дбайливість про деталі і професіоналізм. Вона відображає вашу унікальність та ідентичність бренду, створюючи візуальне відображення вашої компанії.
 
-                    .portfolio-more-h3-margin
-                        h3.title-h3.blue-text Приклади виконаних робіт
-                    .portfolio-slider-look-card.portfolio-img-smaller.portfolio-img-smaller-margin
-                        .d-flex.flex-between.portfolio-small-img-flex
-                            +sliderLookCard(sliderLookCard.img1)
-                            +sliderLookCard(sliderLookCard.img2)
-                        .d-flex.flex-between.portfolio-small-img-flex
-                            +sliderLookCard(sliderLookCard.img3)
-                            +sliderLookCard(sliderLookCard.img4)
-                    .submit.portfolio-submit-margin 
-                        form(action="", method="post") 
-                            button(type="submit") замовити
-        .menuButton#menuBtn
-            .menuText
-                p М
-                p е
-                p н
-                p ю
-        div.menuOpen#menuOpen
-            .cardsOverflow.d-flex.wrapper.flex-between
-                +cardsMenuInfo(cardsMenuInfo.general)
-                +cardsMenuInfo(cardsMenuInfo.aboutUs)
-                +cardsMenuInfo(cardsMenuInfo.portfolio)
-                +cardsMenuInfo(cardsMenuInfo.contacts)
-        footer.portfolio-wrapper 
-            +footerContact(footer)
+                        .portfolio-more-h3-margin
+                            h3.title-h3.blue-text Приклади виконаних робіт
+                        .portfolio-slider-look-card.portfolio-img-smaller.portfolio-img-smaller-margin
+                            .d-flex.flex-between.portfolio-small-img-flex
+                                +sliderLookCard(sliderLookCard.img1)
+                                +sliderLookCard(sliderLookCard.img2)
+                            .d-flex.flex-between.portfolio-small-img-flex
+                                +sliderLookCard(sliderLookCard.img3)
+                                +sliderLookCard(sliderLookCard.img4)
+                        .submit.portfolio-submit-margin 
+                            form(action="", method="post") 
+                                button(type="submit") замовити
+            .menuButton#menuBtn
+                .menuText
+                    p М
+                    p е
+                    p н
+                    p ю
+            div.menuOpen#menuOpen
+                .cardsOverflow.d-flex.wrapper.flex-between
+                    +cardsMenuInfo(cardsMenuInfo.general)
+                    +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                    +cardsMenuInfo(cardsMenuInfo.portfolio)
+                    +cardsMenuInfo(cardsMenuInfo.contacts)
+            footer.portfolio-wrapper 
+                +footerContact(footer)
         script(src="js/scripts.js") 
 

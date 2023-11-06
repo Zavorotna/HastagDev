@@ -58,6 +58,9 @@ ul
 .hidden
     overflow: hidden
     
+.hidden-x
+    overflow-x: hidden
+
 .wrapper
     padding: 0 25rem
     +media(768)
@@ -634,6 +637,9 @@ input[type=file]
     +media(768)
         padding-top: 105rem
 
+.hidden-contacts
+    min-height: 100vh
+
 .no-odject-fit img
     object-fit: contain 
     
@@ -714,7 +720,9 @@ input[type=file]
 .portfolio-wrapper
     width: 76.3%
     margin: 0 auto
-    padding-top: 130rem
+    +media(768)
+        padding-top: 130rem
+
 
 .portfolio-main
     padding-top: 105rem
@@ -760,6 +768,8 @@ h1.title.portfolio-margin
 
 .content-title
     display: none
+    &:first-child
+        display: block
 
 
 .portfolio-slider
@@ -828,6 +838,10 @@ h1.title.portfolio-margin
     // display: none
     position: absolute
     transition: 1s
+    opacity: 0
+    &:first-child
+        opacity: 1
+
 
 .portfoli-wrap 
     width: 1900px
@@ -866,6 +880,8 @@ h1.title.portfolio-margin
     width: 100%
     column-gap: 20rem
     row-gap: 30rem
+    +media(768)
+        flex-wrap: nowrap
     .card-slider
         text-align: center
         width: 100%
