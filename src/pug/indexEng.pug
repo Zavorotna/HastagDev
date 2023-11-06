@@ -6,24 +6,25 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, uset-scalabel=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         title Document
         link(rel="stylesheet", href="css/styles.css")
-    body.hidden
+    body
         include components/mixins
-        div#menu-slide.slide-default
-            .svg-container 
-                .my-svg
-            header.container
-                .main-container.d-flex.flex-between
-                    .main-text 
-                        span.elipse-box.elipse1
-                        span.elipse-box.elipse2
-                        span.elipse-box.elipse3
-                        span.elipse-box.elipse4
-                        +headerLogoEng(logo, lang, link, altText, numText)
-                        .name-company
-                            h1 Hashtag, Design агенція та веб-розробка
-                            h2.main-description Створення сайтів будь-якого ступеня складності. Розкрутка та просування сайту. Послуги з обслуговування та підтримки сайту. 
-                    .main-project
-                        .carousel.d-flex
+        .hidden
+            div#menu-slide.slide-default
+                .svg-container 
+                    .my-svg
+                header.container
+                    .main-container.d-flex.flex-between
+                        .main-text 
+                            span.elipse-box.elipse1
+                            span.elipse-box.elipse2
+                            span.elipse-box.elipse3
+                            span.elipse-box.elipse4
+                            +headerLogo('img/logo.svg', 'ENG', 'index.html', 'logo', '097 302 1025')  
+                            .name-company
+                                h1 Hashtag Developers: Дизайн агенція та 
+                                    nobr веб-розробка 
+                                p.main-description Створення сайтів будь-якого ступеня складності. Розкрутка та просування сайту. Послуги з обслуговування та підтримки сайту. 
+                        .main-project.hidden.d-flex
                             .left-vertical
                                 .down-block
                                     picture 
@@ -33,16 +34,7 @@ html(lang="en")
                                         img.image(src="img/decstop.png", alt="")
                                 .down-block
                                     picture 
-                                        img.image(src="img/card.png", alt="")
-                                .down-block
-                                    picture 
-                                        img.image(src="img/treemcb.png", alt="")
-                                .down-block
-                                    picture 
-                                        img.image(src="img/decstop.png", alt="")
-                                .down-block
-                                    picture 
-                                        img.image(src="img/card.png", alt="")
+                                        img.image(src="img/coffe.png", alt="")
                             .center 
                                 .up-block.center-block
                                     picture 
@@ -53,50 +45,32 @@ html(lang="en")
                                 .up-block.center-block
                                     picture 
                                         img.image(src="img/website.png", alt="")
-                                .up-block.center-block
-                                    picture 
-                                        img.image(src="img/mackbook.png", alt="")
-                                .up-block.center-block
-                                    picture 
-                                        img.image(src="img/magazine.png", alt="")
-                                .up-block.center-block
-                                    picture 
-                                        img.image(src="img/website.png", alt="")
                             .right-vertical
-                                .down-block
+                                .down-block-right
                                     picture 
                                         img.image(src="img/decstop.png", alt="")
-                                .down-block
+                                .down-block-right
                                     picture 
                                         img.image(src="img/note.png", alt="")
-                                .down-block
+                                .down-block-right
                                     picture 
                                         img.image(src="img/annalogo.png", alt="")
-                                .down-block
-                                    picture 
-                                        img.image(src="img/decstop.png", alt="")
-                                .down-block
-                                    picture 
-                                        img.image(src="img/note.png", alt="")
-                                .down-block
-                                    picture 
-                                        img.image(src="img/annalogo.png", alt="")
-                a(href="#")
-                    .center-button
-                        .center-main-button
-                            p.portfolio.arrow Портфоліо
-                            p.button-text Брендинг - Розробка - дизайн
+                    div.btn-href(href="portfolio.html")
+                        .center-button
+                            .center-main-button
+                                p.portfolio#arrow-main Портфоліо
+                                p.button-text Брендинг - Розробка - дизайн
             .menuButton#menuBtn
                 .menuText
                     p М
                     p е
                     p н
                     p ю
-        div.menuOpen#menuOpen
-            .cardsOverflow.d-flex.wrapper.flex-between
-                +cardsMenuInfo(cardsMenuInfo.general)
-                +cardsMenuInfo(cardsMenuInfo.aboutUs)
-                +cardsMenuInfo(cardsMenuInfo.portfolio)
-                +cardsMenuInfo(cardsMenuInfo.contacts)
+            div.menuOpen#menuOpen
+                .cardsOverflow.d-flex.wrapper.flex-between
+                    +cardsMenuInfo(cardsMenuInfo.general)
+                    +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                    +cardsMenuInfo(cardsMenuInfo.portfolio)
+                    +cardsMenuInfo(cardsMenuInfo.contacts)
 
         script(src="js/scripts.js") 
