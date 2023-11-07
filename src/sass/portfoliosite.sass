@@ -29,16 +29,36 @@ img
 
 .main-site-block
     flex-wrap: wrap-reverse
+    padding-right: 5rem
     padding-bottom: 90rem  
     column-gap: 50rem
+    &::-webkit-scrollbar
+        width: 2rem
+        background: transparent
+    &::-webkit-scrollbar-thumb 
+        background-color:  rgba(#24D7FF, 0.8)
     +media(768)
         flex-wrap: nowrap
+        height: 800rem
+        overflow: auto
+
 
 .picture-block 
     width: 100%
     max-width: 738rem
     flex-direction: column
     row-gap: 50rem
+
+.description-block
+    width: 100%
+    flex-direction: column
+    row-gap: 85rem
+    // padding-bottom: 120rem
+    +media(768)
+        position: sticky
+        top: 0
+        left: 0
+
 
 h2.header-description
     color: #24d7ff
@@ -49,17 +69,14 @@ h2.header-description
     letter-spacing: -1.08rem
     text-transform: uppercase
 
-.description-block
-    padding-bottom: 120rem
-    flex-direction: column
-    row-gap: 85rem
-    width: 100%
-
 .descript
     padding: 15rem 0
 
 .cta-block
-    column-gap: 30rem
+    column-gap: 10rem
+    +media(768)
+        column-gap: 30rem
+
 .blue-cta
     +cta($fixed: true)
     transition: all .5s ease
@@ -71,3 +88,6 @@ h2.header-description
     transition: all .5s ease
     &:hover
         transform: scale(1.1)
+
+.main-wrapper
+    padding-top: 120rem
