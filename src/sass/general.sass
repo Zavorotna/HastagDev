@@ -364,11 +364,11 @@ ul
     position: fixed
     left: -200%
     width: 100%
-    min-height: 500rem
+    min-height: 290rem
     transition: 0.5s
-    overflow-y: scroll
-    overflow-x: hidden
-    height: 60vh
+    overflow-y: hidden
+    overflow-x: scroll
+    // height: 60vh
     &::-webkit-scrollbar
         width: 5rem
         height: 8rem
@@ -455,10 +455,10 @@ ul
 .cardsOverflow
     row-gap: 20rem
     column-gap: 5rem
-    flex-wrap: wrap
-    justify-content: center
+    flex-wrap: nowrap
+    justify-content: space-between
     +media(624)
-        justify-content: space-between
+        flex-wrap: wrap
 
 .menuButton
     position: fixed
