@@ -322,40 +322,78 @@ mixin sliderLookReklamCreat(slider4)
             | #{slider4.titleNormal}
 
 -
-    let ourTeam = {
-        director: {
-            name: "дмитро пиріжок -",
+    let ourTeam =  [
+        {
+            name: "дмитро пиріжок",
             position: "Director"
         },
-        designer: {
-            name: "анастасія костроміна - ",
+        {
+            name: "анастасія костроміна",
             position: "Designer"
         },
-        developer1: {
-            name: "Ярослав - ",
-            position:"Developer"
+        {
+            name: "Оля Шутильова",
+            position:"Front-end developer"
         },
-        developer2: {
-            name: "Оля - ",
-            position:"Developer"
+        {
+            name: "Аліна Заворотна",
+            position:"Front-end developer"
         },
-        developer3: {
-            name: "Наташа - ",
-            position:"Developer"
+        {
+            name: "Олександр Франчук",
+            position:"Front-end developer"
         },
-        developer4: {
-            name: "Аліна - ",
-            position:"Developer"
+        {
+            name: "Олександр Чешун",
+            position:"Fullstack developer"
         },
-        developer5: {
-            name: "Олександр -",
-            position:"Developer"
-        }
-    }
+        {
+            name: "Олександр Гуцалюк",
+            position:"Back-end developer"
+        },
+        {
+            name: "Маріна Раїнчук",
+            position:"SMM"
+        },
+        {
+            name: "В'ячеслав Олійник",
+            position:"SEO / google ADS"
+        },
+        {
+            name: "Вадим Шутько",
+            position:"Fullstack developer"
+        },
+        {
+            name: "Сергій Плехно",
+            position:"Fullstack developer"
+        },
+        {
+            name: "Ілля Ільчук",
+            position:"SEO"
+        },
+        {
+            name: "Ігор Дікал",
+            position:"Back-end developer"
+        },
+        {
+            name: "Андрій Хіміч",
+            position:"Front-end developer"
+        },
+        {
+            name: "Андрій Сороковський",
+            position:"Wordpress developer"
+        },
+        {
+            name: "Влад Пташник",
+            position:"Fullstack developer"
+        },
+    ]
+    
 
-mixin ourTeam(team)
-    .d-flex.team
-        p.white.team-name #{team.name}
-        p.team-position #{team.position}
-    hr.team-hr
+mixin ourTeam()
+    for team in ourTeam
+        .d-flex.team
+            p.white.team-name #{team.name} -
+                span.team-position  #{team.position}
+        hr.team-hr
 
