@@ -235,85 +235,6 @@ if (carouselBlock) {
   startScroll()
 }
 
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   var menuBtn = document.getElementById("menuBtn")
-//   var menuSlide = document.getElementById("menu-slide")
-//   var menuOpen = document.getElementById("menuOpen")
-
-
-// let lookAllCont = document.getElementById("contentAll");
-// let lookSitesCont = document.getElementById("contentSites");
-// let lookLogoCont = document.getElementById("contentLogo");
-// let lookCardsCont = document.getElementById("contentCards");
-// let reklamCreatCont = document.getElementById("contentReklam");
-// if(lookAll) {
-//   lookAll.onclick = function() {
-//     lookAll.style.color = "#24D7FF"
-//     lookSites.style.color = "#FFF"
-//     lookLogo.style.color = "#FFF"
-//     lookCards.style.color = "#FFF"
-//     reklamCreat.style.color = "#FFF"
-//     lookAllCont.style.display = "block";
-//     lookSitesCont.style.display = "none";
-//     lookLogoCont.style.display = "none";
-//     lookCardsCont.style.display = "none";
-//     reklamCreatCont.style.display = "none";
-//   };
-// } else if(lookSites) {
-//   lookSites.onclick = function() {
-//     lookAll.style.color = "#FFF"
-//     lookSites.style.color = "#24D7FF"
-//     lookLogo.style.color = "#FFF"
-//     lookCards.style.color = "#FFF"
-//     reklamCreat.style.color = "#FFF"
-//     lookAllCont.style.display = "none";
-//     lookSitesCont.style.display = "block";
-//     lookLogoCont.style.display = "none";
-//     lookCardsCont.style.display = "none";
-//     reklamCreatCont.style.display = "none";
-//   };
-// } else if (lookLogo) {
-//   lookLogo.onclick = function() {
-//     lookAll.style.color = "#FFF"
-//     lookSites.style.color = "#FFF"
-//     lookLogo.style.color = "#24D7FF"
-//     lookCards.style.color = "#FFF"
-//     reklamCreat.style.color = "#FFF"
-//     lookAllCont.style.display = "none";
-//     lookSitesCont.style.display = "none";
-//     lookLogoCont.style.display = "block";
-//     lookCardsCont.style.display = "none";
-//     reklamCreatCont.style.display = "none";
-//   };
-// } else if (lookCards) {
-//   lookCards.onclick = function() {
-//     lookAll.style.color = "#FFF"
-//     lookSites.style.color = "#FFF"
-//     lookLogo.style.color = "#FFF"
-//     lookCards.style.color = "#24D7FF"
-//     reklamCreat.style.color = "#FFF"
-//     lookAllCont.style.display = "none";
-//     lookSitesCont.style.display = "none";
-//     lookLogoCont.style.display = "none";
-//     lookCardsCont.style.display = "block";
-//     reklamCreatCont.style.display = "none";
-//   };
-// } else if (reklamCreat){
-//   reklamCreat.onclick = function() {
-//     lookAll.style.color = "#FFF"
-//     lookSites.style.color = "#FFF"
-//     lookLogo.style.color = "#FFF"
-//     lookCards.style.color = "#FFF"
-//     reklamCreat.style.color = "#24D7FF"
-//     lookAllCont.style.display = "none";
-//     lookSitesCont.style.display = "none";
-//     lookLogoCont.style.display = "none";
-//     lookCardsCont.style.display = "none";
-//     reklamCreatCont.style.display = "block";
-//   };
-// }
-
 document.addEventListener("DOMContentLoaded", function () {
   var menuBtn = document.getElementById("menuBtn")
   var menuSlide = document.getElementById("menu-slide")
@@ -337,17 +258,17 @@ if (buttonMain) {
   })
 
 }
-
+// animation elipse position
 function rand(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
+  return Math.floor(Math.random() * (max - min + 10)) + min
 }
 
 const elipseBox = [...document.querySelectorAll(".elipse-box")],
-  stepRand = 0.1
+  stepRand = 0.5
 
 function updatePosition(elipse) {
-  const topRand = rand(1, 50),
-    leftRand = rand(1, 50),
+  const topRand = rand(1, 100),
+    leftRand = rand(1, 100),
     intervalPos = setInterval(() => {
       // console.log(elipse.style.top);
       const currentTopElipse = parseFloat(elipse.style.top) || topRand + 20,
@@ -376,13 +297,3 @@ elipseBox.forEach((elipse) => {
   updatePosition(elipse)
 })
 
-
-//   menuBtn.addEventListener("click", function () {
-//     menuBtn.classList.toggle("menuBtnClicked")
-//     menuOpen.classList.toggle("menuOpenClicked")
-//     menuSlide.classList.toggle("menu-slide-upper")
-//   })
-
-
-
-// })

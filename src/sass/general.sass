@@ -152,10 +152,8 @@ ul
 @keyframes elipse1
     0%,100%
         opacity: 1
-    25%
-        opacity: 0.3
     50%
-        opacity: 0.5
+        opacity: 0
 
 .fixed-header
     padding-top: 100rem
@@ -314,22 +312,29 @@ ul
     height: 100%
     object-fit: cover
 
-.center-button
+.btn-href
     position: absolute
-    bottom: 5vw
+    bottom: 40%
     left: 50%
-    width: 350rem
-    height: 120rem
+    padding: 10rem
+    width: 86%
+    min-height: 75rem
     background-color: #333
     transform: translateX(-50%)
     transition: all .5s ease
     box-shadow: 0 0 10rem 1rem #24d7ff
     cursor: pointer
+    +media(768)
+        bottom: 5vw
+        max-width: 350rem
+        max-height: 120rem
     &:hover
         transform: translateX(-50%) scale(1.1)
 
-.center-main-button
-    padding: 37rem 90rem
+.flex-btn
+    display: flex
+    align-items: center
+    justify-content: center
 
 .portfolio
     position: relative
@@ -351,6 +356,7 @@ ul
             height: 10rem   
 
 .button-text
+    display: block
     margin: 0
     padding-top: 7rem
     color: #fff
