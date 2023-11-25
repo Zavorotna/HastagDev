@@ -102,11 +102,13 @@ ul
     background: rgba(36, 215, 255, 1)
     border-radius: 50%
     transition: left 10s top 10s
+    user-select: none
+    pointer-events: none
     z-index: -1
 
 .elipse1
     width: 11vw
-    height: 20vh
+    height: 11vw
     top: 25%
     left: 15%
     animation: elipse1 15s infinite
@@ -114,14 +116,14 @@ ul
 
 .elipse2
     width: 20vw
-    height: 35vh
+    height: 20vw
     top: 10%
     right: 50%
     animation: elipse1 12s infinite
 
 .elipse3
     width: 9vw
-    height: 18vh
+    height: 9vw
     bottom: 25%
     left: 25%
     animation: elipse1 10s infinite
@@ -129,7 +131,7 @@ ul
 
 .elipse4
     width: 18vw
-    height: 28vh
+    height: 18vw
     bottom: 25%
     right: 50%
     animation: elipse1 20s infinite
@@ -140,7 +142,7 @@ ul
 
 .elipse5
     width: 24vw
-    height: 34vh
+    height: 24vw
     top: 45%
     right: 50%
     animation: elipse1 20s infinite
@@ -393,7 +395,7 @@ ul
     transform: translateY(50%)
     +media(624)
         transform: translateY(0)
-        bottom: 23rem
+        bottom: 20%
 
 .menuNavCard
     &:first-child
