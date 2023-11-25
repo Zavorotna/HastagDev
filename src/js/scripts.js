@@ -201,9 +201,9 @@ document.addEventListener("DOMContentLoaded", function () {
         currentTopCenter -= step
 
         if (currentTop >= window.innerHeight) {
-          currentTop = -305
+          currentTop = -itemsImgheight
         }
-        if (currentTopCenter <= -605) {
+        if (currentTopCenter <= -itemsImgCenterHeight) {
           currentTopCenter = window.innerHeight;
         }
 
