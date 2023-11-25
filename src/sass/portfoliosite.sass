@@ -5,7 +5,9 @@ img
     object-fit: cover
 
 .main-presentation-block
-    padding: 105rem 0
+    padding: 50rem 0
+    +media(768)
+        padding: 105rem 0
     +media(1440)
         padding: 135rem 0
 
@@ -40,8 +42,6 @@ img
     +media(768)
         flex-wrap: nowrap
         
-
-
 .picture-block 
     width: 100%
     max-width: 738rem
@@ -52,12 +52,11 @@ img
     width: 100%
     flex-direction: column
     row-gap: 85rem
-    // padding-bottom: 120rem
+    padding-bottom: 120rem
     +media(768)
         position: sticky
         top: 120rem
         left: 0
-
 
 h2.header-description
     color: #24d7ff
@@ -88,5 +87,5 @@ h2.header-description
     &:hover
         transform: scale(1.1)
 
-.main-wrapper
-    padding-top: 120rem
+// .main-wrapper
+//     padding-top: 120rem

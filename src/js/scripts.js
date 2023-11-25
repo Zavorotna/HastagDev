@@ -156,20 +156,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let step = 1
 
 
-    for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-      if (itemsImg) {
-        const cloneImg = itemsImg[i].cloneNode(true)
-        carouselVertical.appendChild(cloneImg)
-      }
-      if (itemsImgRight) {
-        const cloneImgRight = itemsImgRight[i].cloneNode(true)
-        carouselVerticalRight.appendChild(cloneImgRight)
-      }
-      if (itemsImgCenter) {
-        const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
-        carouselVerticalCenter.appendChild(cloneImgCenter)
-      }
-    }
+    // for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+    //   if (itemsImg) {
+    //     const cloneImg = itemsImg[i].cloneNode(true)
+    //     carouselVertical.appendChild(cloneImg)
+    //   }
+    //   if (itemsImgRight) {
+    //     const cloneImgRight = itemsImgRight[i].cloneNode(true)
+    //     carouselVerticalRight.appendChild(cloneImgRight)
+    //   }
+    //   if (itemsImgCenter) {
+    //     const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
+    //     carouselVerticalCenter.appendChild(cloneImgCenter)
+    //   }
+    // }
     itemsImg = [...document.querySelectorAll(".down-block")]
     itemsImgRight = [...document.querySelectorAll(".down-block-right")]
     itemsImgCenter = [...document.querySelectorAll(".up-block")]
