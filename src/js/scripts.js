@@ -138,102 +138,106 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // карусель зображень на гол сторінці
+document.addEventListener("DOMContentLoaded", function () {
 
-const carouselBlock = document.querySelector(".main-project")
+  const carouselBlock = document.querySelector(".main-project")
 
-if (carouselBlock) {
-  const carouselVertical = document.querySelector(".left-vertical"),
-    carouselVerticalRight = document.querySelector(".right-vertical"),
-    carouselVerticalCenter = document.querySelector(".center")
+  if (carouselBlock) {
+    const carouselVertical = document.querySelector(".left-vertical"),
+      carouselVerticalRight = document.querySelector(".right-vertical"),
+      carouselVerticalCenter = document.querySelector(".center")
 
-  let itemsImg = [...document.querySelectorAll(".down-block")],
-    itemsImgRight = [...document.querySelectorAll(".down-block-right")],
-    itemsImgCenter = [...document.querySelectorAll(".up-block")],
-    itemsImgCenterHeight = itemsImgCenter[0].offsetHeight,
-    itemsImgheightRight = itemsImgRight[0].offsetHeight,
-    itemsImgheight = itemsImg[0].offsetHeight
-  let step = 1
+    let itemsImg = [...document.querySelectorAll(".down-block")],
+      itemsImgRight = [...document.querySelectorAll(".down-block-right")],
+      itemsImgCenter = [...document.querySelectorAll(".up-block")],
+      itemsImgCenterHeight = itemsImgCenter[0].offsetHeight,
+      itemsImgheightRight = itemsImgRight[0].offsetHeight,
+      itemsImgheight = itemsImg[0].offsetHeight
+    let step = 1
 
 
-  for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-    if (itemsImg) {
-      const cloneImg = itemsImg[i].cloneNode(true)
-      carouselVertical.appendChild(cloneImg)
-    }
-    if (itemsImgRight) {
-      const cloneImgRight = itemsImgRight[i].cloneNode(true)
-      carouselVerticalRight.appendChild(cloneImgRight)
-    }
-    if (itemsImgCenter) {
-      const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
-      carouselVerticalCenter.appendChild(cloneImgCenter)
-    }
-  }
-  itemsImg = [...document.querySelectorAll(".down-block")]
-  itemsImgRight = [...document.querySelectorAll(".down-block-right")]
-  itemsImgCenter = [...document.querySelectorAll(".up-block")]
-
-  for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-    if (itemsImg) {
-      itemsImg[i].style.position = "absolute"
-      itemsImg[i].style.top = `${itemsImgheight * i}rem`
-    }
-    if (itemsImgRight) {
-      itemsImgRight[i].style.position = "absolute"
-      itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
-    }
-    if (itemsImgCenter) {
-      itemsImgCenter[i].style.position = "absolute"
-      itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
-    }
-  }
-
-  function updateCarouselImg() {
     for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-
-      let currentTop = parseFloat(itemsImg[i].style.top),
-        currentTopRight = parseFloat(itemsImgRight[i].style.top),
-        currentTopCenter = parseFloat(itemsImgCenter[i].style.top)
-
-      currentTop += step
-      currentTopRight += step
-      currentTopCenter -= step
-
-      if (currentTop >= window.innerHeight) {
-        currentTop = -305
+      if (itemsImg) {
+        const cloneImg = itemsImg[i].cloneNode(true)
+        carouselVertical.appendChild(cloneImg)
       }
-      if (currentTopCenter <= -605) {
-        currentTopCenter = window.innerHeight;
+      if (itemsImgRight) {
+        const cloneImgRight = itemsImgRight[i].cloneNode(true)
+        carouselVerticalRight.appendChild(cloneImgRight)
       }
-
-      itemsImg[i].style.top = currentTop + "rem"
-      itemsImgRight[i].style.top = currentTop + "rem"
-      itemsImgCenter[i].style.top = currentTopCenter + "rem"
+      if (itemsImgCenter) {
+        const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
+        carouselVerticalCenter.appendChild(cloneImgCenter)
+      }
     }
-  }
+    itemsImg = [...document.querySelectorAll(".down-block")]
+    itemsImgRight = [...document.querySelectorAll(".down-block-right")]
+    itemsImgCenter = [...document.querySelectorAll(".up-block")]
 
-  updateCarouselImg()
+    for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+      if (itemsImg) {
+        itemsImg[i].style.position = "absolute"
+        itemsImg[i].style.top = `${itemsImgheight * i}rem`
+      }
+      if (itemsImgRight) {
+        itemsImgRight[i].style.position = "absolute"
+        itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
+      }
+      if (itemsImgCenter) {
+        itemsImgCenter[i].style.position = "absolute"
+        itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
+      }
+    }
 
-  function startScroll() {
-    autoScrollInterval = setInterval(() => {
-      updateCarouselImg()
-    }, 20)
-  }
+    function updateCarouselImg() {
+      for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
 
-  function stopScroll() {
-    clearInterval(autoScrollInterval)
-  }
+        let currentTop = parseFloat(itemsImg[i].style.top),
+          currentTopRight = parseFloat(itemsImgRight[i].style.top),
+          currentTopCenter = parseFloat(itemsImgCenter[i].style.top)
 
-  carouselBlock.addEventListener("mouseenter", () => {
-    stopScroll()
-  })
+        currentTop += step
+        currentTopRight += step
+        currentTopCenter -= step
 
-  carouselBlock.addEventListener("mouseleave", () => {
+        if (currentTop >= window.innerHeight) {
+          currentTop = -305
+        }
+        if (currentTopCenter <= -605) {
+          currentTopCenter = window.innerHeight;
+        }
+
+        itemsImg[i].style.top = currentTop + "rem"
+        itemsImgRight[i].style.top = currentTop + "rem"
+        itemsImgCenter[i].style.top = currentTopCenter + "rem"
+      }
+    }
+
+    updateCarouselImg()
+
+    function startScroll() {
+      autoScrollInterval = setInterval(() => {
+        updateCarouselImg()
+      }, 20)
+    }
+
+    function stopScroll() {
+      clearInterval(autoScrollInterval)
+    }
+
+    carouselBlock.addEventListener("mouseenter", () => {
+      stopScroll()
+    })
+
+    carouselBlock.addEventListener("mouseleave", () => {
+      startScroll()
+    })
+
     startScroll()
-  })
+  }
 
-  startScroll()
-}
+})
+
 
 document.addEventListener("DOMContentLoaded", function () {
   var menuBtn = document.getElementById("menuBtn")
