@@ -645,10 +645,11 @@ input[type=file]
     max-width: 870rem
     padding: 0 50rem 
     margin: 0 auto 
-    padding-bottom: 20rem !important
+    padding-bottom: 140rem !important
     +media(768)
         padding-top: 105rem
-
+    +media(1170)
+        padding-bottom: 20rem !important
 .hidden-contacts
     min-height: 100vh
 
@@ -802,7 +803,7 @@ h1.title.portfolio-margin
 
     & > div
         column-gap: 50rem
-        margin-left: 11.85%
+        margin-left: calc(11.85% / 2)
         padding-bottom: 15rem
         display: block
         // &:first-child
@@ -811,6 +812,7 @@ h1.title.portfolio-margin
         //         display: flex
         +media(450)
             display: flex
+            margin-left: 11.85%
     & img
         // min-width: 300px
         width: 95%
