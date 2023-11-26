@@ -66,14 +66,22 @@ document.addEventListener("DOMContentLoaded", function () {
         
         let selectedBlocks = document.querySelectorAll(`.tabs-block[data-value="${dataValue}"] .card-slider`),
           allBlocksWidth = 0,
+          allBlocksHeight = 0
           selectedBlock = document.querySelectorAll(`.portfolio-slider .tabs-block`)
         for (let i = 0; i < selectedBlocks.length; i++) {
           console.log(allBlocksWidth);
-          let blocksToSum = Number(selectedBlocks[i].getBoundingClientRect().width)
+          let blocksToSum = Number(selectedBlocks[i].getBoundingClientRect().width),
+            blocksHeightToSum = Number(selectedBlocks[i].getBoundingClientRect().height)
           allBlocksWidth += (blocksToSum + 50) 
+          allBlocksHeight += (blocksHeightToSum + 20)
         }
         selectedBlock.forEach((e) => {
-          e.style.width = allBlocksWidth + 10 + "px"
+          if(window.innerWidth > 450) {
+            e.style.width = allBlocksWidth + 10 + "px"
+
+          } else {
+            e.style.height = allBlocksHeight + "px"
+          }
           console.log(e.getBoundingClientRect().width);
         })
 
