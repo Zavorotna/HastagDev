@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         let selectedBlocks = document.querySelectorAll(`.tabs-block[data-value="${dataValue}"] .card-slider`),
           allBlocksWidth = 0,
-          allBlocksHeight = 0
+          allBlocksHeight = 0,
           selectedBlock = document.querySelectorAll(`.portfolio-slider .tabs-block`)
         for (let i = 0; i < selectedBlocks.length; i++) {
           console.log(allBlocksWidth);
