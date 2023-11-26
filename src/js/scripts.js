@@ -108,18 +108,18 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-let resizePortfolio
+// let resizePortfolio
 
-window.addEventListener("resize", () => {
-  clearTimeout(resizePortfolio)
+// window.addEventListener("resize", () => {
+//   clearTimeout(resizePortfolio)
 
-  resizePortfolio = setTimeout(() => {
-    if (window.innerWidth <= 450) {
-      document.location.reload()
-      console.log(1)
-    }
-  }, 1000) 
-})
+//   resizePortfolio = setTimeout(() => {
+//     if (window.innerWidth <= 450) {
+//       document.location.reload()
+//       console.log(1)
+//     }
+//   }, 1000) 
+// })
 
 
 // скрипт для фіксованого хедеру на скрол
