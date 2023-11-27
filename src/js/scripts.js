@@ -143,19 +143,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const carouselBlock = document.querySelector(".main-project")
 
   if (carouselBlock) {
-    const carouselVertical = document.querySelector(".left-vertical"),
-      carouselVerticalRight = document.querySelector(".right-vertical"),
-      carouselVerticalCenter = document.querySelector(".center")
+    // const carouselVertical = document.querySelector(".left-vertical"),
+    //   carouselVerticalRight = document.querySelector(".right-vertical"),
+    //   carouselVerticalCenter = document.querySelector(".center")
 
     let itemsImg = [...document.querySelectorAll(".down-block")],
       itemsImgRight = [...document.querySelectorAll(".down-block-right")],
       itemsImgCenter = [...document.querySelectorAll(".up-block")],
-      itemsImgCenterHeight = itemsImgCenter[0].offsetHeight,
-      itemsImgheightRight = itemsImgRight[0].offsetHeight,
-      itemsImgheight = itemsImg[0].offsetHeight
+      itemsImgCenterHeight = itemsImgCenter[0].offsetHeight + 20,
+      itemsImgheightRight = itemsImgRight[0].offsetHeight + 20,
+      itemsImgheight = itemsImg[0].offsetHeight + 20
     let step = 1
 
-
+    console.log(itemsImgheight);
     // for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
     //   if (itemsImg) {
     //     const cloneImg = itemsImg[i].cloneNode(true)
@@ -170,9 +170,10 @@ document.addEventListener("DOMContentLoaded", function () {
     //     carouselVerticalCenter.appendChild(cloneImgCenter)
     //   }
     // }
-    itemsImg = [...document.querySelectorAll(".down-block")]
-    itemsImgRight = [...document.querySelectorAll(".down-block-right")]
-    itemsImgCenter = [...document.querySelectorAll(".up-block")]
+
+    // itemsImg = [...document.querySelectorAll(".down-block")]
+    // itemsImgRight = [...document.querySelectorAll(".down-block-right")]
+    // itemsImgCenter = [...document.querySelectorAll(".up-block")]
 
     for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
       if (itemsImg) {
@@ -181,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (itemsImgRight) {
         itemsImgRight[i].style.position = "absolute"
-        itemsImg[i].style.top = `${itemsImgheightRight * i}rem`
+        itemsImgRight[i].style.top = `${itemsImgheightRight * i}rem`
       }
       if (itemsImgCenter) {
         itemsImgCenter[i].style.position = "absolute"
@@ -195,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentTop = parseFloat(itemsImg[i].style.top),
           currentTopRight = parseFloat(itemsImgRight[i].style.top),
           currentTopCenter = parseFloat(itemsImgCenter[i].style.top)
-
+        // console.log(currentTop);
         currentTop += step
         currentTopRight += step
         currentTopCenter -= step
@@ -203,12 +204,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentTop >= window.innerHeight) {
           currentTop = -itemsImgheight
         }
+        if(currentTopRight >= window.innerHeight) {
+          currentTopRight = -itemsImgheightRight 
+        }
         if (currentTopCenter <= -itemsImgCenterHeight) {
           currentTopCenter = window.innerHeight;
         }
 
         itemsImg[i].style.top = currentTop + "rem"
-        itemsImgRight[i].style.top = currentTop + "rem"
+        itemsImgRight[i].style.top = currentTopRight + "rem"
         itemsImgCenter[i].style.top = currentTopCenter + "rem"
       }
     }
@@ -250,7 +254,6 @@ document.addEventListener("DOMContentLoaded", function () {
     menuSlide.classList.toggle("menu-slide-upper")
   })
 
-
 })
 
 const buttonMain = document.querySelector(".btn-href")
@@ -275,8 +278,8 @@ function updatePosition(elipse) {
     leftRand = rand(1, 100),
     intervalPos = setInterval(() => {
       // console.log(elipse.style.top);
-      const currentTopElipse = parseFloat(elipse.style.top) || topRand + 20,
-        currentLeftElipse = parseFloat(elipse.style.left) || leftRand + 20
+      const currentTopElipse = parseFloat(elipse.style.top) || topRand + 40,
+        currentLeftElipse = parseFloat(elipse.style.left) || leftRand + 40
 
       if (currentLeftElipse < leftRand) {
         elipse.style.left = `${currentLeftElipse + stepRand}%`
@@ -300,4 +303,38 @@ function updatePosition(elipse) {
 elipseBox.forEach((elipse) => {
   updatePosition(elipse)
 })
+
+
+// function updateWidthDynamically(elipseWidth) {
+//   let targetWidth = rand(10, 100)
+//   const currentWidth = parseFloat(window.getComputedStyle(elipseWidth).width),
+//     direction = (targetWidth > currentWidth) ? 1 : -1,
+//     widthinterval = setInterval(() => {
+//       const newWidth = currentWidth + direction
+//       if(currentWidth < targetWidth) {
+//         elipseWidth.style.width = `${newWidth + 1}vw`
+//       } else if (currentWidth > targetWidth) {
+//         elipseWidth.style.width = `${newWidth - 1}vw`
+//       }
+//       if (newWidth == targetWidth) {
+//         clearInterval(widthinterval)
+//       }
+//     }, 20)
+// }
+
+// const elipse1 = document.querySelector(".elipse1"),
+//   elipse2 = document.querySelector(".elipse2"),
+//   elipse3 = document.querySelector(".elipse3"),
+//   elipse4 = document.querySelector(".elipse4")
+
+// setInterval(() => {
+//   updateWidthDynamically(elipse1)
+//   updateWidthDynamically(elipse2)
+//   updateWidthDynamically(elipse3)
+//   updateWidthDynamically(elipse4)
+// }, 2000)
+
+//   // currWidthElipse5 = currentWidth5.width
+
+//   console.log(currWidthElipse1, currWidthElipse2, currWidthElipse3, currWidthElipse4)
 
