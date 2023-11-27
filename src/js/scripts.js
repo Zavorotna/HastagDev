@@ -26,7 +26,9 @@ if (langChange) {
 document.addEventListener("DOMContentLoaded", function () {
   const portfolioNavItems = document.querySelectorAll('.portfolio-slider-ul li'),
     tabBlocks = document.querySelectorAll('.tabs-block'),
-    textBlocks = document.querySelectorAll('.content-title')
+    textBlocks = document.querySelectorAll('.content-title'),
+    portfolioSlider = document.querySelector('.portfolio-slider')
+  
 
 
   tabBlocks.forEach((block, index) => {
@@ -61,7 +63,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const selectedTextBlock = document.querySelector(`.content-title[data-value="${dataValue}"]`)
       if (selectedTextBlock) {
+        
+        let selectedBlocks = document.querySelectorAll(`.tabs-block[data-value="${dataValue}"] .card-slider`),
+          allBlocksWidth = 0,
+          allBlocksHeight = 0,
+          selectedBlock = document.querySelectorAll(`.portfolio-slider .tabs-block`)
+        for (let i = 0; i < selectedBlocks.length; i++) {
+          console.log(allBlocksWidth);
+          let blocksToSum = Number(selectedBlocks[i].getBoundingClientRect().width),
+            blocksHeightToSum = Number(selectedBlocks[i].getBoundingClientRect().height)
+          allBlocksWidth += (blocksToSum + 50) 
+          allBlocksHeight += (blocksHeightToSum + 20)
+        }
+        selectedBlock.forEach((e) => {
+          if(window.innerWidth > 450) {
+            e.style.width = allBlocksWidth + 10 + "px"
+
+          } else {
+            e.style.height = allBlocksHeight + "px"
+          }
+          console.log(e.getBoundingClientRect().width);
+        })
+
+
+
+        // console.log("width " + allBlocksWidth)
+
         selectedTextBlock.style.display = 'block'
+        portfolioSlider.style.width = selectedTextBlock.getBoundingClientRect().width
+        
+        console.log(selectedTextBlock.getBoundingClientRect().width, portfolioSlider );
       }
 
       tabBlocks.forEach((block) => {
@@ -76,6 +107,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 })
+
+let resizePortfolio
+
+window.addEventListener("resize", () => {
+  clearTimeout(resizePortfolio)
+
+  resizePortfolio = setTimeout(() => {
+    if (window.innerWidth <= 450) {
+      document.location.reload()
+      console.log(1)
+    }
+  }, 1000) 
+})
+
 
 // скрипт для фіксованого хедеру на скрол
 window.addEventListener('scroll', function () {
