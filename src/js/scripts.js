@@ -319,11 +319,11 @@ const elipseBox = [...document.querySelectorAll(".elipse-box")],
   stepRand = 0.5
 
 function updatePosition(elipse) {
-  const topRand = rand(1, 100),
+  const topRand = rand(1, 10),
     leftRand = rand(1, 100),
     intervalPos = setInterval(() => {
       // console.log(elipse.style.top);
-      const currentTopElipse = parseFloat(elipse.style.top) || topRand + 40,
+      const currentTopElipse = parseFloat(elipse.style.top) || topRand + 20,
         currentLeftElipse = parseFloat(elipse.style.left) || leftRand + 40
 
       if (currentLeftElipse < leftRand) {
