@@ -10,33 +10,33 @@ html(lang="en")
     body
         include components/mixins
         include components/sitemixin
-        .hidden
-            .svg-container 
-                .my-svg
-            header.fixed-header.container
-                .fixed-navigation
-                    +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
-            div#menu-slide.slide-default
+        .svg-container 
+            .my-svg
+        header.fixed-header.container
+            .fixed-navigation
+                +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
+        div#menu-slide.slide-default
+            .hidden-elipse
                 span.elipse-box.elipse1
                 span.elipse-box.elipse2
                 span.elipse-box.elipse3
                 span.elipse-box.elipse4
                 span.elipse-box.elipse5
-                main
-                    +oursWorks(site.highWay)
-            .main-wrapper            
-                +footerContact(footer)
-            .menuButton#menuBtn
-                    .menuText
-                        p М
-                        p е
-                        p н
-                        p ю
-            div.menuOpen#menuOpen
-                .cardsOverflow.d-flex.wrapper.flex-between
-                    +cardsMenuInfo(cardsMenuInfo.general)
-                    +cardsMenuInfo(cardsMenuInfo.aboutUs)
-                    +cardsMenuInfo(cardsMenuInfo.portfolio)
-                    +cardsMenuInfo(cardsMenuInfo.contacts)
+            main
+                +oursWorks(site.highWay)
+        .main-wrapper            
+            +footerContact(footer)
+        .menuButton#menuBtn
+                .menuText
+                    p М
+                    p е
+                    p н
+                    p ю
+        div.menuOpen#menuOpen
+            .cardsOverflow.d-flex.wrapper.flex-between
+                +cardsMenuInfo(cardsMenuInfo.general)
+                +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                +cardsMenuInfo(cardsMenuInfo.portfolio)
+                +cardsMenuInfo(cardsMenuInfo.contacts)
 
-        script(src="js/scripts.js") 
+    script(src="js/scripts.js") 

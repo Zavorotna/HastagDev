@@ -102,19 +102,19 @@ mixin oursWorks(site)
                     img(src=site.img1, alt=site.alt1)
         .main-site-block.d-flex
             .picture-block.d-flex
-                picture
-                    if site.img2
+                if site.img2
+                    picture
                         img.presentation-img(src=site.img2, alt=site.alt2)
-                picture
-                    if site.img3
+                if site.img3
+                    picture
                         img.presentation-img(src=site.img3, alt=site.alt3)
-                picture
-                    if site.img4
+                if site.img4
+                    picture
                         img.presentation-img(src=site.img4, alt=site.alt4)
-                picture
-                    if site.img5
+                if site.img5
+                    picture
                         img.presentation-img(src=site.img5, alt=site.alt5)
-            .description-block.d-flex.sticky
+            .description-block.d-flex
                 .description1
                     h2.header-description #{site.headerDescript1}
                     p.descript.text-style #{site.descript1}

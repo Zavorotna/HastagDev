@@ -188,9 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const carouselBlock = document.querySelector(".main-project")
 
   if (carouselBlock) {
-    // const carouselVertical = document.querySelector(".left-vertical"),
-    //   carouselVerticalRight = document.querySelector(".right-vertical"),
-    //   carouselVerticalCenter = document.querySelector(".center")
+    const carouselVertical = document.querySelector(".left-vertical"),
+      carouselVerticalRight = document.querySelector(".right-vertical"),
+      carouselVerticalCenter = document.querySelector(".center")
 
     let itemsImg = [...document.querySelectorAll(".down-block")],
       itemsImgRight = [...document.querySelectorAll(".down-block-right")],
@@ -382,4 +382,38 @@ elipseBox.forEach((elipse) => {
 //   // currWidthElipse5 = currentWidth5.width
 
 //   console.log(currWidthElipse1, currWidthElipse2, currWidthElipse3, currWidthElipse4)
+
+// document.addEventListener("load", function () {
+//   const descriptionBlock = document.querySelector('.description-block')
+
+//   if (descriptionBlock) {
+//       const isScrollingAllowed = true
+
+//       window.addEventListener('scroll', function () {
+//           if (isScrollingAllowed && isElementInViewport(descriptionBlock)) {
+//               isScrollingAllowed = false
+//               setTimeout(function () {
+//                   isScrollingAllowed = true
+//               }, 1000)
+//           }
+//       })
+//   }
+
+//   function isElementInViewport(el) {
+//       var rect = el.getBoundingClientRect()
+//       return (
+//           rect.top >= 0 &&
+//           rect.left >= 0 &&
+//           rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//           rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//       )
+//   }
+// })
+
+
+
+
+
+
+
 

@@ -34,6 +34,9 @@ img
     padding-right: 5rem
     padding-bottom: 90rem  
     column-gap: 50rem
+    align-items: flex-start
+    // max-height: 1000rem
+    // overflow: auto
     // &::-webkit-scrollbar
     //     width: 2rem
     //     background: transparent
@@ -46,19 +49,25 @@ img
     width: 100%
     max-width: 738rem
     flex-direction: column
+    justify-content: space-between
+    height: 100%
     row-gap: 50rem
 
 .description-block
     width: 100%
-    height: 500rem
     flex-direction: column
     row-gap: 85rem
     padding-bottom: 120rem
     +media(768)                       
         position: sticky
-        top: 100rem
-        left: 0
-        padding: 0
+        top: 110rem
+        padding-bottom: 0rem
+
+// .sticky 
+//     position: sticky
+//     width: 100%
+//     top: 0
+//     z-index: 100 
 
 h2.header-description
     color: #24d7ff
