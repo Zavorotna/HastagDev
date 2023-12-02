@@ -182,78 +182,70 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 
-// карусель зображень на гол сторінці
-document.addEventListener("DOMContentLoaded", function () {
 
+// карусель зображень на гол сторінці
+window.onload = function () {
   const carouselBlock = document.querySelector(".main-project")
 
   if (carouselBlock) {
-    const carouselVertical = document.querySelector(".left-vertical"),
-      carouselVerticalRight = document.querySelector(".right-vertical"),
-      carouselVerticalCenter = document.querySelector(".center")
-
     let itemsImg = [...document.querySelectorAll(".down-block")],
       itemsImgRight = [...document.querySelectorAll(".down-block-right")],
       itemsImgCenter = [...document.querySelectorAll(".up-block")],
-      itemsImgCenterHeight = itemsImgCenter[0].offsetHeight + 20,
-      itemsImgheightRight = itemsImgRight[0].offsetHeight + 20,
-      itemsImgheight = itemsImg[0].offsetHeight + 20
-    let step = 1
+      itemsImgCenterHeight = itemsImgCenter[0].getBoundingClientRect().height + 20,
+      itemsImgheight = 0,
+      step = 1
 
-    console.log(itemsImgheight);
-    // for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-    //   if (itemsImg) {
-    //     const cloneImg = itemsImg[i].cloneNode(true)
-    //     carouselVertical.appendChild(cloneImg)
-    //   }
-    //   if (itemsImgRight) {
-    //     const cloneImgRight = itemsImgRight[i].cloneNode(true)
-    //     carouselVerticalRight.appendChild(cloneImgRight)
-    //   }
-    //   if (itemsImgCenter) {
-    //     const cloneImgCenter = itemsImgCenter[i].cloneNode(true)
-    //     carouselVerticalCenter.appendChild(cloneImgCenter)
-    //   }
-    // }
+    for(let i = 0; i < itemsImgCenter.length; i++) {
+      let height = itemsImgCenter[i].getBoundingClientRect().height
 
-    // itemsImg = [...document.querySelectorAll(".down-block")]
-    // itemsImgRight = [...document.querySelectorAll(".down-block-right")]
-    // itemsImgCenter = [...document.querySelectorAll(".up-block")]
-
-    for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
-      if (itemsImg) {
-        itemsImg[i].style.position = "absolute"
-        itemsImg[i].style.top = `${itemsImgheight * i}rem`
-      }
-      if (itemsImgRight) {
-        itemsImgRight[i].style.position = "absolute"
-        itemsImgRight[i].style.top = `${itemsImgheightRight * i}rem`
-      }
-      if (itemsImgCenter) {
-        itemsImgCenter[i].style.position = "absolute"
-        itemsImgCenter[i].style.top = `${itemsImgCenterHeight * i}rem`
+      if (height > itemsImgCenterHeight) {
+        itemsImgCenterHeight = height + 20
       }
     }
 
-    function updateCarouselImg() {
-      for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
+    function imgPosition (column) {
+      let previousHeight = 0
+      
+      for (let i = 0; i < column.length; i++) {
+        itemsImgheight = column[i].getBoundingClientRect().height + 20
+        column[i].style.position = "absolute"
 
+        if (i === 0) {
+          column[0].style.top = `${0}rem`
+        } else {
+          column[i].style.top = `${previousHeight}rem`
+        }
+
+        previousHeight += itemsImgheight
+      }
+      
+      return previousHeight
+    }
+
+    let leftImgHeight = imgPosition(itemsImg),
+      centerImgHeight = imgPosition(itemsImgCenter),
+      rightImgHeight = imgPosition(itemsImgRight)
+    
+    function updateCarouselImg(imgBlockHeightLeft, imgBlockHeightCenter, imgBlockHeightRight) {
+      for (let i = 0; i < itemsImg.length || i < itemsImgRight.length || i < itemsImgCenter.length; i++) {
         let currentTop = parseFloat(itemsImg[i].style.top),
           currentTopRight = parseFloat(itemsImgRight[i].style.top),
           currentTopCenter = parseFloat(itemsImgCenter[i].style.top)
-        // console.log(currentTop);
+
         currentTop += step
         currentTopRight += step
         currentTopCenter -= step
 
         if (currentTop >= window.innerHeight) {
-          currentTop = -itemsImgheight
+          currentTop -= imgBlockHeightLeft
         }
-        if(currentTopRight >= window.innerHeight) {
-          currentTopRight = -itemsImgheightRight 
-        }
+
         if (currentTopCenter <= -itemsImgCenterHeight) {
-          currentTopCenter = window.innerHeight;
+          currentTopCenter += imgBlockHeightCenter
+        }
+
+        if(currentTopRight >= window.innerHeight) {
+          currentTopRight -= imgBlockHeightRight
         }
 
         itemsImg[i].style.top = currentTop + "rem"
@@ -261,12 +253,12 @@ document.addEventListener("DOMContentLoaded", function () {
         itemsImgCenter[i].style.top = currentTopCenter + "rem"
       }
     }
-
-    updateCarouselImg()
-
+    
+    updateCarouselImg(leftImgHeight, centerImgHeight, rightImgHeight)
+    
     function startScroll() {
       autoScrollInterval = setInterval(() => {
-        updateCarouselImg()
+        updateCarouselImg(leftImgHeight, centerImgHeight, rightImgHeight)
       }, 20)
     }
 
@@ -285,13 +277,14 @@ document.addEventListener("DOMContentLoaded", function () {
     startScroll()
   }
 
-})
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var menuBtn = document.getElementById("menuBtn")
-  var menuSlide = document.getElementById("menu-slide")
-  var menuOpen = document.getElementById("menuOpen")
+  const menuBtn = document.getElementById("menuBtn")
+  const menuSlide = document.getElementById("menu-slide")
+  const menuOpen = document.getElementById("menuOpen")
 
   menuBtn.addEventListener("click", function () {
     menuBtn.classList.toggle("menuBtnClicked")
@@ -319,10 +312,9 @@ const elipseBox = [...document.querySelectorAll(".elipse-box")],
   stepRand = 0.5
 
 function updatePosition(elipse) {
-  const topRand = rand(1, 10),
+  const topRand = rand(1, 50),
     leftRand = rand(1, 100),
     intervalPos = setInterval(() => {
-      // console.log(elipse.style.top);
       const currentTopElipse = parseFloat(elipse.style.top) || topRand + 20,
         currentLeftElipse = parseFloat(elipse.style.left) || leftRand + 40
 
