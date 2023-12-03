@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    updateCarouselImg()
+    // updateCarouselImg()
 
     function startScroll() {
       autoScrollInterval = setInterval(() => {
@@ -319,7 +319,7 @@ const elipseBox = [...document.querySelectorAll(".elipse-box")],
   stepRand = 0.5
 
 function updatePosition(elipse) {
-  const topRand = rand(1, 10),
+  const topRand = rand(1, 100),
     leftRand = rand(1, 100),
     intervalPos = setInterval(() => {
       // console.log(elipse.style.top);
