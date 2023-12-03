@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menuBtn")
   const menuSlide = document.getElementById("menu-slide")
   const menuOpen = document.getElementById("menuOpen")
-
+  
   menuBtn.addEventListener("click", function () {
     function buttonInterval () {
       let btnInterval = setInterval(function() {
@@ -305,7 +305,13 @@ document.addEventListener("DOMContentLoaded", function () {
         clearTimeout(btnTimeout)
       }, 1000)
     }
-    
+    document.addEventListener("click", function(e) {
+      let target = e.target
+      if (target !== document.querySelector(".cardsOverflow") && target !== menuBtn) {
+        menuBtn.click()
+        console.log("CLOSE");
+      } 
+    })
   })
 
 })
