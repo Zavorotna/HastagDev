@@ -253,15 +253,9 @@ window.onload = function () {
         itemsImgCenter[i].style.top = currentTopCenter + "rem"
       }
     }
-<<<<<<< HEAD
-
-    // updateCarouselImg()
-
-=======
     
     updateCarouselImg(leftImgHeight, centerImgHeight, rightImgHeight)
     
->>>>>>> 12043381429629dc53804267318da72567ab2caf
     function startScroll() {
       autoScrollInterval = setInterval(() => {
         updateCarouselImg(leftImgHeight, centerImgHeight, rightImgHeight)
@@ -332,11 +326,7 @@ const elipseBox = [...document.querySelectorAll(".elipse-box")],
   stepRand = 0.5
 
 function updatePosition(elipse) {
-<<<<<<< HEAD
   const topRand = rand(1, 100),
-=======
-  const topRand = rand(1, 50),
->>>>>>> 12043381429629dc53804267318da72567ab2caf
     leftRand = rand(1, 100),
     intervalPos = setInterval(() => {
       const currentTopElipse = parseFloat(elipse.style.top) || topRand + 20,
