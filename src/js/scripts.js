@@ -287,22 +287,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuOpen = document.getElementById("menuOpen")
 
   menuBtn.addEventListener("click", function () {
-    menuBtn.classList.toggle("menuBtnClicked")
-    menuOpen.classList.toggle("menuOpenClicked")
-    menuSlide.classList.toggle("menu-slide-upper")
+    function buttonInterval () {
+      let btnInterval = setInterval(function() {
+        menuBtn.classList.toggle("menuBtnClicked")
+        menuOpen.classList.toggle("menuOpenClicked")
+        menuSlide.classList.toggle("menu-slide-upper")
+        clearInterval(btnInterval)
+      }, 0)
+    }
+    if (menuBtn.style.animation !== "auto ease 0s 1 normal none running none")  {
+      menuBtn.style.animation = "none "
+      buttonInterval ()
+    } else {
+      buttonInterval ()
+      let btnTimeout = setTimeout(() => {
+        menuBtn.style.animation = "shake 3s linear infinite"
+        clearTimeout(btnTimeout)
+      }, 1000)
+    }
+    
   })
 
 })
 
-const buttonMain = document.querySelector(".btn-href")
-if (buttonMain) {
-  const hrefMain = buttonMain.getAttribute("href")
 
-  buttonMain.addEventListener("click", function () {
-    window.location.href = hrefMain
-  })
-
-}
 // animation elipse position
 function rand(min, max) {
   return Math.floor(Math.random() * (max - min + 10)) + min
