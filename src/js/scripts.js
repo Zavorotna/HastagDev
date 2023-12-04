@@ -279,8 +279,6 @@ window.onload = function () {
 
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menuBtn")
   const menuSlide = document.getElementById("menu-slide")
