@@ -211,9 +211,9 @@ window.onload = function () {
         column[i].style.position = "absolute"
 
         if (i === 0) {
-          column[0].style.top = `${0}rem`
+          column[0].style.top = `${0}px`
         } else {
-          column[i].style.top = `${previousHeight}rem`
+          column[i].style.top = `${previousHeight}px`
         }
 
         previousHeight += itemsImgheight
@@ -248,9 +248,9 @@ window.onload = function () {
           currentTopRight -= imgBlockHeightRight
         }
 
-        itemsImg[i].style.top = currentTop + "rem"
-        itemsImgRight[i].style.top = currentTopRight + "rem"
-        itemsImgCenter[i].style.top = currentTopCenter + "rem"
+        itemsImg[i].style.top = currentTop + "px"
+        itemsImgRight[i].style.top = currentTopRight + "px"
+        itemsImgCenter[i].style.top = currentTopCenter + "px"
       }
     }
     
