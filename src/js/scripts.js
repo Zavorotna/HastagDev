@@ -108,18 +108,18 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-let resizePortfolio
+// let resizePortfolio
 
-window.addEventListener("resize", () => {
-  clearTimeout(resizePortfolio)
+// window.addEventListener("resize", () => {
+//   clearTimeout(resizePortfolio)
 
-  resizePortfolio = setTimeout(() => {
-    if (window.innerWidth <= 450) {
-      document.location.reload()
-      console.log(1)
-    }
-  }, 1000) 
-})
+//   resizePortfolio = setTimeout(() => {
+//     if (window.innerWidth <= 450) {
+//       document.location.reload()
+//       console.log(1)
+//     }
+//   }, 1000) 
+// })
 
 
 // скрипт для фіксованого хедеру на скрол
@@ -291,25 +291,28 @@ document.addEventListener("DOMContentLoaded", function () {
         menuOpen.classList.toggle("menuOpenClicked")
         menuSlide.classList.toggle("menu-slide-upper")
         clearInterval(btnInterval)
+      
       }, 0)
+      console.log("int2");
     }
     if (menuBtn.style.animation !== "auto ease 0s 1 normal none running none")  {
       menuBtn.style.animation = "none "
       buttonInterval ()
     } else {
+      console.log("in1");
       buttonInterval ()
       let btnTimeout = setTimeout(() => {
         menuBtn.style.animation = "shake 3s linear infinite"
         clearTimeout(btnTimeout)
       }, 1000)
     }
-    document.addEventListener("click", function(e) {
-      let target = e.target
-      if (target !== document.querySelector(".cardsOverflow") && target !== menuBtn) {
-        menuBtn.click()
-        console.log("CLOSE");
-      } 
-    })
+    // document.addEventListener("click", function(e) {
+    //   let target = e.target
+    //   if (target !== document.querySelector(".cardsOverflow") && target !== menuBtn) {
+    //     menuBtn.click()
+    //     console.log("CLOSE");
+    //   } 
+    // })
   })
 
 })

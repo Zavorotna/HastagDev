@@ -522,23 +522,15 @@ ul
     position: fixed
     z-index: 2
     bottom: 30rem
-    left: 50rem
     cursor: pointer
     animation: shake 3s linear infinite
     transition: 1s ease
+    left: 0
+    +media(450)
+        left: 50rem
+
     
-    &::before
-        content: ''
-        position: absolute
-        border-radius: 50%
-        background: var(--blu, #24D7FF)
-        box-shadow: 0rem 3rem 8rem 1rem rgba(0, 0, 0, 0.20)
-    p
-        position: absolute
-        left: 42%
-        padding-bottom: 50%
-        bottom: 55%
-        transform-origin: 0% 100%
+    text
         color: #E4E4E4
         font-size: 17rem
         font-style: normal
@@ -551,14 +543,29 @@ ul
     5%, 30%
         transform: rotate(10deg)
 
-.menuBtnClicked
+div.menuBtnClicked
     // animation: none 
     transition: 1s ease
     left: 50%
     transform: translate(-50%, 0%) rotateZ(180deg)
-.menuButton, .menuButton:before
-    width: 100rem
-    height: 100rem
+.menuButton
+    min-width: 134rem
+    min-height: 134rem
+    scale: 0.9
+    +media(450)
+        scale: 1
+    svg
+        
+        width: 134px
+        height: 134px
+        scale: 0.9
+        +media(450)
+            scale: 1
+            
+        text
+            font-size: 17px
+            font-family: "Montserratt"
+            transform: translate(-40px, -40px)
 .menuButton p:nth-of-type(1) 
     transform: rotate(295deg)
 .menuButton p:nth-of-type(2) 
