@@ -306,13 +306,16 @@ document.addEventListener("DOMContentLoaded", function () {
         clearTimeout(btnTimeout)
       }, 1000)
     }
-    // document.addEventListener("click", function(e) {
-    //   let target = e.target
-    //   if (target !== document.querySelector(".cardsOverflow") && target !== menuBtn) {
-    //     menuBtn.click()
-    //     console.log("CLOSE");
-    //   } 
-    // })
+    document.addEventListener("click", function(e) { 
+      let target = e.target
+      if (document.querySelector(".menuBtnClicked")) {
+        if (target !== document.querySelector(".cardsOverflow") && target !== menuBtn) {
+          menuBtn.click()
+          console.log("CLOSE");
+        } 
+
+      }
+    })
   })
 
 })
