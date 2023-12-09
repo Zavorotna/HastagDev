@@ -103,8 +103,10 @@ ul
 
 .elipse-box
     position: absolute
-    filter: blur(90rem)
-    background: rgba(36, 215, 255, 1)
+    // filter: blur(90rem)
+    background: radial-gradient(rgba(36,215,255,.5) ,transparent 70%)
+    // background: rgba(36, 215, 255, 1)
+    backdrop-filter: blur(100%)
     border-radius: 50%
     transition: left 10s top 10s
     user-select: none
@@ -112,8 +114,8 @@ ul
     z-index: -1
 
 .elipse1
-    width: 11vw
-    height: 11vw
+    width: 30vw
+    height: 30vw
     top: 25%
     left: 15%
     animation: elipse1 25s infinite
@@ -122,18 +124,19 @@ ul
 
 @keyframes width1 
     0%, 100%
-        width: 11vw
-        height: 11vw
+        scale: 1
     25%, 75%
-        width: 15vw
-        height: 15vw
+        scale: 0.7
+        // width: 20vw
+        // height: 20vw
     50%
-        width: 5vw
-        height: 5vw
+        scale: 0.5
+        // width: 15vw
+        // height: 15vw
 
 .elipse2
-    width: 20vw
-    height: 20vw
+    width: 35vw
+    height: 35vw
     top: 10%
     // right: 50%
     animation: elipse1 30s infinite
@@ -142,14 +145,15 @@ ul
 
 @keyframes width2
     0%, 100%
-        width: 20vw
-        height: 20vw
+        scale: 1
+        // width: 30vw
+        // height: 30vw
     25%, 75%
-        width: 5vw
-        height: 5vw
+        scale: 0.7
     50%
-        width: 10vw
-        height: 10vw
+        scale: 0.5
+        // width: 10vw
+        // height: 10vw
 
 .elipse3
     width: 9vw
@@ -522,23 +526,17 @@ ul
     position: fixed
     z-index: 2
     bottom: 30rem
-    left: 50rem
     cursor: pointer
     animation: shake 3s linear infinite
     transition: 1s ease
+    left: 0
+    +media(450)
+        left: 50rem
+    svg
+        user-select: none
+
     
-    &::before
-        content: ''
-        position: absolute
-        border-radius: 50%
-        background: var(--blu, #24D7FF)
-        box-shadow: 0rem 3rem 8rem 1rem rgba(0, 0, 0, 0.20)
-    p
-        position: absolute
-        left: 42%
-        padding-bottom: 50%
-        bottom: 55%
-        transform-origin: 0% 100%
+    text
         color: #E4E4E4
         font-size: 17rem
         font-style: normal
@@ -551,22 +549,30 @@ ul
     5%, 30%
         transform: rotate(10deg)
 
-.menuBtnClicked
+div.menuBtnClicked
     // animation: none 
     transition: 1s ease
     left: 50%
     transform: translate(-50%, 0%) rotateZ(180deg)
-.menuButton, .menuButton:before
-    width: 100rem
-    height: 100rem
-.menuButton p:nth-of-type(1) 
-    transform: rotate(295deg)
-.menuButton p:nth-of-type(2) 
-    transform: rotate(310deg)
-.menuButton p:nth-of-type(3) 
-    transform: rotate(320deg)
-.menuButton p:nth-of-type(4) 
-    transform: rotate(330deg)
+.menuButton
+    min-width: 134rem
+    min-height: 134rem
+    scale: 0.9
+    +media(450)
+        scale: 1
+    svg
+        
+        width: 134px
+        height: 134px
+        scale: 0.9
+        +media(450)
+            scale: 1
+            
+        text
+            font-size: 17px
+            font-family: "Montserratt"
+            transform: translate(-40px, -40px)
+
 
 .bottom-contacts
     justify-content: space-between

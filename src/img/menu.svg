@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!-- Коло -->
+<circle fill="rgba(36, 215, 255, 1)" cx="67" cy="67" r="50"></circle>
+<!-- Текст, який обтікає коло -->
+<text x="20">
+<textPath class="path" xlink:href="#circlePath">
+<tspan font-family="Montserrat" font-weight="500" font-size="17" fill="#fff">Меню</tspan>
+</textPath>
+</text>
+<!-- Дефініція шляху для кола -->
+<defs>
+<path id="circlePath" d="M 10 67, Q10,10 67,10"></path>
+</defs>
+</svg>

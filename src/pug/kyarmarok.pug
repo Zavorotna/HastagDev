@@ -5,6 +5,9 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         title Document
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Slab:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         link(rel="stylesheet", href="css/styles.css")
 
     body
@@ -29,10 +32,22 @@ html(lang="en")
             +footerContact(footer)
         .menuButton#menuBtn
                 .menuText
-                    p М
-                    p е
-                    p н
-                    p ю
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <!-- Коло -->
+                        <circle fill="rgba(36, 215, 255, 1)" cx="67" cy="67" r="50" />
+
+                        <!-- Текст, який обтікає коло -->
+                        <text cx="0" cy="0">
+                            <textPath class="path" xlink:href="#circlePath" startOffset="250">
+                                <tspan  x="0" y="0" rotate="180" font-family="Montserrat" font-weight="500" font-size="17" fill="rgba(255, 252, 252, 1)">юнеМ</tspan>
+                            </textPath>
+                        </text>
+
+                        <!-- Дефініція шляху для кола -->
+                        <defs>
+                            <path id="circlePath" d="M 100 100 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0" />
+                        </defs>
+                    </svg>
         div.menuOpen#menuOpen
             .cardsOverflow.d-flex.wrapper.flex-between
                 +cardsMenuInfo(cardsMenuInfo.general)
