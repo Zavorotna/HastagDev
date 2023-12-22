@@ -101,7 +101,7 @@ mixin footerContact(footer)
 mixin sliderLookAll(slider, color, isPortfolio)
     .card-slider
         a(href= isPortfolio ? slider.hrefPortfolio : slider.href)
-        img(src=slider.img, alt=slider.alt)
+        img(loading="lazy", src=slider.img, alt=slider.alt)
         h3.title-h3(class=color)
             span.blue-text= slider.titleBlue
             | #{slider.titleNormal}
@@ -144,7 +144,7 @@ mixin sliderLookAll(slider, color, isPortfolio)
 mixin sliderLookSite(slider, isPortfolio)
     .card-slider
         a(href= isPortfolio ? slider.hrefPortfolio : slider.href)
-        img(src=slider.img, alt=slider.alt)
+        img(loading="lazy", src=slider.img, alt=slider.alt)
         h3.title-h3
             span.blue-text= slider.titleBlue
             | #{slider.titleNormal}
@@ -201,7 +201,7 @@ mixin sliderLookSite(slider, isPortfolio)
 mixin sliderLookLogo(slider2, isPortfolio)
     .card-slider
         a(href= isPortfolio ? slider2.hrefPortfolio : slider2.href) 
-        img(src=slider2.img, alt=slider2.alt)
+        img(loading="lazy", src=slider2.img, alt=slider2.alt)
         h3.title-h3
             span.blue-text= slider2.titleBlue
             | #{slider2.titleNormal}
@@ -241,7 +241,7 @@ mixin sliderLookLogo(slider2, isPortfolio)
 mixin sliderLookCard(slider3)
     .card-slider
         a(href=slider3.href) 
-        img(src=slider3.img, alt=slider3.alt)
+        img(loading="lazy", src=slider3.img, alt=slider3.alt)
         h3.title-h3
             span.blue-text= slider3.titleBlue
             | #{slider3.titleNormal}
@@ -316,7 +316,7 @@ mixin sliderLookCard(slider3)
 mixin sliderLookReklamCreat(slider4)
     .card-slider
         a(href=slider4.href) 
-        img(src=slider4.img, alt=slider4.alt)
+        img(loading="lazy", src=slider4.img, alt=slider4.alt)
         h3.title-h3
             span.blue-text= slider4.titleBlue
             | #{slider4.titleNormal}

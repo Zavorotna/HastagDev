@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
           allBlocksHeight = 0,
           selectedBlock = document.querySelectorAll(`.portfolio-slider .tabs-block`)
         for (let i = 0; i < selectedBlocks.length; i++) {
-          console.log(allBlocksWidth);
           let blocksToSum = Number(selectedBlocks[i].getBoundingClientRect().width),
             blocksHeightToSum = Number(selectedBlocks[i].getBoundingClientRect().height)
           allBlocksWidth += (blocksToSum + 50) 
@@ -82,17 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             e.style.height = allBlocksHeight + "px"
           }
-          console.log(e.getBoundingClientRect().width);
         })
-
-
-
-        // console.log("width " + allBlocksWidth)
-
         selectedTextBlock.style.display = 'block'
         portfolioSlider.style.width = selectedTextBlock.getBoundingClientRect().width
-        
-        console.log(selectedTextBlock.getBoundingClientRect().width, portfolioSlider );
+ 
       }
 
       tabBlocks.forEach((block) => {
@@ -107,19 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 })
-
-// let resizePortfolio
-
-// window.addEventListener("resize", () => {
-//   clearTimeout(resizePortfolio)
-
-//   resizePortfolio = setTimeout(() => {
-//     if (window.innerWidth <= 450) {
-//       document.location.reload()
-//       console.log(1)
-//     }
-//   }, 1000) 
-// })
 
 
 // скрипт для фіксованого хедеру на скрол
@@ -146,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function resizeImgHeight() {
     const portfolioImages = document.querySelectorAll(".portfolio-img-smaller img")
     if (portfolioImages) {
-      console.log(portfolioImages)
       portfolioImages.forEach((img) => {
         let imgWidth = img.getBoundingClientRect().width
         img.style.transition = "1s"
@@ -283,36 +261,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menuBtn")
   const menuSlide = document.getElementById("menu-slide")
   const menuOpen = document.getElementById("menuOpen")
+  let canClick = true
   
   menuBtn.addEventListener("click", function () {
-    function buttonInterval () {
-      let btnInterval = setInterval(function() {
-        menuBtn.classList.toggle("menuBtnClicked")
-        menuOpen.classList.toggle("menuOpenClicked")
-        menuSlide.classList.toggle("menu-slide-upper")
-        clearInterval(btnInterval)
-      
-      }, 0)
-      console.log("int2");
+    if (canClick === true) {
+      canClick = false
+      function buttonInterval () {
+        let btnInterval = setInterval(function() {
+          menuBtn.classList.toggle("menuBtnClicked")
+          menuOpen.classList.toggle("menuOpenClicked")
+          menuSlide.classList.toggle("menu-slide-upper")
+          clearInterval(btnInterval)
+        
+        }, 0)
+      }
+      if (menuBtn.style.animation !== "auto ease 0s 1 normal none running none")  {
+        menuBtn.style.animation = "none "
+        buttonInterval ()
+      } else {
+        buttonInterval ()
+        let btnTimeout = setTimeout(() => {
+          menuBtn.style.animation = "shake 3s linear infinite"
+          clearTimeout(btnTimeout)
+        }, 1000)
+      }
+      let timeoutMenu = setTimeout(() => {
+        canClick = true
+        clearTimeout(timeoutMenu)
+      }, 1000) 
+
+      document.addEventListener("click", function(e) { 
+        let target = e.target
+        if (document.querySelector(".menuBtnClicked")) {
+          if (target !== document.querySelector(".cardsOverflow") && target !== menuBtn) {
+            menuBtn.click()
+          } 
+  
+        }
+      })
+
     }
-    if (menuBtn.style.animation !== "auto ease 0s 1 normal none running none")  {
-      menuBtn.style.animation = "none "
-      buttonInterval ()
-    } else {
-      console.log("in1");
-      buttonInterval ()
-      let btnTimeout = setTimeout(() => {
-        menuBtn.style.animation = "shake 3s linear infinite"
-        clearTimeout(btnTimeout)
-      }, 1000)
-    }
-    // document.addEventListener("click", function(e) {
-    //   let target = e.target
-    //   if (target !== document.querySelector(".cardsOverflow") && target !== menuBtn) {
-    //     menuBtn.click()
-    //     console.log("CLOSE");
-    //   } 
-    // })
   })
 
 })
@@ -388,7 +376,6 @@ elipseBox.forEach((elipse) => {
 
 //   // currWidthElipse5 = currentWidth5.width
 
-//   console.log(currWidthElipse1, currWidthElipse2, currWidthElipse3, currWidthElipse4)
 
 
 
