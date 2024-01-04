@@ -452,6 +452,20 @@ ul
         transform: translateY(0)
         bottom: 20%
 
+
+.cardImage 
+    border-radius: 13rem
+    width: 22vw
+    min-width: 290px
+    height: 11vw
+    min-height: 142px
+    background: url(../img/cover.jpg), lightgray -1.376rem 0rem / 112% 100% no-repeat
+    background-size: cover
+    background-position: -3rem 
+    border: 1rem solid #24D7FF
+    transition: 0.5s
+
+
 .menuNavCard
     &:first-child
         p
@@ -472,31 +486,22 @@ ul
             display: block
         a.cardHref p
             left: 18rem
+
     &:nth-child(2n)
         .cardImage
-            background: url(../img/cover-business.webp), lightgray -1.376rem 0rem / 112% 100% no-repeat
-            background-size: 103% 103%
-            background-position: -3rem
+            background: url(../img/cover-business.webp), lightgray no-repeat
+            background-size: cover
+            background-position: -3rem 
     &:nth-child(3n)
         .cardImage
-            background: url(../img/cover-portfolio.webp), lightgray -1.376rem 0rem / 112% 100% no-repeat
-            background-size: 103% 103%
-            background-position: -3rem
+            background: url(../img/cover-portfolio.webp), lightgray no-repeat
+            background-size: cover
+            background-position: -3rem 
     &:nth-child(4n)
         .cardImage
-            background: url(../img/cover-contacts.webp), lightgray -1.376rem 0rem / 112% 100% no-repeat
-            background-size: 103% 103%
-            background-position: -3rem
-            
-.cardImage 
-    border-radius: 13rem
-    min-width: 360rem
-    min-height: 177rem
-    background: url(../img/cover.jpg), lightgray -1.376rem 0rem / 112% 100% no-repeat
-    background-size: 103% 103%
-    background-position: -3rem
-    border: 1rem solid #24D7FF
-    transition: 0.5s
+            background: url(../img/cover-contacts.webp), lightgray no-repeat
+            background-size: cover
+            background-position: -3rem 
         
 .cardHref
     text-decoration: none
@@ -504,6 +509,7 @@ ul
         background: url(../img/cover.jpg), lightgray -1.376rem 0rem / 112% 100% no-repeat
         background-size: 120% 120%
         background-position: -3rem
+        
 
 .cardTitle p
     color: #FFF
@@ -520,7 +526,7 @@ ul
     column-gap: 5rem
     flex-wrap: nowrap
     justify-content: space-between
-    +media(624)
+    +media(630)
         flex-wrap: wrap
 
 .menuButton
@@ -531,15 +537,26 @@ ul
     animation: shake 3s linear infinite
     transition: 1s ease
     left: 0
+    min-width: 134rem
+    min-height: 134rem
+    scale: 0.9
     +media(450)
         left: 50rem
+        scale: 1
     svg
         user-select: none
-
+        width: 134px
+        height: 134px
+        scale: 0.9
+        +media(450)
+            scale: 1
+    &:hover 
+        animation: none !important
     
     text
         color: #E4E4E4
-        font-size: 17rem
+        font-size: 17px
+        font-family: Open Sans
         font-style: normal
         font-weight: 500
         line-height: normal
@@ -555,23 +572,6 @@ div.menuBtnClicked
     transition: 1s ease
     left: 50%
     transform: translate(-50%, 0%) rotateZ(180deg)
-.menuButton
-    min-width: 134rem
-    min-height: 134rem
-    scale: 0.9
-    +media(450)
-        scale: 1
-    svg
-        
-        width: 134px
-        height: 134px
-        scale: 0.9
-        +media(450)
-            scale: 1
-            
-        text
-            font-size: 17px
-            font-family: Open Sans
 
 
 .bottom-contacts
