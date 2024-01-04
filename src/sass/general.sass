@@ -467,25 +467,6 @@ ul
 
 
 .menuNavCard
-    &:first-child
-        p
-            position: relative
-        a.cardHref:first-child p:before 
-            content: ""
-            position: absolute
-            display: block
-            width: 10rem
-            height: 10rem
-            flex-shrink: 0
-            border-radius: 10rem
-            background: var(--blu, #24D7FF)
-            top: 50%
-            left: -13rem
-            transform: translate(-50%, -50%)
-        a.cardHref:hover p:before 
-            display: block
-        a.cardHref p
-            left: 18rem
 
     &:nth-child(2n)
         .cardImage
@@ -502,7 +483,27 @@ ul
             background: url(../img/cover-contacts.webp), lightgray no-repeat
             background-size: cover
             background-position: -3rem 
-        
+
+.active-page > div
+    p
+        position: relative
+    a.cardHref:first-child p:before 
+        content: ""
+        position: absolute
+        display: block
+        width: 10rem
+        height: 10rem
+        flex-shrink: 0
+        border-radius: 10rem
+        background: var(--blu, #24D7FF)
+        top: 50%
+        left: -13rem
+        transform: translate(-50%, -50%)
+    a.cardHref:hover p:before 
+        display: block
+    a.cardHref p
+        left: 18rem
+
 .cardHref
     text-decoration: none
     &:hover .cardImage
@@ -862,7 +863,7 @@ h1.title.portfolio-margin
     &::-webkit-scrollbar
         width: 5rem
         height: 8rem
-        background: transparent
+        background: #444
     
     &::-webkit-scrollbar-thumb 
         background-color:  rgba(#24D7FF, 0.8)

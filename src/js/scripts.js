@@ -29,7 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
     textBlocks = document.querySelectorAll('.content-title'),
     portfolioSlider = document.querySelector('.portfolio-slider')
   
+    portfolioSlider.addEventListener('wheel', function (event) {
+      event.preventDefault()
 
+      const delta = event.deltaY || event.detail || (-event.wheelDelta)
+      const currentScroll = portfolioSlider.scrollLeft
+      portfolioSlider.scrollLeft = currentScroll + delta
+    })
 
   tabBlocks.forEach((block, index) => {
     block.style.opacity = index === 0 ? 1 : 0

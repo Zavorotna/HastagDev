@@ -6,7 +6,44 @@ mixin headerLogo(logo)
         .cellphone.d-flex.flex-between
             a.number(href="tel:+380971647256") 0971647256
             a.language-switch(href="index.html") UA
-            
+
+mixin menu(page)
+    .menuButton#menuBtn
+        svg(xmlns="http://www.w3.org/2000/svg")
+            circle(fill="rgba(36, 215, 255, 1)", cx="67", cy="67", r="50")
+            text(x="20")
+                textPath(class="path", xlink:href="#circlePath")
+                    tspan(font-weight="500", font-size="17", fill="#fff") Меню
+            defs
+                path(id="circlePath", d="M 10 67, Q10,10 67,10")
+    div.menuOpen#menuOpen
+        .cardsOverflow.d-flex.wrapper.flex-between
+            if page === 'index'
+                .active-page
+                        +cardsMenuInfo(cardsMenuInfo.general)
+                +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                +cardsMenuInfo(cardsMenuInfo.portfolio)
+                +cardsMenuInfo(cardsMenuInfo.contacts)
+            else if page === 'about'
+                +cardsMenuInfo(cardsMenuInfo.general)
+                .active-page
+                        +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                +cardsMenuInfo(cardsMenuInfo.portfolio)
+                +cardsMenuInfo(cardsMenuInfo.contacts)
+            else if page === 'portfolio'
+                +cardsMenuInfo(cardsMenuInfo.general)
+                +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                .active-page
+                        +cardsMenuInfo(cardsMenuInfo.portfolio)
+                +cardsMenuInfo(cardsMenuInfo.contacts)
+            else if page === 'contacts'
+                +cardsMenuInfo(cardsMenuInfo.general)
+                +cardsMenuInfo(cardsMenuInfo.aboutUs)
+                +cardsMenuInfo(cardsMenuInfo.portfolio)
+                .active-page
+                        +cardsMenuInfo(cardsMenuInfo.contacts)
+
+
 mixin headerLogoEng(logoEng)
     .top-navigation.d-flex.flex-wrap
         .logo

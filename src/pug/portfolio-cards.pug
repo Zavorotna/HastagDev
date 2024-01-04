@@ -43,25 +43,7 @@ html(lang="en")
                                 +sliderLookCard(sliderLookCard.img4)
                         .submit.portfolio-submit-margin 
                             a(href="contacts.html") замовити
-            .menuButton#menuBtn
-                .menuText
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                        <circle fill="rgba(36, 215, 255, 1)" cx="67" cy="67" r="50"></circle>
-                        <text x="20">
-                            <textPath class="path" xlink:href="#circlePath">
-                                <tspan font-weight="500" font-size="17" fill="#fff">Меню</tspan>
-                            </textPath>
-                        </text>
-                        <defs>
-                            <path id="circlePath" d="M 10 67, Q10,10 67,10"></path>
-                        </defs>
-                    </svg>
-            div.menuOpen#menuOpen
-                .cardsOverflow.d-flex.wrapper.flex-between
-                    +cardsMenuInfo(cardsMenuInfo.general)
-                    +cardsMenuInfo(cardsMenuInfo.aboutUs)
-                    +cardsMenuInfo(cardsMenuInfo.portfolio)
-                    +cardsMenuInfo(cardsMenuInfo.contacts)
+            +menu('portfolio')
             footer.main-wrapper  
                 +footerContact(footer)
         script(src="js/scripts.js") 
