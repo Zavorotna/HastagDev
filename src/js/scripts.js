@@ -27,11 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const portfolioNavItems = document.querySelectorAll('.portfolio-slider-ul li'),
     tabBlocks = document.querySelectorAll('.tabs-block'),
     textBlocks = document.querySelectorAll('.content-title'),
-    portfolioSlider = document.querySelector('.portfolio-slider'),
-    maxScroll = portfolioSlider.scrollWidth - portfolioSlider.clientWidth
+    portfolioSlider = document.querySelector('.portfolio-slider')
   
     portfolioSlider.addEventListener('wheel', function (event) {
-      
+      let maxScroll = portfolioSlider.scrollWidth - portfolioSlider.clientWidth
       const delta = event.deltaY || event.detail || (-event.wheelDelta)
       const currentScroll = portfolioSlider.scrollLeft
       if ((delta < 0 && currentScroll > 0) || (delta > 0 && currentScroll < maxScroll)) {
