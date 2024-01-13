@@ -29,34 +29,38 @@ html(lang="en")
                                 | Ми розуміємо, що кожен бізнес має свої унікальні потреби, тому ми пропонуємо  
                                 span.blue-text індивідуальний підхід 
                                 | до кожного проекту.
-                            .content-title.content-look-sites#contentSites(data-value="sites")
-                                | Знайдемо найкраще вирішення проблем вашого бізнесу. Створимо 
-                                span.blue-text сайт 
-                                | вашої мрії.
-                            .content-title.content-look-logo#contentLogo(data-value="logos")
-                                | Потрібно створити логотип якісно та швидко? 
-                                span.blue-text Hashtag Developers
-                                |  до ваших послуг.
-                            .content-title.content-look-cards#contentCards(data-value="cards")
-                                span.blue-text Візитки 
-                                | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
-                            .content-title.content-look-reklam#contentReklam(data-value="reklam-creatives")
-                                span.blue-text Рекламні креативи 
-                                | є ефективним інструментом для просування бізнесу і залучення уваги цільової аудиторії.
+                            //- .content-title.content-look-sites#contentSites(data-value="sites")
+                            //-     | Знайдемо найкраще вирішення проблем вашого бізнесу. Створимо 
+                            //-     span.blue-text сайт 
+                            //-     | вашої мрії.
+                            //- .content-title.content-look-logo#contentLogo(data-value="logos")
+                            //-     | Потрібно створити логотип якісно та швидко? 
+                            //-     span.blue-text Hashtag Developers
+                            //-     |  до ваших послуг.
+                            //- .content-title.content-look-cards#contentCards(data-value="cards")
+                            //-     span.blue-text Візитки 
+                            //-     | - важливий інструментдля забезпечення професійного враження про вашу компанію та вас особисто.
+                            //- .content-title.content-look-reklam#contentReklam(data-value="reklam-creatives")
+                            //-     span.blue-text Рекламні креативи 
+                            //-     | є ефективним інструментом для просування бізнесу і залучення уваги цільової аудиторії.
                         .portfolio-slider-nav
                             ul.portfolio-slider-ul
-                                li.title-h3#lookall(href="#slideLookAll", data-value="look-all") переглянути усе
-                                li.title-h3#lookSites(href="#slideLookSites", data-value="sites") Сайти
-                                li.title-h3#lookLogo(href="#slideLookLogo", data-value="logos") логотипи
-                                li.title-h3#lookCards(href="#slideLookCard", data-value="cards") візитки
-                                li.title-h3#reklamCreat(href="#slideLookReklam", data-value="reklam-creatives") рекламні креативи
+                                li.title-h3#lookall(href="#slideLookAll", data-value="look-all") усе
+                                li.title-h3#lookSites(href="#slideLookSites", data-value="sites") 
+                                    a(href="portfolio-sites.html")  Сайти
+                                li.title-h3#lookLogo(href="#slideLookLogo", data-value="logos") 
+                                    a(href="portfolio-logo.html") логотипи
+                                li.title-h3#lookCards(href="#slideLookCard", data-value="cards") 
+                                    a(href="portfolio-cards.html") візитки
+                                li.title-h3#reklamCreat(href="#slideLookReklam", data-value="reklam-creatives") 
+                                    a(href="portfolio-creatives.html") рекламні креативи
                                 
                     .portfolio-slider 
                         .portfolio-slider-look-all.tabs-block.d-flex#slideLookAll(data-value="look-all")
                             +sliderLookSite(sliderLookSite.img1)
-                            +sliderLookSite(sliderLookSite.img2, false)
+                            +sliderLookSite(sliderLookSite.img2)
                             +sliderLookSite(sliderLookSite.img3)
-                            +sliderLookSite(sliderLookSite.img4, false)
+                            +sliderLookSite(sliderLookSite.img4)
                             +sliderLookLogo(sliderLookLogo.img1)
                             +sliderLookLogo(sliderLookLogo.img2)
                             +sliderLookLogo(sliderLookLogo.img3)
@@ -69,29 +73,29 @@ html(lang="en")
                             +sliderLookReklamCreat(sliderLookReklamCreat.img2)
                             +sliderLookReklamCreat(sliderLookReklamCreat.img3)
                             +sliderLookReklamCreat(sliderLookReklamCreat.img4)
-                        .portfolio-slider-look-sites.tabs-block.d-flex#slideLookSites(data-value="sites")
-                            +sliderLookSite(sliderLookSite.img1)
-                            +sliderLookSite(sliderLookSite.img2, false)
-                            +sliderLookSite(sliderLookSite.img3)
-                            +sliderLookSite(sliderLookSite.img4, false)
-                        .portfolio-slider-look-logo.tabs-block.d-flex#slideLookLogo(data-value="logos") 
-                            +sliderLookLogo(sliderLookLogo.img1)
-                            +sliderLookLogo(sliderLookLogo.img2)
-                            +sliderLookLogo(sliderLookLogo.img3)
-                            +sliderLookLogo(sliderLookLogo.img4)
-                        .portfolio-slider-look-card.tabs-block.d-flex#slideLookCard(data-value="cards") 
-                            +sliderLookCard(sliderLookCard.img1)
-                            +sliderLookCard(sliderLookCard.img2)
-                            +sliderLookCard(sliderLookCard.img3)
-                            +sliderLookCard(sliderLookCard.img4)
-                        .portfolio-slider-look-reklam-creatives.tabs-block.d-flex#slideLookReklam(data-value="reklam-creatives") 
-                            +sliderLookReklamCreat(sliderLookReklamCreat.img1)
-                            +sliderLookReklamCreat(sliderLookReklamCreat.img2)
-                            +sliderLookReklamCreat(sliderLookReklamCreat.img3)
-                            +sliderLookReklamCreat(sliderLookReklamCreat.img4)
+                        //- .portfolio-slider-look-sites.tabs-block.d-flex#slideLookSites(data-value="sites")
+                        //-     +sliderLookSite(sliderLookSite.img1)
+                        //-     +sliderLookSite(sliderLookSite.img2, false)
+                        //-     +sliderLookSite(sliderLookSite.img3)
+                        //-     +sliderLookSite(sliderLookSite.img4, false)
+                        //- .portfolio-slider-look-logo.tabs-block.d-flex#slideLookLogo(data-value="logos") 
+                        //-     +sliderLookLogo(sliderLookLogo.img1)
+                        //-     +sliderLookLogo(sliderLookLogo.img2)
+                        //-     +sliderLookLogo(sliderLookLogo.img3)
+                        //-     +sliderLookLogo(sliderLookLogo.img4)
+                        //- .portfolio-slider-look-card.tabs-block.d-flex#slideLookCard(data-value="cards") 
+                        //-     +sliderLookCard(sliderLookCard.img1)
+                        //-     +sliderLookCard(sliderLookCard.img2)
+                        //-     +sliderLookCard(sliderLookCard.img3)
+                        //-     +sliderLookCard(sliderLookCard.img4)
+                        //- .portfolio-slider-look-reklam-creatives.tabs-block.d-flex#slideLookReklam(data-value="reklam-creatives") 
+                        //-     +sliderLookReklamCreat(sliderLookReklamCreat.img1)
+                        //-     +sliderLookReklamCreat(sliderLookReklamCreat.img2)
+                        //-     +sliderLookReklamCreat(sliderLookReklamCreat.img3)
+                        //-     +sliderLookReklamCreat(sliderLookReklamCreat.img4)
 
             +menu('portfolio')
-            footer.main-wrapper  
+            footer.portfolio-wrapper 
                 +footerContact(footer)
         script(src="js/scripts.js") 
 

@@ -59,31 +59,29 @@ mixin headerLogoEng(logoEng)
             alt: "Демонстрація головної сторінки Hashtag Developers",
             title: "ГОЛОВНА",
             href: "index.html",
+            class: "general"
         },
         aboutUs: {
-            img: "img/cover.jpg",
+            img: "img/cover-about.webp",
             alt: "Демонстрація сторінки Про нас Hashtag Developers",
             title: "Про нас", 
             href: "aboutus.html",
+            class: "aboutUs"
         },
         contacts: {
             img: "img/cover.jpg",
             alt: "Демонстрація сторінки Контакти Hashtag Developers",
             title: "Контакти",
             href: "contacts.html",
+            class: "contacts-card"
         },
         portfolio: {
             img: "img/cover.jpg",
             alt: "Демонстрація сторінки Портфоліо Hashtag Developers",
             title: "Портфоліо",
             href: "portfolio.html", 
-        },
-        comand: {
-            img: "img/cover.jpg",
-            alt: "Демонстрація сторінки Команда Hashtag Developers",
-            title: "Команда",
-            href: "#",
-        },
+            class: "portfolio-card"
+        }
     }
 
 mixin cardsMenuInfo(cardsInfo)
@@ -91,7 +89,7 @@ mixin cardsMenuInfo(cardsInfo)
         a(href = cardsInfo.href).cardHref
             .cardTitle
                 p.menuNavText #{cardsInfo.title}
-            .cardImage 
+            .cardImage(class=cardsInfo.class)
 
 mixin footerContact(footer) 
     .bottom-contacts.d-flex
@@ -101,47 +99,45 @@ mixin footerContact(footer)
     .copyright
         p Copyright © since 2018. Hashtag Developers
 
--
-    let sliderLookAll = {
-        img1: {
-            img: "img/omegadev.png",
-            alt: "Демонстрація сторінки omegadev",
-            titleBlue: "Omega Dev",
-            titleNormal: " | Development Services",
-            href: "portfolio-sites.html",
-        },
-        img2: {
-            img: "img/wrau.png",
-            alt: "Демонстрація сторінки wrau",
-            titleBlue: "wrau",
-            titleNormal: " | Асоціація переробки відходів",
-            href: "portfolio-sites.html",
-            hrefPortfolio: "westrecycling.html"
-        },
-        img3: {
-            img: "img/highway.jpg",
-            alt: "Демонстрація сторінки highway",
-            titleBlue: "highway",
-            titleNormal: " | Інженерно - будівельна компанія",
-            href: "portfolio-sites.html",
-        },
-        img4: {
-            img: "img/k-yarmarock.jpg",
-            alt: "Демонстрація сторінки k-yarmarock",
-            titleBlue: "k-yarmarock",
-            titleNormal: " | Продаж килимів",
-            href: "portfolio-sites.html",
-            hrefPortfolio: "kyarmarok.html",
-        },
-    }
+//- -
+//-     let sliderLookAll = {
+//-         img1: {
+//-             img: "img/omegadev.png",
+//-             alt: "Демонстрація сторінки omegadev",
+//-             titleBlue: "Omega Dev",
+//-             titleNormal: " | Development Services",
+//-             href: "omega.html",
+//-         },
+//-         img2: {
+//-             img: "img/wrau.png",
+//-             alt: "Демонстрація сторінки wrau",
+//-             titleBlue: "wrau",
+//-             titleNormal: " | Асоціація переробки відходів",
+//-             href: "westrecycling.html"
+//-         },
+//-         img3: {
+//-             img: "img/highway.jpg",
+//-             alt: "Демонстрація сторінки highway",
+//-             titleBlue: "highway",
+//-             titleNormal: " | Інженерно - будівельна компанія",
+//-             href: "highway.html",
+//-         },
+//-         img4: {
+//-             img: "img/k-yarmarock.jpg",
+//-             alt: "Демонстрація сторінки k-yarmarock",
+//-             titleBlue: "k-yarmarock",
+//-             titleNormal: " | Продаж килимів",
+//-             href: "kyarmarok.html",
+//-         },
+//-     }
 
-mixin sliderLookAll(slider, color, isPortfolio)
-    .card-slider
-        a(href= isPortfolio ? slider.hrefPortfolio : slider.href)
-        img(loading="lazy", src=slider.img, alt=slider.alt)
-        h3.title-h3(class=color)
-            span.blue-text= slider.titleBlue
-            | #{slider.titleNormal}
+//- mixin sliderLookAll(slider, color)
+//-     .card-slider
+//-         a(href= slider.href)
+//-         img(loading="lazy", src=slider.img, alt=slider.alt)
+//-         h3.title-h3(class=color)
+//-             span.blue-text= slider.titleBlue
+//-             | #{slider.titleNormal}
 
 
 -
@@ -151,38 +147,37 @@ mixin sliderLookAll(slider, color, isPortfolio)
             alt: "Демонстрація сторінки omegadev",
             titleBlue: "Omega Dev",
             titleNormal: " | Development Services",
-            href: "portfolio-sites.html",
+            href: "omega.html",
         },
         img2: {
             img: "img/wrau.png",
             alt: "Демонстрація сторінки wrau",
             titleBlue: "wrau",
             titleNormal: " | Асоціація переробки відходів",
-            href: "portfolio-sites.html",
-            hrefPortfolio: "westrecycling.html"
+            href: "westrecycling.html",
+            
         },
         img3: {
             img: "img/highway.jpg",
             alt: "Демонстрація сторінки highway",
             titleBlue: "highway",
             titleNormal: " | Інженерно - будівельна компанія",
-            href: "portfolio-sites.html",
+            href: "highway.html",
         },
         img4: {
             img: "img/k-yarmarock.jpg",
             alt: "Демонстрація сторінки k-yarmarock",
             titleBlue: "k-yarmarock",
             titleNormal: " | Продаж килимів",
-            href: "portfolio-sites.html",
-            hrefPortfolio: "kyarmarok.html",
+            href: "kyarmarok.html",
         },
     }
 
-mixin sliderLookSite(slider, isPortfolio)
+mixin sliderLookSite(slider, color)
     .card-slider
-        a(href= isPortfolio ? slider.hrefPortfolio : slider.href)
+        a(href=slider.href)
         img(loading="lazy", src=slider.img, alt=slider.alt)
-        h3.title-h3
+        h3.title-h3(class=color)
             span.blue-text= slider.titleBlue
             | #{slider.titleNormal}
 
@@ -207,7 +202,7 @@ mixin sliderLookSite(slider, isPortfolio)
             alt: "Демонстрація сторінки association",
             titleBlue: "association of renewable energy",
             titleNormal: " | асоціація ",
-            href: "portfolio-logo.html",
+            href: "#",
         },
         img4: {
             img: "img/vzuteviymagnat.png",
@@ -230,14 +225,13 @@ mixin sliderLookSite(slider, isPortfolio)
             alt: "Демонстрація сторінки waste",
             titleBlue: "waste recycling association of ukraine",
             titleNormal: " | Асоціація переробки України",
-            href: "portfolio-logo.html",
-            hrefPortfolio: "westrecycling.html"
+            href: "westrecycling.html"
         },
     }
 
 mixin sliderLookLogo(slider2, isPortfolio)
     .card-slider
-        a(href= isPortfolio ? slider2.hrefPortfolio : slider2.href) 
+        a(href=slider2.href) 
         img(loading="lazy", src=slider2.img, alt=slider2.alt)
         h3.title-h3
             span.blue-text= slider2.titleBlue

@@ -223,6 +223,8 @@ ul
     width: 100%
     padding: 15rem 15rem
     box-sizing: border-box
+    transform: translateY(0rem)
+    transition: 1s
     +media(768)
         position: fixed
         top: 0
@@ -459,30 +461,24 @@ ul
     min-width: 290px
     height: 11vw
     min-height: 142px
-    background: url(../img/cover.jpg), lightgray -1.376rem 0rem / 112% 100% no-repeat
     background-size: cover
-    background-position: -3rem 
     border: 1rem solid #24D7FF
     transition: 0.5s
 
 
-.menuNavCard
 
-    &:nth-child(2n)
-        .cardImage
-            background: url(../img/cover-business.webp), lightgray no-repeat
-            background-size: cover
-            background-position: -3rem 
-    &:nth-child(3n)
-        .cardImage
-            background: url(../img/cover-portfolio.webp), lightgray no-repeat
-            background-size: cover
-            background-position: -3rem 
-    &:nth-child(4n)
-        .cardImage
-            background: url(../img/cover-contacts.webp), lightgray no-repeat
-            background-size: cover
-            background-position: -3rem 
+.general
+    background: url(../img/cover.jpg), lightgray no-repeat
+    background-size: cover
+.aboutUs
+    background: url(../img/cover-business.webp), lightgray no-repeat
+    background-size: cover
+.contacts-card
+    background: url(../img/cover-portfolio.webp), lightgray no-repeat
+    background-size: cover
+.portfolio-card
+    background: url(../img/cover-contacts.webp), lightgray no-repeat
+    background-size: cover
 
 .active-page > div
     p
@@ -507,9 +503,8 @@ ul
 .cardHref
     text-decoration: none
     &:hover .cardImage
-        background: url(../img/cover.jpg), lightgray -1.376rem 0rem / 112% 100% no-repeat
-        background-size: 120% 120%
-        background-position: -3rem
+        background-position-y: -25rem
+        background-size: cover
         
 
 .cardTitle p
@@ -843,6 +838,11 @@ h1.title.portfolio-margin
             color: #24D7FF
         &:first-child
             color: #24D7FF
+        a 
+            color: #fff
+            transition: 0.5s
+            &:hover 
+                color: #24D7FF
         +media(768)
             width: auto
 
@@ -917,10 +917,10 @@ h1.title.portfolio-margin
 
 .tabs-block 
     // display: none
-    position: absolute
+    // position: absolute
     transition: 1s
     opacity: 0
-    overflow-x: hidden 
+    // overflow-x: hidden 
     &:first-child
         opacity: 1
 
@@ -992,10 +992,15 @@ h1.title.portfolio-margin
     margin-bottom: 140rem
 
 .slide-default
+    position: relative
     transform: translateY(0rem)
     transition: 1s
 
 .menu-slide-upper
-    filter: blur(2px)
+    filter: blur(3px) grayscale(0.5)
     transform: translateY(-500rem)
 
+.slide-top
+    .top-navigation
+        position: fixed
+        top: -500rem

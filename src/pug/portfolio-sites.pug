@@ -35,16 +35,16 @@ html(lang="en")
                             h3.title-h3.blue-text Приклади виконаних робіт
                         .portfolio-slider-look-logo.portfolio-img-smaller.portfolio-img-smaller-margin.no-odject-fit
                             .d-flex.flex-between.portfolio-small-img-flex
-                                +sliderLookAll(sliderLookAll.img1)
-                                +sliderLookAll(sliderLookAll.img2, "", true)
+                                +sliderLookSite(sliderLookSite.img1)
+                                +sliderLookSite(sliderLookSite.img2)
                             .d-flex.flex-between.portfolio-small-img-flex
-                                +sliderLookAll(sliderLookAll.img3)
-                                +sliderLookAll(sliderLookAll.img4, "", true)
+                                +sliderLookSite(sliderLookSite.img3)
+                                +sliderLookSite(sliderLookSite.img4)
                         .submit.portfolio-submit-margin 
                             
                             a(href="contacts.html") замовити
             +menu('portfolio')
-            footer.main-wrapper  
+            footer.portfolio-wrapper
                 +footerContact(footer)
         script(src="js/scripts.js") 
 

@@ -31,81 +31,81 @@ document.addEventListener("DOMContentLoaded", function () {
   
     portfolioSlider.addEventListener('wheel', function (event) {
       let maxScroll = portfolioSlider.scrollWidth - portfolioSlider.clientWidth
-      const delta = event.deltaY || event.detail || (-event.wheelDelta)
-      const currentScroll = portfolioSlider.scrollLeft
+      let delta = event.deltaY || event.detail || (-event.wheelDelta)
+      let currentScroll = portfolioSlider.scrollLeft
       if ((delta < 0 && currentScroll > 0) || (delta > 0 && currentScroll < maxScroll)) {
         event.preventDefault()
         portfolioSlider.scrollLeft = currentScroll + delta
       }
     })
 
-  tabBlocks.forEach((block, index) => {
-    block.style.opacity = index === 0 ? 1 : 0
-    block.style.zIndex = index === 0 ? 2 : 0
-  })
-  textBlocks.forEach((block, index) => {
+  // tabBlocks.forEach((block, index) => {
+  //   block.style.opacity = index === 0 ? 1 : 0
+  //   block.style.zIndex = index === 0 ? 2 : 0
+  // })
+  // textBlocks.forEach((block, index) => {
 
-    block.style.display = index === 0 ? 'block' : 'none'
-  })
+  //   block.style.display = index === 0 ? 'block' : 'none'
+  // })
 
-  portfolioNavItems.forEach((item, index) => {
-    item.style.color = '#fff'
-    item.addEventListener('click', () => {
-      const dataValue = item.getAttribute('data-value')
+  // portfolioNavItems.forEach((item, index) => {
+  //   item.style.color = '#fff'
+  //   item.addEventListener('click', () => {
+  //     const dataValue = item.getAttribute('data-value')
 
-      portfolioNavItems.forEach((navItem) => {
-        navItem.style.color = '#fff'
-      })
+  //     portfolioNavItems.forEach((navItem) => {
+  //       navItem.style.color = '#fff'
+  //     })
 
-      item.style.color = '#24d7ff'
+  //     item.style.color = '#24d7ff'
 
-      textBlocks.forEach((block) => {
-        block.style.display = "none"
-        block.style.transform = "translateY(50px)"
-        block.style.transition = "1s"
-        setTimeout(() => {
-          block.style.transform = "translateY(0px)"
+  //     textBlocks.forEach((block) => {
+  //       block.style.display = "none"
+  //       block.style.transform = "translateY(50px)"
+  //       block.style.transition = "1s"
+  //       setTimeout(() => {
+  //         block.style.transform = "translateY(0px)"
 
-        }, 0)
-      })
+  //       }, 0)
+  //     })
 
-      const selectedTextBlock = document.querySelector(`.content-title[data-value="${dataValue}"]`)
-      if (selectedTextBlock) {
+  //     const selectedTextBlock = document.querySelector(`.content-title[data-value="${dataValue}"]`)
+  //     if (selectedTextBlock) {
         
-        let selectedBlocks = document.querySelectorAll(`.tabs-block[data-value="${dataValue}"] .card-slider`),
-          allBlocksWidth = 0,
-          allBlocksHeight = 0,
-          selectedBlock = document.querySelectorAll(`.portfolio-slider .tabs-block`)
-        for (let i = 0; i < selectedBlocks.length; i++) {
-          let blocksToSum = Number(selectedBlocks[i].getBoundingClientRect().width),
-            blocksHeightToSum = Number(selectedBlocks[i].getBoundingClientRect().height)
-          allBlocksWidth += (blocksToSum + 50) 
-          allBlocksHeight += (blocksHeightToSum + 20)
-        }
-        selectedBlock.forEach((e) => {
-          if(window.innerWidth > 450) {
-            e.style.width = allBlocksWidth + 10 + "px"
+  //       let selectedBlocks = document.querySelectorAll(`.tabs-block[data-value="${dataValue}"] .card-slider`),
+  //         allBlocksWidth = 0,
+  //         allBlocksHeight = 0,
+  //         selectedBlock = document.querySelectorAll(`.portfolio-slider .tabs-block`)
+  //       for (let i = 0; i < selectedBlocks.length; i++) {
+  //         let blocksToSum = Number(selectedBlocks[i].getBoundingClientRect().width),
+  //           blocksHeightToSum = Number(selectedBlocks[i].getBoundingClientRect().height)
+  //         allBlocksWidth += (blocksToSum + 50) 
+  //         allBlocksHeight += (blocksHeightToSum + 20)
+  //       }
+  //       selectedBlock.forEach((e) => {
+  //         if(window.innerWidth > 450) {
+  //           e.style.width = allBlocksWidth + 10 + "px"
 
-          } else {
-            e.style.height = allBlocksHeight + "px"
-          }
-        })
-        selectedTextBlock.style.display = 'block'
-        portfolioSlider.style.width = selectedTextBlock.getBoundingClientRect().width
+  //         } else {
+  //           e.style.height = allBlocksHeight + "px"
+  //         }
+  //       })
+  //       selectedTextBlock.style.display = 'block'
+  //       portfolioSlider.style.width = selectedTextBlock.getBoundingClientRect().width
  
-      }
+  //     }
 
-      tabBlocks.forEach((block) => {
-        const blockDataValue = block.getAttribute('data-value')
-        block.style.opacity = blockDataValue === dataValue ? 1 : 0
-        block.style.zIndex = blockDataValue === dataValue ? 2 : 0
-      })
-    })
+  //     tabBlocks.forEach((block) => {
+  //       const blockDataValue = block.getAttribute('data-value')
+  //       block.style.opacity = blockDataValue === dataValue ? 1 : 0
+  //       block.style.zIndex = blockDataValue === dataValue ? 2 : 0
+  //     })
+  //   })
 
-    if (index === 0) {
-      item.style.color = '#24d7ff'
-    }
-  })
+  //   if (index === 0) {
+  //     item.style.color = '#24d7ff'
+  //   }
+  // })
 })
 
 
@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menuBtn"),
     menuSlide = document.getElementById("menu-slide"),
     menuOpen = document.getElementById("menuOpen")
+
   let resizeTimeout
 
   // функція для виконання коду після завершення ресайзу
@@ -150,6 +151,10 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBtn.classList.toggle("menuBtnClicked")
     menuOpen.classList.toggle("menuOpenClicked")
     menuSlide.classList.toggle("menu-slide-upper")
+    if (document.querySelector(".fixed-navigation")) {
+      document.querySelector(".fixed-navigation").classList.toggle("slide-top")
+
+    }
   })
 })
 
@@ -164,6 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBtn.classList.toggle("menuBtnClicked")
     menuOpen.classList.toggle("menuOpenClicked")
     menuSlide.classList.toggle("menu-slide-upper")
+    if (document.querySelector(".fixed-navigation")) {
+      document.querySelector(".fixed-navigation").classList.toggle("slide-top")
+
+    }
   })
 })
 
@@ -279,6 +288,10 @@ document.addEventListener("DOMContentLoaded", function () {
           menuBtn.classList.toggle("menuBtnClicked")
           menuOpen.classList.toggle("menuOpenClicked")
           menuSlide.classList.toggle("menu-slide-upper")
+          if (document.querySelector(".fixed-navigation")) {
+            document.querySelector(".fixed-navigation").classList.toggle("slide-top")
+
+          }
           clearInterval(btnInterval)
         
         }, 0)

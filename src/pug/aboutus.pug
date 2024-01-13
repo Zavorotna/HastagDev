@@ -90,15 +90,15 @@ html(lang="en")
                                 a.arrow.more(href="portfolio.html") Детальніше           
                         .portfolio-slider.aboutus-portfolio
                             .portfolio-slider-look-all.tabs-block.aboutus-portfolio.d-flex#slideLookAll
-                                +sliderLookAll(sliderLookAll.img1, "blue-text")
-                                +sliderLookAll(sliderLookAll.img2, "blue-text")
-                                +sliderLookAll(sliderLookAll.img3, "blue-text")
-                                +sliderLookAll(sliderLookAll.img4, "blue-text")
+                                +sliderLookSite(sliderLookSite.img1, "blue-text")
+                                +sliderLookSite(sliderLookSite.img2, "blue-text")
+                                +sliderLookSite(sliderLookSite.img3, "blue-text")
+                                +sliderLookSite(sliderLookSite.img4, "blue-text")
                     section.main-wrapper.team-section
                         h3.our-team Наша команда
                         +ourTeam()
             
-                .main-wrapper            
+                .portfolio-wrapper           
                     +footerContact(footer)
             +menu('about')
 
