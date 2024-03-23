@@ -271,12 +271,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   closePopup.addEventListener("click", function() {
     popup.classList.toggle("active")
+    document.body.classList.toggle("hidden")
   })
 
   developerBtn.forEach(function(e) {
     e.addEventListener("click", function(e) {
       e.preventDefault()
       popup.classList.toggle("active")
+      document.body.classList.toggle("hidden")
 
     })
   })
