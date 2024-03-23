@@ -12,6 +12,44 @@ html(lang="en")
         include components/mixins
         .svg-container 
             .my-svg
+        .popup-outline
+            .popup-developer.relative
+                .popup-developer__close
+                .d-flex.flex-wrap.flex-between.popup-developer__top
+                    .popup-developer__image.developer-image
+                        picture 
+                            source(srcset="img/developer-example.jpg" type="image/jpg")
+                            img(src="img/no-developer-img.svg", alt="")
+                    .popup-developer__description.developer-description
+                        h2.developer-description__name імʼя прізвище
+                        span.developer-description__position developer
+                        p.developer-description__about is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                .developer-portfolio 
+                    span.developer-description__position Портфоліо
+                    .developer-portfolio__slider.developer-slider
+                        .developer-slider__card.card-slider
+                            a(href="#") 
+                            img(loading="lazy" src="img/omegadev.png" alt="").card-slider__img
+                            h3.title-h3.card-slider__h3
+                                span.blue-text Omega Dev | Development Services
+                        .developer-slider__card.card-slider
+                            a(href="#") 
+                            img(loading="lazy" src="img/omegadev.png" alt="").card-slider__img
+                            h3.title-h3.card-slider__h3
+                                span.blue-text Omega Dev | Development Services
+                        .developer-slider__card.card-slider
+                            a(href="#") 
+                            img(loading="lazy" src="img/omegadev.png" alt="").card-slider__img
+                            h3.title-h3.card-slider__h3
+                                span.blue-text Omega Dev | Development Services
+                        .developer-slider__card.card-slider
+                            a(href="#") 
+                            img(loading="lazy" src="img/omegadev.png" alt="").card-slider__img
+                            h3.title-h3.card-slider__h3
+                                span.blue-text Omega Dev | Development Services
+
+
+
         header.fixed-header.container
             .fixed-navigation
                 +headerLogo('img/logo.svg', 'ua', 'index.html', 'logo', '097 302 1025')  
