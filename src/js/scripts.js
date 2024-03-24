@@ -81,31 +81,31 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeTimeout = setTimeout(resizeImgHeight, 1000)
   })
 
-  menuBtn.addEventListener("click", function () {
-    menuBtn.classList.toggle("menuBtnClicked")
-    menuOpen.classList.toggle("menuOpenClicked")
-    menuSlide.classList.toggle("menu-slide-upper")
-    if (document.querySelector(".fixed-navigation")) {
-      document.querySelector(".fixed-navigation").classList.toggle("slide-top")
+  // menuBtn.addEventListener("click", function () {
+  //   menuBtn.classList.toggle("menuBtnClicked")
+  //   menuOpen.classList.toggle("menuOpenClicked")
+  //   menuSlide.classList.toggle("menu-slide-upper")
+  //   if (document.querySelector(".fixed-navigation")) {
+  //     document.querySelector(".fixed-navigation").classList.toggle("slide-top")
 
-    }
-  })
+  //   }
+  // })
   // document.addEventListener("DOMContentLoaded", function () {
   // const menuBtn = document.querySelector(".menuButton"),
   //   menuSlide = document.getElementById("menu-slide"),
   //   menuOpen = document.getElementById("menuOpen")
   let body = document.querySelector("body")
 
-  menuBtn.addEventListener("click", function () {
-    body.classList.toggle("hidden")
-    menuBtn.classList.toggle("menuBtnClicked")
-    menuOpen.classList.toggle("menuOpenClicked")
-    menuSlide.classList.toggle("menu-slide-upper")
-    if (document.querySelector(".fixed-navigation")) {
-      document.querySelector(".fixed-navigation").classList.toggle("slide-top")
+  // menuBtn.addEventListener("click", function () {
+  //   body.classList.toggle("hidden")
+  //   menuBtn.classList.toggle("menuBtnClicked")
+  //   menuOpen.classList.toggle("menuOpenClicked")
+  //   menuSlide.classList.toggle("menu-slide-upper")
+  //   if (document.querySelector(".fixed-navigation")) {
+  //     document.querySelector(".fixed-navigation").classList.toggle("slide-top")
 
-    }
-  })
+  //   }
+  // })
   // })
 })
 
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function() {
   const closePopup = document.querySelector(".popup-developer__close"),
     popup = document.querySelector(".popup-outline"),
-    developerBtn = document.querySelectorAll(".team-section")
+    developerBtn = document.querySelectorAll(".team")
 
   closePopup.addEventListener("click", function() {
     popup.classList.toggle("active")
@@ -323,4 +323,3 @@ function updatePosition(elipse) {
 elipseBox.forEach((elipse) => {
   updatePosition(elipse)
 })
-
