@@ -1031,8 +1031,8 @@ h1.title.portfolio-margin
     border-radius: 20px
     background: rgb(51, 51, 51)
     left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
+    top: 5vw
+    transform: translateX(-50%)
     background-image: url(../img/arrow-background.svg)
     +media(1650)
         width: 55%
@@ -1044,7 +1044,8 @@ h1.title.portfolio-margin
     display: flex
     justify-content: center
     align-items: center
-    width: 60%
+    width: 65%
+    min-height: 300rem
     max-height: 300rem
     box-sizing: border-box
     border: 1px solid rgb(36, 215, 255)
@@ -1132,9 +1133,6 @@ h1.title.portfolio-margin
     background-image: url(../img/close-popup.svg)
 
 .description4
-    .team
-        position: relative
-        z-index: 1
     a, span
         text-align: left
         color: #fff
@@ -1144,3 +1142,7 @@ h1.title.portfolio-margin
         font-weight: 300
     .team
         justify-content: start
+
+.team
+    position: relative
+    z-index: 1
