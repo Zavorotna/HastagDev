@@ -21,7 +21,7 @@ a
 p
     margin: 0
     
-h1
+h1, .word
     padding-bottom: 21rem
     color: #fff
     font-size: 30rem
@@ -427,17 +427,21 @@ ul
 
 .menuOpen
     position: fixed
-    left: -200%
+    left: -100%
+    bottom: 50%
     width: 100%
     min-height: 290rem
-    transition: 0.5s
+    transition: all .5s ease
     overflow-y: hidden
     overflow-x: scroll
+    transform: translateY(-50%)
     // height: 60vh
     &::-webkit-scrollbar
         width: 5rem
         height: 8rem
         background: transparent
+    +media(624)
+        bottom: 20%
     
     &::-webkit-scrollbar-thumb 
         background-color:  rgba(#24D7FF, 0.8)
@@ -448,11 +452,7 @@ ul
 
 .menuOpenClicked
     left: 0
-    bottom: 50%
-    transform: translateY(50%)
-    +media(624)
-        transform: translateY(0)
-        bottom: 20%
+
 
 
 .cardImage 
@@ -531,7 +531,7 @@ ul
     bottom: 30rem
     cursor: pointer
     animation: shake 3s linear infinite
-    transition: 1s ease
+    transition: all 1s ease
     left: 0
     min-width: 134rem
     min-height: 134rem
@@ -564,9 +564,10 @@ ul
         transform: rotate(10deg)
 
 div.menuBtnClicked
-    // animation: none 
-    transition: 1s ease
+    animation: none
     left: 50%
+    // transition: 1s ease
+    // left: 50%
     transform: translate(-50%, 0%) rotateZ(180deg)
 
 
@@ -1010,7 +1011,7 @@ h1.title.portfolio-margin
     display: none
     position: fixed
     width: 100vw
-    height: 150vh
+    height: 120vh
     backdrop-filter: blur(10px)
     background: rgba(0, 0, 0, 0.6)
     z-index: 10
@@ -1146,3 +1147,38 @@ h1.title.portfolio-margin
 .team
     position: relative
     z-index: 1
+
+.rotating-text
+  font-family: sans-serif
+  font-weight: 600
+  font-size: 36px
+  color: white
+
+
+  p
+    display: inline-flex
+    margin: 0
+    vertical-align: top
+
+    .word
+      position: absolute
+      display: flex
+      opacity: 0
+
+      .letter
+        transform-origin: center center 25px
+
+        &.out
+          transform: rotateX(90deg)
+          transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2)
+
+        &.in
+          transition: 0.38s ease
+
+        &.behind
+          transform: rotateX(-90deg)
+
+.name-company__description--padding
+    padding-top: 40rem
+    +media(2000)
+        padding-top: 60rem
